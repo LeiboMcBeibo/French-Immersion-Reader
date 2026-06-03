@@ -1,0 +1,132 @@
+{
+  "project": "French Immersion Reader & Vocabulary Builder",
+  "version": "3.0",
+  "created": "2026-05-29",
+  "total_words": 10,
+  "rules": {
+    "new_words_per_day": 10,
+    "avoid_easy_cognates": true,
+    "no_duplicate_new_words": true,
+    "default_level": "A2",
+    "preferred_voice": "fr-FR",
+    "required_flashcard_modes": [
+      "new",
+      "all",
+      "random",
+      "important",
+      "difficult"
+    ]
+  },
+  "words": [
+    {
+      "id": "2026-05-26-001",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "le pouvoir d’achat",
+      "english": "purchasing power; what people can afford",
+      "example": "Le pouvoir d’achat reste un sujet politique très important.",
+      "tag": "economy",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-002",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "une hausse",
+      "english": "an increase; a rise",
+      "example": "Une hausse du pétrole peut créer une hausse des coûts de transport.",
+      "tag": "economy",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-003",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "une canicule",
+      "english": "a heat wave",
+      "example": "Quand une canicule arrive en mai, le problème n’est pas abstrait.",
+      "tag": "weather",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-004",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "les soins",
+      "english": "medical care; care",
+      "example": "Elles donnent de la nourriture, de l’eau et des soins.",
+      "tag": "health",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-005",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "un dirigeant",
+      "english": "a leader; a person in charge",
+      "example": "Les dirigeants parlent de sécurité, d’énergie et de commerce.",
+      "tag": "politics",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-006",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "l’aide",
+      "english": "aid; help; assistance",
+      "example": "Beaucoup de pays donnent encore de l’aide.",
+      "tag": "politics",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-007",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "un marché financier",
+      "english": "a financial market",
+      "example": "Les marchés financiers réagissent à chaque nouvelle.",
+      "tag": "economy",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-008",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "une tension",
+      "english": "a tension; strain; conflict pressure",
+      "example": "Les tensions au Moyen-Orient ont un effet sur les marchés.",
+      "tag": "politics",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-009",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "surveiller",
+      "english": "to monitor; to watch closely",
+      "example": "Les gouvernements surveillent la situation avec attention.",
+      "tag": "news",
+      "important": false,
+      "difficult": false
+    },
+    {
+      "id": "2026-05-26-010",
+      "date_added": "2026-05-26",
+      "level": "A2+",
+      "french": "un fournisseur",
+      "english": "a supplier; provider",
+      "example": "Les entreprises doivent choisir leurs fournisseurs avec attention.",
+      "tag": "business",
+      "important": false,
+      "difficult": false
+    }
+  ]
+}

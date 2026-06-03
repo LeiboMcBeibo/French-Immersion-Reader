@@ -1,0 +1,6 @@
+Use this project scaffold. Do not edit reader.html, flashcards.html, or index.html.
+Create or replace only data/today_news.js.
+Write today’s 30-minute A2+ French immersion news reader based on real current news.
+Use sentence-by-sentence French suitable for the existing Product B Reader.
+Return a JavaScript file that assigns window.TODAY_NEWS = { meta, phrases, vocabularyWords }.
+Do not AI-select a permanent vocabulary list. vocabularyWords may contain only optional highlight candidates from today’s text; the user will add their own words while reading.

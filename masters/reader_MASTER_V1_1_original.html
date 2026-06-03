@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>French Immersion Reader — MASTER V1.1 — User Vocabulary Capture</title>
+<style>
+:root {
+  --rose:#F4C4C4; --rose-deep:#C08497; --sage:#BFD8C7; --sage-dark:#304D36;
+  --paper:rgba(255,252,250,.92); --ink:#2d2d2d; --muted:#888; --line:rgba(192,132,151,.18);
+}
+* { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; }
+body {
+  padding:20px;
+  background:radial-gradient(circle at 10% 8%, rgba(244,196,196,.52), transparent 31%),
+             radial-gradient(circle at 90% 10%, rgba(191,216,199,.46), transparent 30%),
+             linear-gradient(135deg,#f8e7e5 0%,#f7f5ef 52%,#e8efe4 100%);
+  font-family:Georgia,"Times New Roman",serif; color:var(--ink);
+}
+.shell { max-width:1400px; margin:auto; min-height:calc(100vh - 40px); background:var(--paper); border-radius:34px; padding:34px; box-shadow:0 24px 64px rgba(70,50,40,.15); border:1px solid var(--line); }
+.top { display:flex; justify-content:space-between; gap:18px; align-items:flex-end; flex-wrap:wrap; }
+.title { font-family:"Snell Roundhand","Apple Chancery","Brush Script MT",cursive; font-size:64px; line-height:1; color:var(--rose-deep); margin:0; font-weight:400; }
+.meta { font-size:20px; color:var(--muted); margin-top:8px; }
+.track { height:12px; background:#e8e2de; border-radius:999px; overflow:hidden; margin:22px 0; }
+.bar { height:100%; width:0%; background:linear-gradient(90deg,#bcd8c7,#f4c4c4); transition:width .25s ease; }
+.stage { background:rgba(255,255,255,.66); border-radius:28px; min-height:520px; display:flex; flex-direction:column; justify-content:center; text-align:center; padding:34px; box-shadow:inset 0 0 0 1px rgba(230,214,210,.58); }
+.context { font-size:26px; color:rgba(80,80,80,.36); line-height:1.4; min-height:78px; display:flex; align-items:center; justify-content:center; }
+.active { font-size:50px; line-height:1.35; font-weight:600; color:#222; margin:22px 0; min-height:150px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; }
+.word { padding:0 4px; border-radius:8px; transition:background .08s linear,color .08s linear; }
+.word.now { background:rgba(244,196,196,.70); color:#a85e6f; box-shadow:0 0 0 2px rgba(244,196,196,.25); }
+.word.vocab { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: rgba(48,77,54,.35); }
+.counter { text-align:center; margin:14px 0; color:#888; font-size:18px; }
+.controls,.settings { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:16px; align-items:center; }
+button,select { border:none; border-radius:999px; padding:13px 20px; font-size:18px; }
+button { background:var(--sage-dark); color:white; cursor:pointer; }
+button.secondary { background:white; color:var(--sage-dark); border:1px solid rgba(48,77,54,.25); }
+select { background:white; border:1px solid #ddd2d0; }
+.status,.note { text-align:center; color:#777; margin-top:12px; font-size:15px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.add-vocab-popover { position:fixed; z-index:20; display:none; background:#fff; border:1px solid rgba(48,77,54,.25); border-radius:999px; box-shadow:0 10px 28px rgba(70,50,40,.18); padding:8px; gap:8px; align-items:center; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.add-vocab-popover button { font-size:15px; padding:10px 14px; }
+.add-vocab-popover .selected-word { max-width:220px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#304D36; font-size:14px; padding-left:8px; }
+#startOverlay { position:fixed; inset:0; z-index:10; background:rgba(255,249,245,.94); backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; padding:28px; }
+.startCard { max-width:740px; background:rgba(255,255,255,.88); border-radius:30px; padding:34px; box-shadow:0 24px 70px rgba(105,70,70,.16); text-align:center; }
+.startCard h2 { color:var(--rose-deep); font-size:52px; margin:0 0 8px; font-family:"Snell Roundhand","Apple Chancery","Brush Script MT",cursive; font-weight:400; }
+.startCard p { color:#777; line-height:1.45; font-size:18px; }
+@media(max-width:900px) {
+  body { padding:12px; } .shell { padding:22px; border-radius:24px; } .title { font-size:46px; }
+  .active { font-size:32px; min-height:130px; } .context { font-size:20px; min-height:70px; }
+  .stage { min-height:430px; padding:22px; } button,select { font-size:15px; padding:11px 15px; }
+}
+</style>
+</head>
+<body>
+<div id="startOverlay">
+  <div class="startCard">
+    <h2>Immersion Reader</h2>
+    <p>This rebuild restores automatic flow, moving word highlight, and previous/current/next sentence context. Tap Start, choose a French voice if available, then press Lire.</p>
+    <button onclick="startReader()">▶ Start Reader</button>
+  </div>
+</div>
+<div class="add-vocab-popover" id="addVocabPopover"><span class="selected-word" id="selectedWordPreview"></span><button onclick="addSelectedToVocabulary(event)">＋ Ajouter aux cartes</button></div>
+<div class="shell">
+  <div class="top">
+    <div><h1 class="title">Immersion Reader</h1><div class="meta">Actualité américaine • 29 mai 2026 • A2+ • 198 phrases</div></div>
+    <button class="secondary" onclick="restart()">Recommencer</button>
+  </div>
+  <div class="track"><div class="bar" id="bar"></div></div>
+  <div class="stage">
+    <div class="context" id="prev"></div>
+    <div class="active" id="active"></div>
+    <div class="context" id="next"></div>
+  </div>
+  <div class="counter" id="counter"></div>
+  <div class="controls">
+    <button onclick="prevPhrase()">← Précédente</button>
+    <button id="playBtn" onclick="play()">▶ Lire</button>
+    <button onclick="pauseAudio()">⏸ Pause</button>
+    <button onclick="repeatPhrase()">↻ Répéter</button>
+    <button onclick="nextPhrase()">Suivante →</button>
+  </div>
+  <div class="settings">
+    <label>Vitesse <select id="speed"><option value="0.58">Très lent</option><option value="0.68" selected>Lent 30 min</option><option value="0.82">Presque normal</option><option value="1">Normal</option></select></label>
+    <label>Pause <select id="gap"><option value="400">Courte</option><option value="800" selected>Moyenne</option><option value="1200">Longue</option></select></label>
+    <label>Voix <select id="voiceSelect"></select></label>
+  </div>
+  <div class="status" id="status">Chargement des voix françaises…</div>
+  <div class="note">Note: Pause the reader, select a French word or short phrase, then tap “Ajouter aux cartes” to send it to the Flashcard Player.</div>
+</div>
+<script>
+const phrases = ["Ouverture.", "Bonjour, Mark. Aujourd’hui, nous lisons un long résumé de l’actualité en français facile.", "Le but est de rester dans le français, phrase après phrase, sans traduction automatique.", "Vous n’avez pas besoin de comprendre chaque mot.", "Vous pouvez écouter le rythme, regarder les mots, et suivre l’idée générale.", "Le lecteur avance tout seul, sauf si vous appuyez sur Pause.", "Le mot entendu doit se colorer pendant la lecture.", "La phrase précédente reste visible au-dessus.", "La phrase suivante reste visible au-dessous.", "Ainsi, le texte respire davantage, et l’écoute devient plus naturelle.", "Cette version contient une lecture beaucoup plus longue, proche de trente minutes à vitesse lente.", "Économie.", "Aux États-Unis, l’économie reste au centre de beaucoup de conversations.", "Des responsables expliquent que la sécurité économique est maintenant aussi importante que la sécurité militaire.", "Selon eux, le pays veut dépendre moins de certains fournisseurs étrangers.", "Cette idée revient souvent quand on parle de la Chine, des médicaments, des bateaux, et des minéraux importants.", "Certains dirigeants disent que le pays a cherché l’efficacité pendant trop longtemps.", "Maintenant, ils veulent plus de solidité dans les chaînes d’approvisionnement.", "Pour beaucoup de ménages, ces grands débats semblent loin de la vie quotidienne.", "Mais les dépenses ordinaires restent très concrètes.", "Un ménage regarde le prix de la nourriture, du logement, de l’énergie, et des transports.", "Quand un prix monte, le budget peut vite devenir plus lourd.", "Une hausse de l’essence peut alourdir les dépenses de la semaine.", "Une hausse du loyer peut changer les choix d’une famille.", "Si les ventes reculent dans certaines entreprises, les travailleurs s’inquiètent.", "Si les marchés financiers montent, certains investisseurs se rassurent.", "Mais si les marchés financiers reculent, les journaux parlent rapidement de peur et de prudence.", "Les économistes surveillent donc plusieurs signes en même temps.", "Ils regardent les prix, les salaires, les emplois, et les décisions politiques.", "Une seule annonce peut apaiser les marchés pendant quelques heures.", "Une autre annonce peut créer une nouvelle tension.", "Dans ce climat, le pouvoir d’achat reste un mot très important pour les électeurs.", "Politique.", "À Washington, le président Donald Trump occupe encore une place centrale dans les débats.", "Une partie du pays soutient fortement sa politique.", "Une autre partie du pays la critique avec la même force.", "Cette division rend chaque annonce plus difficile à interpréter.", "Quand un dirigeant parle de sécurité, certains entendent protection.", "D’autres entendent contrôle ou conflit.", "Quand un dirigeant parle d’économie, certains entendent indépendance.", "D’autres entendent tarifs, prix plus élevés, ou incertitude.", "Les discussions politiques passent souvent d’un sujet à l’autre.", "Un jour, le sujet principal est l’industrie.", "Le lendemain, le sujet principal est l’immigration.", "Puis les journalistes parlent de justice, de diplomatie, ou de défense.", "Pour un lecteur en français, c’est une bonne occasion d’apprendre des mots fréquents.", "On entend souvent les mots aide, tension, décision, accord, enquête, et réaction.", "On entend aussi des verbes comme surveiller, apaiser, reculer, soutenir, et annoncer.", "Le ton des articles change selon les journaux.", "Certains articles insistent sur la force.", "D’autres articles insistent sur les risques.", "Le lecteur doit donc regarder les faits, mais aussi le choix des mots.", "C’est une partie importante de la compréhension d’une langue.", "Monde.", "Dans le monde, plusieurs dossiers restent sensibles.", "Les États-Unis parlent encore avec leurs alliés de sécurité et de commerce.", "Les relations avec la Chine restent compliquées.", "Les responsables américains parlent souvent de dépendance économique.", "Ils veulent éviter qu’un seul pays contrôle trop de produits essentiels.", "Cette idée concerne les usines, les ports, les médicaments, et la technologie.", "En même temps, les États-Unis ne veulent pas toujours se couper du monde.", "Beaucoup d’entreprises ont besoin de vendre à l’étranger.", "Beaucoup d’entreprises ont aussi besoin de fournisseurs étrangers.", "Il faut donc trouver un équilibre difficile.", "En Europe, les gouvernements surveillent aussi leurs propres dépendances.", "La guerre en Ukraine continue d’influencer les budgets militaires.", "Les prix de l’énergie restent un sujet sérieux.", "La sécurité des frontières reste un sujet politique.", "Dans plusieurs pays, les électeurs demandent plus de protection.", "Mais ils demandent aussi que la vie reste abordable.", "Ces deux demandes ne sont pas toujours faciles à réunir.", "Quand les dépenses publiques augmentent, certains citoyens s’inquiètent.", "Quand l’aide recule, d’autres citoyens s’inquiètent.", "Le monde semble donc chercher un chemin plus stable.", "Vie quotidienne.", "Pendant que les dirigeants parlent, la vie quotidienne continue.", "Dans un quartier calme, une personne ouvre un café tôt le matin.", "Un autre voisin promène son chien près de la pelouse.", "Une famille attend au guichet d’une gare pour changer un billet.", "Une foule avance lentement dans une station de métro.", "Ces scènes ordinaires aident à comprendre les nouvelles.", "Les grandes décisions finissent souvent dans les petites habitudes.", "Si les transports coûtent plus cher, une famille sort moins souvent.", "Si le prix des courses augmente, le menu de la semaine change.", "Si un quartier devient trop cher, des habitants doivent partir.", "Si une ville améliore les soins, des personnes fragiles vivent mieux.", "Si l’aide locale recule, les associations doivent faire davantage.", "Les mots de l’actualité ne sont donc pas seulement abstraits.", "Ils entrent dans la cuisine, le salon, la rue, et le portefeuille.", "Pour apprendre le français, ces liens sont très utiles.", "Un mot comme ménage paraît simple, mais il ouvre beaucoup d’idées.", "Un mot comme dépenses paraît économique, mais il touche la vie intime.", "Un mot comme quartier paraît géographique, mais il parle aussi d’identité.", "Un mot comme foule peut parler d’un stade, d’une gare, ou d’une manifestation.", "Le vocabulaire devient plus vivant quand il revient dans plusieurs contextes.", "Sport et culture.", "Dans le sport, une grande finale peut devenir un tournant.", "Un joueur peut changer le rythme d’un match en quelques minutes.", "Sur la pelouse, les gestes semblent simples, mais la pression est énorme.", "La foule chante, attend, critique, puis célèbre.", "Les supporters regardent chaque détail.", "Un entraîneur cherche à apaiser son équipe.", "Un mauvais début peut alourdir la pression.", "Une bonne passe peut tout changer.", "Dans les journaux, le sport ressemble parfois à la politique.", "On parle de stratégie, de dirigeants, de dépenses, et de décisions.", "On parle aussi de confiance, de peur, et de mémoire collective.", "Pour un apprenant, le sport offre un français très concret.", "Les phrases sont souvent courtes.", "Les actions sont faciles à imaginer.", "On voit la pelouse, la foule, le guichet, et les quartiers autour du stade.", "Après le match, les supporters rentrent chez eux.", "Certains sont heureux.", "D’autres sont silencieux.", "Le lendemain, les journaux recommencent l’histoire.", "Chaque match devient une petite leçon de langue et de société.", "Conclusion.", "Nous arrivons à la fin de ce long lecteur.", "Aujourd’hui, les nouveaux mots sont revenus plusieurs fois.", "Vous avez entendu reculer, dépenses, ménage, alourdir, et apaiser.", "Vous avez aussi entendu tournant, quartier, pelouse, guichet, et foule.", "Ces mots ne sont pas de simples cartes de vocabulaire.", "Ils vivent dans des phrases, dans des histoires, et dans des situations.", "Le meilleur apprentissage vient souvent de cette répétition naturelle.", "Écoutez une première fois sans arrêter.", "Puis réécoutez une partie plus lentement.", "Ensuite, utilisez les flashcards pour fixer les mots difficiles.", "Si un mot paraît facile aujourd’hui, il peut devenir automatique demain.", "Si un mot paraît difficile aujourd’hui, il peut devenir familier après plusieurs écoutes.", "Le but n’est pas la perfection.", "Le but est de construire une habitude.", "Chaque jour ajoute dix mots.", "Chaque jour ajoute un peu de rythme.", "Chaque jour ajoute un peu de confiance.", "Merci d’avoir lu et écouté ce résumé en français.", "Vous pouvez maintenant recommencer depuis le début.", "Ou bien vous pouvez ouvrir les flashcards et revoir les mots du jour.", "Cette lecture volontairement lente laisse le temps de reconnaître les sons.", "Le français parlé relie parfois les mots plus vite que le français écrit.", "Quand vous voyez le mot en même temps que vous l’entendez, la mémoire travaille mieux.", "Le surlignage mobile sert à créer ce lien entre l’œil et l’oreille.", "Il ne doit pas rester bloqué sur une seule phrase.", "Il doit avancer naturellement avec la voix.", "Après chaque phrase, le lecteur passe automatiquement à la phrase suivante.", "Le bouton Suivante reste utile, mais il ne doit pas être obligatoire.", "Le bouton Précédente permet de reprendre un passage difficile.", "Le bouton Répéter permet d’écouter la même phrase encore une fois.", "La barre de progression montre le chemin parcouru.", "Le compteur indique la phrase actuelle et le nombre total de phrases.", "Un nombre proche de deux cents phrases correspond mieux à une lecture longue.", "Une lecture de cinquante phrases est trop courte pour l’objectif de trente minutes.", "À vitesse lente, deux cents phrases donnent une vraie séance d’immersion.", "Sur iPad, certaines voix françaises sont plus agréables que d’autres.", "La liste des voix permet de choisir la meilleure voix disponible.", "Une voix française de France est préférable pour ce projet.", "Si aucune voix française n’apparaît, il faut vérifier les voix installées dans les réglages de l’appareil.", "Le lecteur utilise la synthèse vocale du navigateur.", "Le navigateur peut parfois envoyer les informations de mots avec un petit retard.", "Même avec ce retard, le surlignage aide beaucoup.", "Le texte visible avant et après la phrase active aide aussi la compréhension.", "Le cerveau voit venir la suite.", "Il garde aussi le souvenir de la phrase précédente.", "Cela donne une sensation de lecture continue.", "Ce n’est pas un simple lecteur d’article.", "C’est un lecteur d’immersion phrase par phrase.", "La présentation doit donc soutenir l’écoute, pas seulement afficher du texte.", "Les flashcards ont un autre rôle.", "Elles servent à isoler les nouveaux mots du jour.", "Elles permettent aussi de revoir tous les mots déjà ajoutés.", "Le mode Nouveaux mots seulement doit montrer exactement les dix mots du jour.", "Le mode Tout revoir doit montrer toute la bibliothèque.", "Le mode Aléatoire doit mélanger les cartes.", "Les boutons Important et Difficile permettent de personnaliser la révision.", "Un mot difficile peut revenir plus souvent.", "Un mot important peut rester visible dans une liste spéciale.", "Ces réglages doivent rester enregistrés dans le navigateur.", "Ainsi, le travail d’aujourd’hui n’est pas perdu demain.", "Le fichier de vocabulaire maître garde la mémoire du projet.", "Il doit éviter les doublons.", "Il doit aussi éviter les mots trop proches de l’anglais.", "Des mots comme information ou situation sont souvent trop faciles.", "Des mots comme ménage, foule, guichet, ou pelouse demandent plus d’attention.", "Le choix des mots doit donc rester exigeant mais utilisable.", "Chaque mot nouveau doit apparaître naturellement dans le lecteur.", "Sinon, la carte semble séparée de l’expérience d’écoute.", "Aujourd’hui, les dix mots apparaissent dans plusieurs scènes.", "Ils apparaissent dans l’économie, la politique, la ville, le sport, et la vie quotidienne.", "Cela rend la répétition moins mécanique.", "Une bonne répétition ne doit pas toujours sembler identique.", "Elle doit revenir avec un léger changement de contexte.", "Par exemple, une foule peut être dans une gare.", "Une foule peut aussi être dans un stade.", "Un guichet peut être dans une gare.", "Un guichet peut aussi être dans une administration.", "Une pelouse peut être dans un jardin.", "Une pelouse peut aussi être sur un terrain de sport.", "Un quartier peut être calme, cher, populaire, ou animé.", "Un ménage peut être une personne seule, un couple, ou une famille."];
+const vocabularyWords = ["reculer", "les dépenses", "un ménage", "alourdir", "apaiser", "un tournant", "un quartier", "la pelouse", "un guichet", "la foule"];
+let currentIndex=0, playing=false, selectedVoice=null, voices=[], lastWord=-1;
+const prevEl=document.getElementById("prev"), activeEl=document.getElementById("active"), nextEl=document.getElementById("next"), counterEl=document.getElementById("counter"), barEl=document.getElementById("bar"), statusEl=document.getElementById("status");
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’']/g,"'").replace(/[^a-z0-9' ]/g,"").trim();}
+const vocabNorm = vocabularyWords.map(norm);
+function render(wordIndex=-1){
+  prevEl.textContent = currentIndex>0 ? phrases[currentIndex-1] : "";
+  nextEl.textContent = currentIndex<phrases.length-1 ? phrases[currentIndex+1] : "";
+  const words=phrases[currentIndex].split(/(\s+)/);
+  activeEl.innerHTML="";
+  let realWord=0;
+  words.forEach(token=>{
+    if(/^\s+$/.test(token)){ activeEl.appendChild(document.createTextNode(token)); return; }
+    const span=document.createElement("span");
+    const clean=norm(token);
+    span.className="word";
+    if(realWord===wordIndex) span.classList.add("now");
+    if(vocabNorm.some(v => v && clean && (clean===v || v.includes(clean) || clean.includes(v)))) span.classList.add("vocab");
+    span.textContent=token;
+    activeEl.appendChild(span);
+    realWord++;
+  });
+  counterEl.textContent = "Phrase " + (currentIndex+1) + " sur " + phrases.length;
+  barEl.style.width = (((currentIndex+1)/phrases.length)*100)+"%";
+}
+function loadVoices(){
+  voices=speechSynthesis.getVoices().filter(v=>v.lang && v.lang.toLowerCase().startsWith("fr"));
+  const select=document.getElementById("voiceSelect"); select.innerHTML="";
+  if(!voices.length){ statusEl.textContent="Aucune voix française trouvée pour l’instant. Essayez Safari/Chrome ou installez une voix française."; return; }
+  voices.sort((a,b)=> (a.lang==="fr-FR"?-1:0) - (b.lang==="fr-FR"?-1:0));
+  voices.forEach((v,i)=>{ const o=document.createElement("option"); o.value=i; o.textContent=v.name+" ("+v.lang+")"; select.appendChild(o); });
+  selectedVoice=voices[0]; select.value=0; select.onchange=()=>{selectedVoice=voices[Number(select.value)];};
+  statusEl.textContent="Voix française chargée: "+selectedVoice.name;
+}
+function startReader(){ document.getElementById("startOverlay").style.display="none"; loadVoices(); render(); }
+function speakPhrase(){
+  speechSynthesis.cancel(); lastWord=-1; render();
+  const text=phrases[currentIndex], words=text.split(/\s+/);
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang="fr-FR"; u.rate=Number(document.getElementById("speed").value); u.pitch=1;
+  if(selectedVoice) u.voice=selectedVoice;
+  u.onboundary=(event)=>{
+    if(typeof event.charIndex==="number"){
+      const upto=text.slice(0,event.charIndex).trim();
+      const idx=upto ? upto.split(/\s+/).length-1 : 0;
+      if(idx!==lastWord){ lastWord=idx; render(Math.max(0,Math.min(idx,words.length-1))); }
+    }
+  };
+  u.onend=()=>{
+    render();
+    if(playing && currentIndex < phrases.length-1){
+      currentIndex++;
+      setTimeout(()=>{ if(playing) speakPhrase(); }, Number(document.getElementById("gap").value));
+    } else { playing=false; document.getElementById("playBtn").textContent="▶ Lire"; }
+  };
+  speechSynthesis.speak(u);
+}
+function play(){ playing=true; document.getElementById("playBtn").textContent="▶ Lecture…"; speakPhrase(); }
+function pauseAudio(){ playing=false; speechSynthesis.cancel(); document.getElementById("playBtn").textContent="▶ Lire"; render(); }
+function repeatPhrase(){ playing=true; speakPhrase(); }
+function nextPhrase(){ pauseAudio(); currentIndex=Math.min(phrases.length-1,currentIndex+1); render(); }
+function prevPhrase(){ pauseAudio(); currentIndex=Math.max(0,currentIndex-1); render(); }
+function restart(){ pauseAudio(); currentIndex=0; render(); }
+
+// ---- V1.1 user vocabulary capture. This is the only new Reader feature. ----
+const USER_VOCAB_KEY = "frenchReaderUserVocabularyV1";
+let pendingSelection = "";
+function normalizeUserVocab(s){
+  return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’']/g,"'").replace(/[^a-z0-9' ]/g,"").trim();
+}
+function getUserVocabulary(){
+  try { return JSON.parse(localStorage.getItem(USER_VOCAB_KEY) || "[]"); }
+  catch(e){ return []; }
+}
+function saveUserVocabulary(items){
+  localStorage.setItem(USER_VOCAB_KEY, JSON.stringify(items));
+}
+function hideAddPopover(){
+  const pop=document.getElementById("addVocabPopover");
+  if(pop) pop.style.display="none";
+}
+function showAddPopoverForSelection(){
+  const sel=window.getSelection();
+  if(!sel || !sel.toString().trim()) { hideAddPopover(); return; }
+  const text=sel.toString().replace(/\s+/g," ").trim();
+  if(!text || text.length>60) { hideAddPopover(); return; }
+  const anchor=sel.anchorNode;
+  const stage=document.querySelector(".stage");
+  if(!stage || !anchor || !stage.contains(anchor.nodeType===1?anchor:anchor.parentNode)) { hideAddPopover(); return; }
+  pendingSelection=text;
+  const range=sel.getRangeAt(0);
+  const rect=range.getBoundingClientRect();
+  const pop=document.getElementById("addVocabPopover");
+  const preview=document.getElementById("selectedWordPreview");
+  preview.textContent=text;
+  pop.style.left=Math.max(12, Math.min(window.innerWidth-280, rect.left)) + "px";
+  pop.style.top=Math.max(12, rect.bottom + 10) + "px";
+  pop.style.display="flex";
+}
+function addSelectedToVocabulary(event){
+  if(event) event.stopPropagation();
+  const french=(pendingSelection||"").trim();
+  if(!french) return;
+  const items=getUserVocabulary();
+  const key=normalizeUserVocab(french);
+  const exists=items.some(item => normalizeUserVocab(item.french)===key && !item.deleted);
+  if(!exists){
+    items.push({
+      id:"user-"+Date.now(),
+      date_added:new Date().toISOString().slice(0,10),
+      level:"user",
+      french:french,
+      english:"",
+      example:phrases[currentIndex] || "",
+      tag:"user-selected",
+      important:false,
+      difficult:false,
+      retired:false,
+      source:"reader-selection"
+    });
+    saveUserVocabulary(items);
+    statusEl.textContent="Ajouté aux cartes: “"+french+"”";
+  } else {
+    statusEl.textContent="Déjà dans les cartes: “"+french+"”";
+  }
+  hideAddPopover();
+  if(window.getSelection) window.getSelection().removeAllRanges();
+}
+document.addEventListener("selectionchange", ()=>{ setTimeout(showAddPopoverForSelection, 80); });
+document.addEventListener("click", (e)=>{ if(!e.target.closest("#addVocabPopover") && !e.target.closest(".stage")) hideAddPopover(); });
+// ---- End V1.1 user vocabulary capture. ----
+
+speechSynthesis.onvoiceschanged=loadVoices;
+window.addEventListener("load",()=>{ loadVoices(); render(); });
+</script>
+</body>
+</html>
