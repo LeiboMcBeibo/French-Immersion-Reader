@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>French Flashcards — MASTER V1.1 — User Vocabulary + Retire</title>
+<title>French Flashcards</title>
+<!--
+  FROZEN APP FILE — do not regenerate from scratch.
+  Design locked 2026-08-06. Vocabulary comes from data/vocabulary.js (the library)
+  plus any words saved from the reader (localStorage: pendingVocab).
+-->
 <style>
 :root {
   --rose:#F4C4C4; --rose-deep:#C08497; --sage:#BFD8C7; --sage-dark:#304D36;
@@ -47,6 +52,7 @@ select { background:white; border:1px solid #ddd2d0; color:#333; max-width:100%;
 .badge { border-radius:999px; padding:6px 11px; font-size:14px; background:rgba(191,216,199,.35); color:#405c45; }
 .badge.important { background:rgba(244,213,141,.55); color:#7a5518; }
 .badge.difficult { background:rgba(244,196,196,.55); color:#7a2525; }
+.badge.pending { background:rgba(192,132,151,.30); color:#8a4a5c; }
 .counter { text-align:center; color:#8d8d8d; font-size:18px; margin:12px 0; }
 .status { width:100%; text-align:center; color:#827879; font-size:15px; }
 .library-note {background:rgba(255,255,255,.55); border-radius:22px; padding:18px 22px; margin-top:24px; color:#6f6f6f; line-height:1.45; font-size:17px;}
@@ -63,7 +69,7 @@ select { background:white; border:1px solid #ddd2d0; color:#333; max-width:100%;
   <div class="topline">
     <div>
       <h1 class="title">French Flashcards</h1>
-      <div class="meta">News vocabulary • 29 mai 2026 • cumulative library</div>
+      <div class="meta" id="meta">News vocabulary • cumulative library</div>
     </div>
     <div class="pill">Tap to reveal • Swipe left/right</div>
   </div>
@@ -76,15 +82,12 @@ select { background:white; border:1px solid #ddd2d0; color:#333; max-width:100%;
     <button class="secondary" onclick="speakCurrentWord()">🔊 Repeat French</button>
     <button class="important" id="importantBtn" onclick="toggleImportant()">Important: Off</button>
     <button class="difficult" id="difficultBtn" onclick="toggleDifficult()">Difficult: Off</button>
-    <button class="secondary" id="retireBtn" onclick="toggleRetired()">Retire</button>
-    <button class="secondary" onclick="editMeaning()">Edit meaning</button>
     <select id="mode" onchange="setMode()">
       <option value="new">New words only</option>
       <option value="all">Review all in order</option>
       <option value="random" selected>Random library cards</option>
       <option value="important">Important words</option>
       <option value="difficult">Difficult words</option>
-      <option value="retired">Retired words</option>
     </select>
   </div>
 
@@ -121,49 +124,39 @@ select { background:white; border:1px solid #ddd2d0; color:#333; max-width:100%;
   </div>
 
   <div class="library-note">
-    Swipe left advances to the next card; swipe right goes back. User-added words from the Reader appear here automatically. Retired words are hidden from normal review but can be restored by switching to Retired Words.
+    Swipe left advances to the next card; swipe right goes back. New Words Only shows the latest day’s words. Random mode weights Difficult cards more heavily than Important cards. Words you tapped in the Reader appear here marked <em>pending</em> until their meaning is filled in.
   </div>
 </div>
 
-<script src="data/base_vocabulary.js"></script>
+<script src="data/vocabulary.js"></script>
 <script>
-const seedVocabularyLibrary = window.BASE_VOCABULARY || [];
+/* ---------- LIBRARY (enriched cards) ---------- */
+const baseLibrary = (window.READER_VOCABULARY && window.READER_VOCABULARY.cards) ? window.READER_VOCABULARY.cards : [];
 
-const USER_VOCAB_KEY = "frenchReaderUserVocabularyV1";
-const USER_RETIRED_KEY = "frenchReaderRetiredVocabularyV1";
-function readUserVocabulary(){
-  try { return JSON.parse(localStorage.getItem(USER_VOCAB_KEY) || "[]"); }
-  catch(e){ return []; }
+/* ---------- PENDING (words saved from the reader, not yet enriched) ----------
+   Phase 2: read from localStorage (pendingVocab), shaped {french, date_added, source_sentence}.
+   Phase 3: these live in Supabase; this section becomes a Supabase select.
+--------------------------------------------------------------------------- */
+function loadPending(){
+  try {
+    const list = JSON.parse(localStorage.getItem("pendingVocab") || "[]");
+    return list.map((r,i)=>({
+      id: "pending-"+(r.date_added||"")+"-"+i,
+      date_added: r.date_added || "",
+      level: "—",
+      french: r.french,
+      english: "(à compléter)",
+      example: r.source_sentence || "",
+      tag: "pending",
+      important: false,
+      difficult: false,
+      pending: true
+    }));
+  } catch(e){ return []; }
 }
-function normalizeUserVocab(s){
-  return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’']/g,"'").replace(/[^a-z0-9' ]/g,"").trim();
-}
-function mergeVocabulary(){
-  const seen = new Set();
-  const combined = [];
-  [...seedVocabularyLibrary, ...readUserVocabulary()].forEach(card => {
-    const key = normalizeUserVocab(card.french);
-    if(!key || seen.has(key)) return;
-    seen.add(key);
-    combined.push({
-      id: card.id || ("user-" + key),
-      date_added: card.date_added || new Date().toISOString().slice(0,10),
-      level: card.level || "user",
-      french: card.french,
-      english: card.english || "",
-      example: card.example || "",
-      tag: card.tag || "user-selected",
-      important: !!card.important,
-      difficult: !!card.difficult,
-      retired: !!card.retired,
-      source: card.source || "master"
-    });
-  });
-  return combined;
-}
-let vocabularyLibrary = mergeVocabulary();
-let storedRetired = JSON.parse(localStorage.getItem(USER_RETIRED_KEY) || "{}");
-vocabularyLibrary.forEach(card => { if (storedRetired[card.id] !== undefined) card.retired = storedRetired[card.id]; });
+
+const vocabularyLibrary = [...baseLibrary, ...loadPending()];
+document.getElementById("meta").textContent = "News vocabulary • cumulative library • " + vocabularyLibrary.length + " words";
 
 let storedImportance = JSON.parse(localStorage.getItem("frenchFlashcardImportance") || "{}");
 let storedDifficulty = JSON.parse(localStorage.getItem("frenchFlashcardDifficulty") || "{}");
@@ -172,14 +165,13 @@ vocabularyLibrary.forEach(card => {
   if (storedDifficulty[card.id] !== undefined) card.difficult = storedDifficulty[card.id];
 });
 let currentMode = "random";
-let activeCards = [...visibleLibrary()];
+let activeCards = [...vocabularyLibrary];
 let currentIndex = 0;
 let frenchVoices = [];
 let selectedVoice = null;
 let touchStartX = 0, touchStartY = 0, didSwipe = false;
 
-function visibleLibrary(){ return vocabularyLibrary.filter(c=>!c.retired); }
-function newestDate(){ const source = visibleLibrary().length ? visibleLibrary() : vocabularyLibrary; return source.map(c=>c.date_added).sort().reverse()[0]; }
+function newestDate(){ return vocabularyLibrary.map(c=>c.date_added).filter(Boolean).sort().reverse()[0]; }
 function weightedDeck(cards){
   const deck=[];
   cards.forEach(card=>{
@@ -192,12 +184,10 @@ function weightedDeck(cards){
 function setMode(){
   currentMode=document.getElementById("mode").value;
   const latest=newestDate();
-  if(currentMode==="new") activeCards=visibleLibrary().filter(c=>c.date_added===latest);
-  else if(currentMode==="important") activeCards=visibleLibrary().filter(c=>c.important);
-  else if(currentMode==="difficult") activeCards=visibleLibrary().filter(c=>c.difficult);
-  else if(currentMode==="retired") activeCards=vocabularyLibrary.filter(c=>c.retired);
-  else activeCards=[...visibleLibrary()];
-  if(!activeCards.length) activeCards=[...visibleLibrary()];
+  if(currentMode==="new") activeCards=vocabularyLibrary.filter(c=>c.date_added===latest);
+  else if(currentMode==="important") activeCards=vocabularyLibrary.filter(c=>c.important);
+  else if(currentMode==="difficult") activeCards=vocabularyLibrary.filter(c=>c.difficult);
+  else activeCards=[...vocabularyLibrary];
   if(!activeCards.length) activeCards=[...vocabularyLibrary];
   currentIndex=0;
   if(currentMode==="random") pickWeightedRandom();
@@ -205,11 +195,11 @@ function setMode(){
 }
 function currentCard(){return activeCards[currentIndex];}
 function renderBadges(card){
-  const badges=[`<span class="badge">${card.level}</span>`,`<span class="badge">${card.tag}</span>`,`<span class="badge">added ${card.date_added}</span>`];
+  const badges=[`<span class="badge">${card.level}</span>`,`<span class="badge">${card.tag}</span>`];
+  if(card.date_added) badges.push(`<span class="badge">added ${card.date_added}</span>`);
+  if(card.pending) badges.push(`<span class="badge pending">pending</span>`);
   if(card.important) badges.push(`<span class="badge important">Important</span>`);
   if(card.difficult) badges.push(`<span class="badge difficult">Difficult</span>`);
-  if(card.retired) badges.push(`<span class="badge">Retired</span>`);
-  if(card.source==="reader-selection") badges.push(`<span class="badge">Reader selection</span>`);
   return badges.join("");
 }
 function renderButtons(card){
@@ -219,20 +209,17 @@ function renderButtons(card){
   const difficult=document.getElementById("difficultBtn");
   difficult.classList.toggle("on",card.difficult);
   difficult.textContent=card.difficult?"Difficult: On":"Difficult: Off";
-  const retire=document.getElementById("retireBtn");
-  retire.textContent=card.retired?"Restore":"Retire";
 }
 function renderCard(){
+  if(!activeCards.length) return;
   const c=currentCard();
   document.getElementById("frontFrench").textContent=c.french;
   document.getElementById("backFrench").textContent=c.french;
   document.getElementById("english").textContent=c.english;
   document.getElementById("example").textContent=c.example;
   document.getElementById("frontBadges").innerHTML=renderBadges(c);
-  document.getElementById("counter").textContent="Card "+(currentIndex+1)+" of "+activeCards.length+" • Active: "+visibleLibrary().length+" • Library total: "+vocabularyLibrary.length;
+  document.getElementById("counter").textContent="Card "+(currentIndex+1)+" of "+activeCards.length+" • Library total: "+vocabularyLibrary.length;
   renderButtons(c);
-  clearTimeout(window.__autoSpeakTimer);
-  if(!document.getElementById("card").classList.contains("flipped")) window.__autoSpeakTimer=setTimeout(speakCurrentWord, 180);
 }
 function handleCardTap(){ if(didSwipe){didSwipe=false;return;} flipCard(); }
 function flipCard(){ const card=document.getElementById("card"); const was=card.classList.contains("flipped"); card.classList.toggle("flipped"); if(!was) speakCurrentWord(); }
@@ -243,37 +230,6 @@ function previousCard(){ resetCard(); if(currentMode==="random") pickWeightedRan
 function shuffleCard(){ resetCard(); pickWeightedRandom(); renderCard(); }
 function toggleImportant(){ const c=currentCard(); c.important=!c.important; storedImportance[c.id]=c.important; localStorage.setItem("frenchFlashcardImportance",JSON.stringify(storedImportance)); renderCard(); }
 function toggleDifficult(){ const c=currentCard(); c.difficult=!c.difficult; storedDifficulty[c.id]=c.difficult; localStorage.setItem("frenchFlashcardDifficulty",JSON.stringify(storedDifficulty)); renderCard(); }
-function toggleRetired(){
-  const c=currentCard();
-  c.retired=!c.retired;
-  storedRetired[c.id]=c.retired;
-  localStorage.setItem(USER_RETIRED_KEY, JSON.stringify(storedRetired));
-  const userItems=readUserVocabulary();
-  const userIndex=userItems.findIndex(item=>item.id===c.id || normalizeUserVocab(item.french)===normalizeUserVocab(c.french));
-  if(userIndex>=0){ userItems[userIndex].retired=c.retired; localStorage.setItem(USER_VOCAB_KEY, JSON.stringify(userItems)); }
-  setMode();
-}
-function editMeaning(){
-  const c=currentCard();
-  const meaning=prompt("English meaning for: " + c.french, c.english || "");
-  if(meaning===null) return;
-  c.english=meaning.trim();
-  const userItems=readUserVocabulary();
-  const idx=userItems.findIndex(item=>item.id===c.id || normalizeUserVocab(item.french)===normalizeUserVocab(c.french));
-  if(idx>=0){ userItems[idx].english=c.english; localStorage.setItem(USER_VOCAB_KEY, JSON.stringify(userItems)); }
-  renderCard();
-}
-function refreshUserVocabulary(){
-  vocabularyLibrary = mergeVocabulary();
-  vocabularyLibrary.forEach(card => { if (storedRetired[card.id] !== undefined) card.retired = storedRetired[card.id]; });
-  vocabularyLibrary.forEach(card => {
-    if (storedImportance[card.id] !== undefined) card.important = storedImportance[card.id];
-    if (storedDifficulty[card.id] !== undefined) card.difficult = storedDifficulty[card.id];
-  });
-  setMode();
-}
-window.addEventListener("storage", refreshUserVocabulary);
-
 function loadVoices(){
   if(!("speechSynthesis" in window)){document.getElementById("status").textContent="Speech is not supported.";return;}
   const voices=speechSynthesis.getVoices();
@@ -303,8 +259,8 @@ function addSwipeSupport(){
   wrap.addEventListener("touchmove",e=>{if(!e.changedTouches || !e.changedTouches.length)return;const dx=e.changedTouches[0].screenX-touchStartX;const dy=e.changedTouches[0].screenY-touchStartY;if(Math.abs(dx)>25&&Math.abs(dx)>Math.abs(dy)*1.5){card.classList.toggle("swipe-right",dx>0);card.classList.toggle("swipe-left",dx<0);}},{passive:true});
   wrap.addEventListener("touchend",e=>{if(!e.changedTouches || !e.changedTouches.length)return;const dx=e.changedTouches[0].screenX-touchStartX;const dy=e.changedTouches[0].screenY-touchStartY;card.classList.remove("swipe-left","swipe-right");if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5){didSwipe=true;if(dx<0)nextCard();else previousCard();setTimeout(()=>{didSwipe=false;},250);}},{passive:true});
 }
-setMode(); addSwipeSupport();
-window.addEventListener("focus", refreshUserVocabulary);
+if(vocabularyLibrary.length){ setMode(); addSwipeSupport(); }
+else { document.getElementById("counter").textContent = "No vocabulary yet — tap words in the Reader to start building cards."; }
 if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices;setTimeout(loadVoices,400);setTimeout(loadVoices,1200);}
 </script>
 </body>
