@@ -1,263 +1,48 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="google" content="notranslate">
-<title>French Immersion Reader</title>
-<!--
-  FROZEN APP FILE — do not regenerate from scratch.
-  Design locked 2026-08-06. Only data/today-news.js changes each day.
-  Edit deliberately and record changes in the project doc.
--->
-<style>
-:root {
-  --rose:#F4C4C4; --rose-deep:#C08497; --sage:#BFD8C7; --sage-dark:#304D36;
-  --paper:rgba(255,252,250,.92); --ink:#2d2d2d; --muted:#888; --line:rgba(192,132,151,.18);
-}
-* { box-sizing:border-box; }
-html,body { margin:0; min-height:100%; }
-body {
-  padding:20px;
-  background:radial-gradient(circle at 10% 8%, rgba(244,196,196,.52), transparent 31%),
-             radial-gradient(circle at 90% 10%, rgba(191,216,199,.46), transparent 30%),
-             linear-gradient(135deg,#f8e7e5 0%,#f7f5ef 52%,#e8efe4 100%);
-  font-family:Georgia,"Times New Roman",serif; color:var(--ink);
-}
-.shell { max-width:1400px; margin:auto; min-height:calc(100vh - 40px); background:var(--paper); border-radius:34px; padding:34px; box-shadow:0 24px 64px rgba(70,50,40,.15); border:1px solid var(--line); }
-.top { display:flex; justify-content:space-between; gap:18px; align-items:flex-end; flex-wrap:wrap; }
-.title { font-family:"Snell Roundhand","Apple Chancery","Brush Script MT",cursive; font-size:64px; line-height:1; color:var(--rose-deep); margin:0; font-weight:400; }
-.meta { font-size:20px; color:var(--muted); margin-top:8px; }
-.track { height:12px; background:#e8e2de; border-radius:999px; overflow:hidden; margin:22px 0; }
-.bar { height:100%; width:0%; background:linear-gradient(90deg,#bcd8c7,#f4c4c4); transition:width .25s ease; }
-.stage { background:rgba(255,255,255,.66); border-radius:28px; min-height:520px; display:flex; flex-direction:column; justify-content:center; text-align:center; padding:34px; box-shadow:inset 0 0 0 1px rgba(230,214,210,.58); }
-/* previous sentence: italic, ghosted = the past */
-.context.prev { font-size:26px; color:rgba(80,80,80,.36); line-height:1.4; min-height:78px; display:flex; align-items:center; justify-content:center; font-style:italic; }
-/* next sentence: upright, ghosted = upcoming */
-.context.next { font-size:26px; color:rgba(80,80,80,.36); line-height:1.4; min-height:78px; display:flex; align-items:center; justify-content:center; font-style:normal; }
-.active { font-size:50px; line-height:1.35; font-weight:600; color:#222; margin:22px 0; min-height:150px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; }
-.word { padding:0 4px; border-radius:8px; transition:background .08s linear,color .08s linear; cursor:pointer; }
-.word.now { background:rgba(244,196,196,.70); color:#a85e6f; box-shadow:0 0 0 2px rgba(244,196,196,.25); }
-.word.vocab { color:#B00020; font-weight:700; text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: rgba(176,0,32,.35); }
-.word.picked { background:rgba(191,216,199,.55); box-shadow:0 0 0 2px rgba(48,77,54,.25); }
-.counter { text-align:center; margin:14px 0; color:#888; font-size:18px; }
-.controls,.settings { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:16px; align-items:center; }
-button,select { border:none; border-radius:999px; padding:13px 20px; font-size:18px; }
-button { background:var(--sage-dark); color:white; cursor:pointer; }
-button.secondary { background:white; color:var(--sage-dark); border:1px solid rgba(48,77,54,.25); }
-select { background:white; border:1px solid #ddd2d0; }
-.status,.note { text-align:center; color:#777; margin-top:12px; font-size:15px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-/* tap-to-save action bar (appears when a word is tapped) */
-#saveBar { position:fixed; left:50%; transform:translateX(-50%); bottom:26px; z-index:20; background:rgba(255,255,255,.96); border:1px solid rgba(48,77,54,.20); border-radius:999px; padding:10px 14px; box-shadow:0 12px 30px rgba(80,55,55,.18); display:none; align-items:center; gap:12px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-#saveBar .pickedWord { font-family:Georgia,serif; font-size:20px; color:#242424; padding-left:8px; }
-#saveBar button { padding:10px 16px; font-size:16px; }
-#saveBar .close { background:transparent; color:#999; padding:8px; }
-#startOverlay { position:fixed; inset:0; z-index:10; background:rgba(255,249,245,.94); backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; padding:28px; }
-.startCard { max-width:740px; background:rgba(255,255,255,.88); border-radius:30px; padding:34px; box-shadow:0 24px 70px rgba(105,70,70,.16); text-align:center; }
-.startCard h2 { color:var(--rose-deep); font-size:52px; margin:0 0 8px; font-family:"Snell Roundhand","Apple Chancery","Brush Script MT",cursive; font-weight:400; }
-.startCard p { color:#777; line-height:1.45; font-size:18px; }
-@media(max-width:900px) {
-  body { padding:12px; } .shell { padding:22px; border-radius:24px; } .title { font-size:46px; }
-  .active { font-size:32px; min-height:130px; } .context.prev,.context.next { font-size:20px; min-height:70px; }
-  .stage { min-height:430px; padding:22px; } button,select { font-size:15px; padding:11px 15px; }
-}
-</style>
-</head>
-<body>
-<div id="startOverlay">
-  <div class="startCard">
-    <h2>Immersion Reader</h2>
-    <p>Édition du jour. Tap Start, choose a French voice if available, then press Lire. Touchez un mot pour l’ajouter à vos cartes.</p>
-    <button onclick="startReader()">▶ Start Reader</button>
-  </div>
-</div>
-<div class="shell">
-  <div class="top">
-    <div><h1 class="title">Immersion Reader</h1><div class="meta" id="meta">Chargement du contenu…</div></div>
-    <button class="secondary" onclick="restart()">Recommencer</button>
-  </div>
-  <div class="track"><div class="bar" id="bar"></div></div>
-  <div class="stage">
-    <div class="context prev" id="prev"></div>
-    <div class="active" id="active"></div>
-    <div class="context next" id="next"></div>
-  </div>
-  <div class="counter" id="counter"></div>
-  <div class="controls">
-    <button onclick="prevPhrase()">← Précédente</button>
-    <button id="playBtn" onclick="play()">▶ Lire</button>
-    <button onclick="pauseAudio()">⏸ Pause</button>
-    <button onclick="repeatPhrase()">↻ Répéter</button>
-    <button onclick="nextPhrase()">Suivante →</button>
-  </div>
-  <div class="settings">
-    <label>Vitesse <select id="speed"><option value="0.58">Très lent</option><option value="0.68" selected>Lent 30 min</option><option value="0.82">Presque normal</option><option value="1">Normal</option></select></label>
-    <label>Pause <select id="gap"><option value="400">Courte</option><option value="800" selected>Moyenne</option><option value="1200">Longue</option></select></label>
-    <label>Voix <select id="voiceSelect"></select></label>
-  </div>
-  <div class="note">Touchez un mot pour l’ajouter à vos cartes. Les mots en rouge sont déjà dans votre liste. Word highlighting depends on browser speech boundary events; Safari/Chrome usually work.</div>
-</div>
-
-<!-- Tap-to-save action bar -->
-<div id="saveBar">
-  <span class="pickedWord" id="pickedWord"></span>
-  <button onclick="saveTappedWord()">+ Ajouter aux cartes</button>
-  <button class="close" onclick="dismissSaveBar()">✕</button>
-</div>
-
-<script src="data/today-news.js"></script>
-<script>
-/* ---------- content ---------- */
-const content = window.READER_CONTENT || {label:"Aucun contenu chargé", phrases:["Aucun contenu chargé."], vocabularyWords:[]};
-document.getElementById("meta").textContent = content.label || ("Actualité • " + (content.date || "") + " • " + content.phrases.length + " phrases");
-const phrases = content.phrases || ["Aucun contenu chargé."];
-const contentDate = content.date || new Date().toISOString().slice(0,10);
-const vocabularyWords = [...(content.vocabularyWords || [])];
-
-let currentIndex=0, playing=false, selectedVoice=null, voices=[], lastWord=-1, pickedWord="";
-const prevEl=document.getElementById("prev"), activeEl=document.getElementById("active"), nextEl=document.getElementById("next"), counterEl=document.getElementById("counter"), barEl=document.getElementById("bar");
-
-function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’']/g,"'").replace(/[^a-z0-9' ]/g,"").trim();}
-const vocabNorm = vocabularyWords.map(norm);
-
-/* ---------- render three-sentence window ---------- */
-function render(wordIndex=-1){
-  prevEl.textContent = currentIndex>0 ? phrases[currentIndex-1] : "";
-  nextEl.textContent = currentIndex<phrases.length-1 ? phrases[currentIndex+1] : "";
-  const words=phrases[currentIndex].split(/(\s+)/);
-  activeEl.innerHTML="";
-  let realWord=0;
-  words.forEach(token=>{
-    if(/^\s+$/.test(token)){ activeEl.appendChild(document.createTextNode(token)); return; }
-    const span=document.createElement("span");
-    const clean=norm(token);
-    span.className="word";
-    if(realWord===wordIndex) span.classList.add("now");
-    if(vocabNorm.some(v => {
-      if(!v || !clean) return false;
-      const c = clean.replace(/^(le |la |les |l'|un |une |des |du |de la |de l')/,"");
-      const vv = v.replace(/^(le |la |les |l'|un |une |des |du |de la |de l')/,"");
-      return c===vv || clean===v;
-    })) span.classList.add("vocab");
-    span.textContent=token;
-    span.addEventListener("click",()=>pickWord(span, token));
-    activeEl.appendChild(span);
-    realWord++;
-  });
-  counterEl.textContent = "Phrase " + (currentIndex+1) + " sur " + phrases.length;
-  barEl.style.width = (((currentIndex+1)/phrases.length)*100)+"%";
-}
-
-/* ---------- tap-to-save a word ---------- */
-function pickWord(span, token){
-  // touching a word pauses reading, as specified
-  pauseAudio();
-  document.querySelectorAll(".word.picked").forEach(w=>w.classList.remove("picked"));
-  span.classList.add("picked");
-  pickedWord = token.replace(/[.,;:!?«»"“”()]/g,"").trim();
-  document.getElementById("pickedWord").textContent = pickedWord;
-  document.getElementById("saveBar").style.display = "flex";
-}
-function dismissSaveBar(){
-  document.getElementById("saveBar").style.display="none";
-  document.querySelectorAll(".word.picked").forEach(w=>w.classList.remove("picked"));
-  pickedWord="";
-}
-function saveTappedWord(){
-  if(!pickedWord) return;
-  const record = {
-    french: pickedWord,
-    date_added: contentDate,
-    source_sentence: phrases[currentIndex]
-  };
-  saveVocabWord(record);                 // <-- storage layer (local now, Supabase in Phase 3)
-  const btn = document.querySelector("#saveBar button");
-  const original = btn.textContent;
-  btn.textContent = "✓ Ajouté";
-  setTimeout(()=>{ btn.textContent = original; dismissSaveBar(); }, 700);
-}
-
-/* ---------- STORAGE LAYER ----------
-   Phase 2: saves to localStorage (key: pendingVocab), so the loop works with no backend.
-   Phase 3: replace the body of saveVocabWord() with a Supabase insert into the
-   `vocabulary` table (columns: french, date_added, source_sentence).
---------------------------------------- */
-function saveVocabWord(record){
-  try {
-    const key = "pendingVocab";
-    const list = JSON.parse(localStorage.getItem(key) || "[]");
-    // avoid duplicate same-word/same-day
-    if(!list.some(r => norm(r.french)===norm(record.french) && r.date_added===record.date_added)){
-      list.push(record);
-      localStorage.setItem(key, JSON.stringify(list));
-    }
-  } catch(e){ /* storage best-effort */ }
-}
-
-/* ---------- settings persistence ---------- */
-function saveReaderSettings(){
-  localStorage.setItem("readerSpeed", document.getElementById("speed").value);
-  localStorage.setItem("readerGap", document.getElementById("gap").value);
-  if(selectedVoice) localStorage.setItem("readerVoiceName", selectedVoice.name);
-}
-function restoreReaderSettings(){
-  const speed = localStorage.getItem("readerSpeed");
-  const gap = localStorage.getItem("readerGap");
-  if(speed) document.getElementById("speed").value = speed;
-  if(gap) document.getElementById("gap").value = gap;
-}
-
-/* ---------- voices ---------- */
-function loadVoices(){
-  restoreReaderSettings();
-  voices=speechSynthesis.getVoices().filter(v=>v.lang && v.lang.toLowerCase().startsWith("fr"));
-  const select=document.getElementById("voiceSelect"); select.innerHTML="";
-  if(!voices.length){ console.warn("Aucune voix française trouvée. Essayez Safari/Chrome ou installez une voix française."); return; }
-  voices.sort((a,b)=> (a.lang==="fr-FR"?-1:0) - (b.lang==="fr-FR"?-1:0));
-  voices.forEach((v,i)=>{ const o=document.createElement("option"); o.value=i; o.textContent=v.name+" ("+v.lang+")"; select.appendChild(o); });
-  const savedVoiceName = localStorage.getItem("readerVoiceName");
-  let savedIndex = savedVoiceName ? voices.findIndex(v => v.name === savedVoiceName) : -1;
-  if(savedIndex < 0) savedIndex = voices.findIndex(v => /amelie|audrey|marie|siri/i.test(v.name) && !/thomas/i.test(v.name));
-  if(savedIndex < 0) savedIndex = 0;
-  selectedVoice=voices[savedIndex]; select.value=savedIndex;
-  select.onchange=()=>{selectedVoice=voices[Number(select.value)]; saveReaderSettings();};
-  document.getElementById("speed").onchange=saveReaderSettings;
-  document.getElementById("gap").onchange=saveReaderSettings;
-}
-function startReader(){ document.getElementById("startOverlay").style.display="none"; loadVoices(); render(); }
-
-/* ---------- speech + highlighting ---------- */
-function speakPhrase(){
-  speechSynthesis.cancel(); lastWord=-1; render();
-  const text=phrases[currentIndex], words=text.split(/\s+/);
-  const u=new SpeechSynthesisUtterance(text);
-  u.lang="fr-FR"; u.rate=Number(document.getElementById("speed").value); u.pitch=1;
-  if(selectedVoice) u.voice=selectedVoice;
-  u.onboundary=(event)=>{
-    if(typeof event.charIndex==="number"){
-      const upto=text.slice(0,event.charIndex).trim();
-      const idx=upto ? upto.split(/\s+/).length-1 : 0;
-      if(idx!==lastWord){ lastWord=idx; render(Math.max(0,Math.min(idx,words.length-1))); }
-    }
-  };
-  u.onend=()=>{
-    render();
-    if(playing && currentIndex < phrases.length-1){
-      currentIndex++;
-      setTimeout(()=>{ if(playing) speakPhrase(); }, Number(document.getElementById("gap").value));
-    } else { playing=false; document.getElementById("playBtn").textContent="▶ Lire"; }
-  };
-  speechSynthesis.speak(u);
-}
-function play(){ dismissSaveBar(); playing=true; document.getElementById("playBtn").textContent="▶ Lecture…"; speakPhrase(); }
-function pauseAudio(){ playing=false; speechSynthesis.cancel(); document.getElementById("playBtn").textContent="▶ Lire"; }
-function repeatPhrase(){ dismissSaveBar(); playing=true; speakPhrase(); }
-function nextPhrase(){ pauseAudio(); dismissSaveBar(); currentIndex=Math.min(phrases.length-1,currentIndex+1); render(); }
-function prevPhrase(){ pauseAudio(); dismissSaveBar(); currentIndex=Math.max(0,currentIndex-1); render(); }
-function restart(){ pauseAudio(); dismissSaveBar(); currentIndex=0; render(); }
-
-speechSynthesis.onvoiceschanged=loadVoices;
-window.addEventListener("load",()=>{ loadVoices(); render(); });
-</script>
-</body>
-</html>
+/* ---------------------------------------------------------------
+   DAILY CONTENT FILE — this is the ONLY file that changes each day.
+   Shape is fixed: label, date, level, phrases[], vocabularyWords[].
+   Each phrase = one sentence (the unit that gets read and highlighted).
+   Edition: US news told in French at level B1.
+----------------------------------------------------------------- */
+window.READER_CONTENT = {
+  label: "Actualité américaine • 8 août 2026 • Niveau B1",
+  date: "2026-08-08",
+  level: "B1",
+  vocabularyWords: [
+    "une panne", "dérouter", "un incendie de forêt", "évacuer", "un incendie criminel",
+    "se propager", "un pompier", "un tatouage", "autiste", "la sécheresse"
+  ],
+  phrases: [
+    "Voici les nouvelles américaines d’aujourd’hui, présentées lentement, en français.",
+    "Commençons par les transports.",
+    "Jeudi, une panne a touché un centre de contrôle aérien à Minneapolis, dans le Minnesota.",
+    "Ce centre gère l’espace aérien d’environ dix États du Midwest américain.",
+    "À cause de cette panne, le radar et les communications radio ont cessé de fonctionner pendant environ deux heures.",
+    "De nombreux vols ont été retardés, déroutés, ou retenus au sol.",
+    "À l’aéroport de Minneapolis-Saint Paul, les retards ont atteint en moyenne quatre-vingt-dix minutes.",
+    "D’autres aéroports, comme celui de Chicago, ont aussi signalé des centaines de retards.",
+    "L’agence fédérale de l’aviation, la FAA, explique que la panne venait d’un problème de télécommunications.",
+    "Une enquête est en cours pour comprendre la cause exacte du problème.",
+    "Le système de contrôle aérien américain est vieillissant, et ce type de panne est déjà arrivé plusieurs fois ces dernières années.",
+    "Passons maintenant à une nouvelle plus grave, dans l’État de Washington.",
+    "Depuis le premier août, plusieurs incendies de forêt brûlent près de la ville de Spokane.",
+    "Le plus important, appelé l’incendie d’Old Trails, a déjà brûlé plus de trois mille acres de terrain.",
+    "Des dizaines de milliers de personnes ont reçu l’ordre d’évacuer leur maison.",
+    "Plus de sept cents bâtiments ont été détruits par les flammes.",
+    "Les autorités pensent qu’il s’agit d’un incendie criminel.",
+    "Un homme a été arrêté et accusé d’avoir allumé l’un des feux.",
+    "Il aurait aussi avoué avoir démarré plus de vingt autres incendies depuis l’année dernière.",
+    "Le vent fort et la sécheresse ont aidé le feu à se propager très rapidement.",
+    "La garde nationale de l’État a été envoyée pour aider les pompiers, une première depuis plusieurs années.",
+    "Le gouverneur de Washington a déclaré l’état d’urgence dans toute la région.",
+    "Terminons par une histoire plus légère et touchante.",
+    "Une mère du nom de Jessica Fletcher s’est fait tatouer un clavier d’ordinateur sur le bras.",
+    "Son fils Hunter, âgé de onze ans, est autiste et communique surtout grâce à une tablette.",
+    "Le tatouage représente exactement le clavier que Hunter utilise chaque jour pour s’exprimer.",
+    "Jessica explique qu’elle voulait montrer, de façon permanente, à quel point la voix de son fils compte pour elle.",
+    "L’histoire a touché de nombreuses personnes sur les réseaux sociaux.",
+    "Elle rappelle que la communication peut prendre des formes très différentes, et que chacune mérite d’être célébrée.",
+    "C’est la fin de ce résumé.",
+    "Merci d’avoir écouté, et à demain pour une nouvelle édition."
+  ]
+};
