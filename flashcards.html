@@ -129,6 +129,23 @@ select { background:white; border:1px solid #ddd2d0; color:#333; max-width:100%;
 </div>
 
 <script src="data/vocabulary.js"></script>
+
+<!-- Supabase client library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ============================================================
+  sb_publishable_hQQd1G1xyviFJlKIqBUKNQ_x9tEwXPH
+   ============================================================ */
+const SUPABASE_URL = "https://qkqigycwbimulskkrwhs.supabase.co";
+const SUPABASE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+let supa = null;
+try {
+  if (window.supabase && SUPABASE_KEY.indexOf("PASTE_") === -1) {
+    supa = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+} catch(e){ supa = null; }
+</script>
+
 <script>
 /* ---------- LIBRARY (enriched cards) ---------- */
 const baseLibrary = (window.READER_VOCABULARY && window.READER_VOCABULARY.cards) ? window.READER_VOCABULARY.cards : [];
@@ -259,8 +276,53 @@ function addSwipeSupport(){
   wrap.addEventListener("touchmove",e=>{if(!e.changedTouches || !e.changedTouches.length)return;const dx=e.changedTouches[0].screenX-touchStartX;const dy=e.changedTouches[0].screenY-touchStartY;if(Math.abs(dx)>25&&Math.abs(dx)>Math.abs(dy)*1.5){card.classList.toggle("swipe-right",dx>0);card.classList.toggle("swipe-left",dx<0);}},{passive:true});
   wrap.addEventListener("touchend",e=>{if(!e.changedTouches || !e.changedTouches.length)return;const dx=e.changedTouches[0].screenX-touchStartX;const dy=e.changedTouches[0].screenY-touchStartY;card.classList.remove("swipe-left","swipe-right");if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5){didSwipe=true;if(dx<0)nextCard();else previousCard();setTimeout(()=>{didSwipe=false;},250);}},{passive:true});
 }
+/* ---------- Supabase load (Phase 3) ----------
+   Pulls all non-retired words from the vocabulary table and merges
+   them into the deck. Runs after initial render so the app is never
+   blocked; if Supabase is unconfigured/unreachable, the file +
+   localStorage version (already loaded) simply stays.
+------------------------------------------------ */
+async function loadFromSupabase(){
+  if(!supa) return;
+  try {
+    const { data, error } = await supa
+      .from("vocabulary")
+      .select("*")
+      .eq("retired", false)
+      .order("created_at", { ascending: true });
+    if (error || !data) { console.warn("Supabase read failed:", error && error.message); return; }
+    // Replace the library with Supabase truth (dedupe by french+date)
+    const seen = new Set();
+    const merged = [];
+    data.forEach(r => {
+      const key = (r.french||"").toLowerCase()+"|"+(r.date_added||"");
+      if (seen.has(key)) return;
+      seen.add(key);
+      merged.push({
+        id: "supa-"+r.id,
+        date_added: r.date_added || "",
+        level: r.level || "—",
+        french: r.french,
+        english: r.english || "(à compléter)",
+        example: r.example || r.source_sentence || "",
+        tag: r.tag || (r.english ? "" : "pending"),
+        important: !!r.important,
+        difficult: !!r.difficult,
+        pending: !r.english
+      });
+    });
+    if (merged.length){
+      vocabularyLibrary.length = 0;
+      merged.forEach(c => vocabularyLibrary.push(c));
+      document.getElementById("meta").textContent = "News vocabulary • synced • " + vocabularyLibrary.length + " words";
+      setMode();
+    }
+  } catch(e){ console.warn("Supabase load error:", e); }
+}
+
 if(vocabularyLibrary.length){ setMode(); addSwipeSupport(); }
-else { document.getElementById("counter").textContent = "No vocabulary yet — tap words in the Reader to start building cards."; }
+else { addSwipeSupport(); document.getElementById("counter").textContent = "Loading your words…"; }
+loadFromSupabase();
 if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices;setTimeout(loadVoices,400);setTimeout(loadVoices,1200);}
 </script>
 </body>
