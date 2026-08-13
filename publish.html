@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="google" content="notranslate">
+<title>Publish — French Immersion Reader</title>
+<!--
+  FROZEN APP FILE — do not regenerate from scratch.
+  Companion to reader.html / flashcards.html. Only data/today-news.js
+  and this page's Supabase config should ever need touching.
+  Purpose: paste Claude's daily edition (JSON) and publish it straight
+  to the Supabase `news` table — no GitHub upload, no SQL editor.
+-->
+<style>
+:root {
+  --rose:#F4C4C4; --rose-deep:#C08497; --sage:#BFD8C7; --sage-dark:#304D36;
+  --paper:rgba(255,252,250,.92); --ink:#2d2d2d; --muted:#888; --line:rgba(192,132,151,.18);
+}
+* { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; }
+body {
+  padding:20px;
+  background:radial-gradient(circle at 10% 8%, rgba(244,196,196,.52), transparent 31%),
+             radial-gradient(circle at 90% 10%, rgba(191,216,199,.46), transparent 30%),
+             linear-gradient(135deg,#f8e7e5 0%,#f7f5ef 52%,#e8efe4 100%);
+  font-family:Georgia,"Times New Roman",serif; color:var(--ink);
+}
+.shell { max-width:900px; margin:auto; min-height:calc(100vh - 40px); background:var(--paper); border-radius:34px; padding:34px; box-shadow:0 24px 64px rgba(70,50,40,.15); border:1px solid var(--line); }
+.top { display:flex; justify-content:space-between; gap:18px; align-items:flex-end; flex-wrap:wrap; }
+.title { font-family:"Snell Roundhand","Apple Chancery","Brush Script MT",cursive; font-size:56px; line-height:1; color:var(--rose-deep); margin:0; font-weight:400; }
+.meta { font-size:18px; color:var(--muted); margin-top:8px; }
+.stage { background:rgba(255,255,255,.66); border-radius:28px; padding:28px; margin-top:24px; box-shadow:inset 0 0 0 1px rgba(230,214,210,.58); }
+label { display:block; font-size:17px; color:var(--sage-dark); margin-bottom:10px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+textarea {
+  width:100%; min-height:320px; border-radius:16px; border:1px solid #ddd2d0;
+  padding:16px; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:14px; line-height:1.5; resize:vertical; background:white; color:#333;
+}
+.row { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:20px; align-items:center; }
+button { border:none; border-radius:999px; padding:14px 26px; font-size:18px; background:var(--sage-dark); color:white; cursor:pointer; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+button.secondary { background:white; color:var(--sage-dark); border:1px solid rgba(48,77,54,.25); }
+button:disabled { opacity:.5; cursor:default; }
+.status { text-align:center; margin-top:18px; font-size:16px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; min-height:24px; }
+.status.ok { color:var(--sage-dark); }
+.status.err { color:#a3323b; }
+.preview { margin-top:22px; font-size:15px; color:#555; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.preview b { color:var(--rose-deep); }
+.nav { text-align:center; margin-top:26px; }
+.nav a { color:var(--sage-dark); text-decoration:none; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:15px; margin:0 10px; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <div>
+      <p class="title">Publier</p>
+      <p class="meta">Colle l'édition du jour, puis publie-la.</p>
+    </div>
+  </div>
+
+  <div class="stage">
+    <label for="paste">Colle ici le JSON que Claude t'a donné :</label>
+    <textarea id="paste" placeholder='{
+  "label": "Actualité américaine • 14 août 2026 • Niveau A1",
+  "date": "2026-08-14",
+  "level": "A1",
+  "vocabularyWords": ["..."],
+  "phrases": ["...", "..."]
+}'></textarea>
+    <div class="row">
+      <button id="publishBtn" onclick="publish()">Publier</button>
+      <button class="secondary" onclick="clearBox()">Effacer</button>
+    </div>
+    <div id="status" class="status"></div>
+    <div id="preview" class="preview"></div>
+  </div>
+
+  <div class="nav">
+    <a href="reader.html">← Ouvrir le Reader</a>
+    <a href="flashcards.html">Flashcards →</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* Same project + same public/RLS-protected publishable key as reader.html / flashcards.html */
+const SUPABASE_URL = "https://qkqigycwbimulskkrwhs.supabase.co";
+const SUPABASE_KEY = "sb_publishable_hQQd1G1xyviFJlKIqBUKNQ_x9tEwXPH";
+const supa = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const statusEl = document.getElementById("status");
+const previewEl = document.getElementById("preview");
+const btn = document.getElementById("publishBtn");
+
+function clearBox(){
+  document.getElementById("paste").value = "";
+  statusEl.textContent = ""; statusEl.className = "status";
+  previewEl.textContent = "";
+}
+
+async function publish(){
+  const raw = document.getElementById("paste").value.trim();
+  if(!raw){ setStatus("Colle d'abord le JSON de l'édition.", true); return; }
+
+  let obj;
+  try {
+    obj = JSON.parse(raw);
+  } catch(e){
+    setStatus("JSON invalide : " + e.message, true);
+    return;
+  }
+  if(!obj.phrases || !obj.phrases.length){
+    setStatus("Il manque les phrases (\"phrases\": [...]).", true);
+    return;
+  }
+
+  btn.disabled = true;
+  setStatus("Publication en cours…", false);
+
+  const row = {
+    label: obj.label || ("Actualité • " + (obj.date || "")),
+    edition_date: obj.date || new Date().toISOString().slice(0,10),
+    level: obj.level || "",
+    phrases: obj.phrases,
+    vocab_words: obj.vocabularyWords || []
+  };
+
+  try {
+    const { error: insertErr } = await supa.from("news").insert(row);
+    if(insertErr){ setStatus("Échec de la publication : " + insertErr.message, true); btn.disabled=false; return; }
+
+    // Keep only the 2 newest editions — mirrors the old SQL step.
+    const { data: all, error: listErr } = await supa
+      .from("news").select("id, edition_date, created_at")
+      .order("edition_date", { ascending:false })
+      .order("created_at", { ascending:false });
+    if(!listErr && all && all.length > 2){
+      const staleIds = all.slice(2).map(r => r.id);
+      await supa.from("news").delete().in("id", staleIds);
+    }
+
+    setStatus("✓ Publié — ouvre le Reader pour voir l'édition d'aujourd'hui.", false);
+    previewEl.innerHTML = "<b>" + row.label + "</b><br>" + row.phrases.length + " phrases · niveau " + row.level;
+  } catch(e){
+    setStatus("Erreur : " + e.message, true);
+  }
+  btn.disabled = false;
+}
+
+function setStatus(msg, isErr){
+  statusEl.textContent = msg;
+  statusEl.className = "status " + (isErr ? "err" : "ok");
+}
+</script>
+</body>
+</html>
