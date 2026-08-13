@@ -111,10 +111,14 @@ select { background:white; border:1px solid #ddd2d0; }
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 /* ============================================================
-   sb_publishable_hQQd1G1xyviFJlKIqBUKNQ_x9tEwXPH
+   SUPABASE CONFIG  — fill in these two values, then save.
+   - SUPABASE_URL is your project URL.
+   - SUPABASE_KEY is your PUBLISHABLE key (starts sb_publishable_...)
+     found in Supabase → Settings → API Keys.
+   Safe to be public (Option A + Row Level Security).
    ============================================================ */
 const SUPABASE_URL = "https://qkqigycwbimulskkrwhs.supabase.co";
-const SUPABASE_KEY = "sb_publishable_hQQd1G1xyviFJlKIqBUKNQ_x9tEwXPH";
+const SUPABASE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
 
 let supa = null;
 try {
@@ -125,18 +129,56 @@ try {
 </script>
 
 <script>
-/* ---------- content ---------- */
-const content = window.READER_CONTENT || {label:"Aucun contenu chargé", phrases:["Aucun contenu chargé."], vocabularyWords:[]};
-document.getElementById("meta").textContent = content.label || ("Actualité • " + (content.date || "") + " • " + content.phrases.length + " phrases");
-const phrases = content.phrases || ["Aucun contenu chargé."];
-const contentDate = content.date || new Date().toISOString().slice(0,10);
-const vocabularyWords = [...(content.vocabularyWords || [])];
+/* ---------- content ----------
+   Loads the latest edition from the Supabase `news` table on open.
+   Falls back to the bundled today-news.js file if Supabase is
+   unconfigured, unreachable, or the table is empty — so the Reader
+   never shows a blank screen.
+------------------------------------------------ */
+const fileContent = window.READER_CONTENT || {label:"Aucun contenu chargé", phrases:["Aucun contenu chargé."], vocabularyWords:[]};
+let content = fileContent;
+let phrases = content.phrases || ["Aucun contenu chargé."];
+let contentDate = content.date || new Date().toISOString().slice(0,10);
+let vocabularyWords = [...(content.vocabularyWords || [])];
+let vocabNorm = [];
+document.getElementById("meta").textContent = content.label || ("Actualité • " + (content.date || "") + " • " + phrases.length + " phrases");
+
+function applyContent(c){
+  content = c;
+  phrases = (c.phrases && c.phrases.length) ? c.phrases : ["Aucun contenu chargé."];
+  contentDate = c.date || c.edition_date || new Date().toISOString().slice(0,10);
+  vocabularyWords = [...(c.vocabularyWords || c.vocab_words || [])];
+  vocabNorm = vocabularyWords.map(norm);
+  document.getElementById("meta").textContent = c.label || ("Actualité • " + (contentDate) + " • " + phrases.length + " phrases");
+  currentIndex = 0;
+  render();
+}
+
+async function loadNewsFromSupabase(){
+  if(!supa) return;                       // no connection → keep file content
+  try {
+    const { data, error } = await supa
+      .from("news")
+      .select("*")
+      .order("edition_date", { ascending: false })
+      .order("created_at", { ascending: false })
+      .limit(1);
+    if (error) { console.warn("News read failed, using file:", error.message); return; }
+    if (!data || !data.length) { console.warn("News table empty, using file."); return; }
+    const row = data[0];
+    // phrases / vocab_words are stored as JSON lists in Supabase
+    const p = Array.isArray(row.phrases) ? row.phrases : (row.phrases ? JSON.parse(row.phrases) : []);
+    const vw = Array.isArray(row.vocab_words) ? row.vocab_words : (row.vocab_words ? JSON.parse(row.vocab_words) : []);
+    if (!p.length) { console.warn("Latest edition has no phrases, using file."); return; }
+    applyContent({ label: row.label, edition_date: row.edition_date, level: row.level, phrases: p, vocab_words: vw });
+  } catch(e){ console.warn("News load error, using file:", e); }
+}
 
 let currentIndex=0, playing=false, selectedVoice=null, voices=[], lastWord=-1, pickedWord="";
 const prevEl=document.getElementById("prev"), activeEl=document.getElementById("active"), nextEl=document.getElementById("next"), counterEl=document.getElementById("counter"), barEl=document.getElementById("bar");
 
 function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’']/g,"'").replace(/[^a-z0-9' ]/g,"").trim();}
-const vocabNorm = vocabularyWords.map(norm);
+vocabNorm = vocabularyWords.map(norm);
 
 /* ---------- render three-sentence window ---------- */
 function render(wordIndex=-1){
@@ -288,7 +330,7 @@ function prevPhrase(){ pauseAudio(); dismissSaveBar(); currentIndex=Math.max(0,c
 function restart(){ pauseAudio(); dismissSaveBar(); currentIndex=0; render(); }
 
 speechSynthesis.onvoiceschanged=loadVoices;
-window.addEventListener("load",()=>{ loadVoices(); render(); });
+window.addEventListener("load",()=>{ loadVoices(); render(); loadNewsFromSupabase(); });
 </script>
 </body>
 </html>
