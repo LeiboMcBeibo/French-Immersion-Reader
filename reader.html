@@ -157,8 +157,44 @@ function applyContent(c){
   render();
 }
 
+/* ---------- morning edition (2026-10-31) ----------
+   A scheduled run writes data/edition.json to GitHub each morning.
+   On open, the Reader compares it with the newest Supabase edition
+   (pasted via Publish) and shows whichever is newer.
+   The edition's glossary gives each word its English, so a tapped
+   word reaches the Flashcards with its meaning already filled in.
+------------------------------------------------ */
+let glossary = {};
+async function loadLatestEdition(){
+  const [fileEd, supaEd] = await Promise.all([loadEditionFile(), loadNewsFromSupabase()]);
+  const stamp = e => e ? (e.edition_date || e.date || "") + "|" + (e.generated_at || e.created_at || "") : "";
+  const pick = (fileEd && (!supaEd || stamp(fileEd) >= stamp(supaEd))) ? fileEd : supaEd;
+  if (pick) { glossary = normalizeGlossary(pick.glossary); applyContent(pick); }
+}
+async function loadEditionFile(){
+  try {
+    const r = await fetch("data/edition.json?v=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) return null;
+    const e = await r.json();
+    return (e && Array.isArray(e.phrases) && e.phrases.length) ? e : null;
+  } catch(e){ console.warn("No morning edition file:", e); return null; }
+}
+function normalizeGlossary(g){
+  const out = {};
+  Object.entries(g || {}).forEach(([k, v]) => { if (v && v.english) out[norm(k)] = v; });
+  return out;
+}
+/* Find the tapped word in the glossary: exact form, then without
+   an elided article/pronoun (l', d', qu', …) */
+function lookupWord(token){
+  const t = norm(token);
+  if (glossary[t]) return glossary[t];
+  const bare = t.replace(/^(l|d|j|m|n|s|t|c|qu|jusqu|lorsqu|puisqu)'/, "");
+  return glossary[bare] || null;
+}
+
 async function loadNewsFromSupabase(){
-  if(!supa) return;                       // no connection → keep file content
+  if(!supa) return null;                  // no connection → keep file content
   try {
     const { data, error } = await supa
       .from("news")
@@ -166,15 +202,15 @@ async function loadNewsFromSupabase(){
       .order("edition_date", { ascending: false })
       .order("created_at", { ascending: false })
       .limit(1);
-    if (error) { console.warn("News read failed, using file:", error.message); return; }
-    if (!data || !data.length) { console.warn("News table empty, using file."); return; }
+    if (error) { console.warn("News read failed:", error.message); return null; }
+    if (!data || !data.length) { return null; }
     const row = data[0];
     // phrases / vocab_words are stored as JSON lists in Supabase
     const p = Array.isArray(row.phrases) ? row.phrases : (row.phrases ? JSON.parse(row.phrases) : []);
     const vw = Array.isArray(row.vocab_words) ? row.vocab_words : (row.vocab_words ? JSON.parse(row.vocab_words) : []);
-    if (!p.length) { console.warn("Latest edition has no phrases, using file."); return; }
-    applyContent({ label: row.label, edition_date: row.edition_date, level: row.level, phrases: p, vocab_words: vw });
-  } catch(e){ console.warn("News load error, using file:", e); }
+    if (!p.length) { return null; }
+    return { label: row.label, edition_date: row.edition_date, created_at: row.created_at, level: row.level, phrases: p, vocab_words: vw };
+  } catch(e){ console.warn("News load error:", e); return null; }
 }
 
 let currentIndex=0, playing=false, selectedVoice=null, voices=[], lastWord=-1, pickedWord="";
@@ -218,7 +254,8 @@ function pickWord(span, token){
   document.querySelectorAll(".word.picked").forEach(w=>w.classList.remove("picked"));
   span.classList.add("picked");
   pickedWord = token.replace(/[.,;:!?«»"“”()]/g,"").trim();
-  document.getElementById("pickedWord").textContent = pickedWord;
+  const g = lookupWord(pickedWord);
+  document.getElementById("pickedWord").textContent = g ? (g.french || pickedWord) + " — " + g.english : pickedWord;
   document.getElementById("saveBar").style.display = "flex";
 }
 function dismissSaveBar(){
@@ -233,6 +270,15 @@ function saveTappedWord(){
     date_added: contentDate,
     source_sentence: phrases[currentIndex]
   };
+  // Meaning from today's glossary, when the edition has one
+  const g = lookupWord(pickedWord);
+  if (g) {
+    record.french = g.french || pickedWord;
+    record.english = g.english;
+    record.example = phrases[currentIndex];
+    record.level = g.level || content.level || null;
+    record.tag = g.tag || null;
+  }
   saveVocabWord(record);                 // <-- storage layer (local now, Supabase in Phase 3)
   const btn = document.querySelector("#saveBar button");
   const original = btn.textContent;
@@ -248,11 +294,9 @@ function saveTappedWord(){
 ------------------------------------------------ */
 function saveVocabWord(record){
   if (supa) {
-    supa.from("vocabulary").insert({
-      french: record.french,
-      date_added: record.date_added,
-      source_sentence: record.source_sentence
-    }).then(({error}) => {
+    const row = { french: record.french, date_added: record.date_added, source_sentence: record.source_sentence };
+    ["english","example","level","tag"].forEach(k => { if (record[k]) row[k] = record[k]; });
+    supa.from("vocabulary").insert(row).then(({error}) => {
       if (error) { console.warn("Supabase insert failed, saving locally:", error.message); saveVocabLocal(record); }
     });
   } else {
@@ -368,7 +412,7 @@ function prevPhrase(){ pauseAudio(); dismissSaveBar(); currentIndex=Math.max(0,c
 function restart(){ pauseAudio(); dismissSaveBar(); currentIndex=0; render(); }
 
 speechSynthesis.onvoiceschanged=loadVoices;
-window.addEventListener("load",()=>{ loadVoices(); render(); loadNewsFromSupabase(); });
+window.addEventListener("load",()=>{ loadVoices(); render(); loadLatestEdition(); });
 </script>
 </body>
 </html>
