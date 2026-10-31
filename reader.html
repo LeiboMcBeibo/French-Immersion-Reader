@@ -74,7 +74,10 @@ select { background:white; border:1px solid #ddd2d0; }
 <div class="shell">
   <div class="top">
     <div><h1 class="title">Immersion Reader</h1><div class="meta" id="meta">Chargement du contenu…</div></div>
-    <button class="secondary" onclick="restart()">Recommencer</button>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="secondary" onclick="restart()">Recommencer</button>
+      <button class="secondary" onclick="pauseAudio(); location.href='flashcards.html'">Flashcards →</button>
+    </div>
   </div>
   <div class="track"><div class="bar" id="bar"></div></div>
   <div class="stage">
@@ -301,7 +304,20 @@ function startReader(){ document.getElementById("startOverlay").style.display="n
 
 /* ---------- speech + highlighting ---------- */
 function speakPhrase(){
-  speechSynthesis.cancel(); lastWord=-1; render();
+  // Fix (2026-10-31): calling speak() in the same instant as cancel()
+  // makes Chrome/iPad speech silently skip and race through the phrases.
+  // If something is still speaking, cancel and wait a moment first.
+  // If nothing is speaking (e.g. the first tap on Lire), speak at once,
+  // so the iPad still treats it as started by your tap.
+  lastWord=-1; render();
+  if(speechSynthesis.speaking || speechSynthesis.pending){
+    speechSynthesis.cancel();
+    setTimeout(()=>{ if(playing) speakNow(); }, 120);
+  } else {
+    speakNow();
+  }
+}
+function speakNow(){
   const text=phrases[currentIndex], words=text.split(/\s+/);
   const u=new SpeechSynthesisUtterance(text);
   u.lang="fr-FR"; u.rate=Number(document.getElementById("speed").value); u.pitch=1;
