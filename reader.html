@@ -322,7 +322,9 @@ function speakNow(){
   const u=new SpeechSynthesisUtterance(text);
   u.lang="fr-FR"; u.rate=Number(document.getElementById("speed").value); u.pitch=1;
   if(selectedVoice) u.voice=selectedVoice;
+  const startedAt=Date.now(); let boundaries=0;
   u.onboundary=(event)=>{
+    boundaries++;
     if(typeof event.charIndex==="number"){
       const upto=text.slice(0,event.charIndex).trim();
       const idx=upto ? upto.split(/\s+/).length-1 : 0;
@@ -330,6 +332,13 @@ function speakNow(){
     }
   };
   u.onend=()=>{
+    // Silent-voice guard (2026-10-31): some voices (e.g. "Daniel" in Chrome
+    // on Mac) "finish" a sentence instantly without speaking. If that
+    // happens, switch to the next French voice and say the sentence again.
+    if(playing && boundaries===0 && Date.now()-startedAt < 600 && words.length > 2 && switchVoice()){
+      setTimeout(()=>{ if(playing) speakNow(); }, 150);
+      return;
+    }
     render();
     if(playing && currentIndex < phrases.length-1){
       currentIndex++;
@@ -337,6 +346,19 @@ function speakNow(){
     } else { playing=false; document.getElementById("playBtn").textContent="▶ Lire"; }
   };
   speechSynthesis.speak(u);
+}
+let badVoices=new Set();
+function switchVoice(){
+  if(selectedVoice) badVoices.add(selectedVoice.name);
+  const pref=/amelie|amélie|audrey|marie|thomas|eddy|siri/i;
+  const ok=voices.filter(v=>!badVoices.has(v.name));
+  if(!ok.length) return false;
+  const next=ok.find(v=>pref.test(v.name) && v.lang==="fr-FR") || ok.find(v=>v.lang==="fr-FR") || ok[0];
+  selectedVoice=next;
+  const sel=document.getElementById("voiceSelect"); sel.value=voices.indexOf(next);
+  saveReaderSettings();
+  console.warn("Voice was silent; switched to "+next.name);
+  return true;
 }
 function play(){ dismissSaveBar(); playing=true; document.getElementById("playBtn").textContent="▶ Lecture…"; speakPhrase(); }
 function pauseAudio(){ playing=false; speechSynthesis.cancel(); document.getElementById("playBtn").textContent="▶ Lire"; }
