@@ -66,7 +66,8 @@ button:disabled { opacity:.5; cursor:default; }
   "date": "2026-08-14",
   "level": "A1",
   "vocabularyWords": ["..."],
-  "phrases": ["...", "..."]
+  "phrases": ["...", "..."],
+  "definitions": [{"french":"...","english":"...","example":"...","level":"A1","tag":"..."}]
 }'></textarea>
     <div class="row">
       <button id="publishBtn" onclick="publish()">Publier</button>
@@ -74,6 +75,14 @@ button:disabled { opacity:.5; cursor:default; }
     </div>
     <div id="status" class="status"></div>
     <div id="preview" class="preview"></div>
+  </div>
+
+  <div class="stage">
+    <label>Mots à définir (tapped words still waiting for their English):</label>
+    <div id="pendingList" class="preview" style="margin-top:0">Chargement…</div>
+    <div class="row">
+      <button class="secondary" onclick="copyPending()">Copier la liste</button>
+    </div>
   </div>
 
   <div class="nav">
@@ -127,6 +136,19 @@ async function publish(){
   };
 
   try {
+    // 1. Fill in meanings for yesterday's tapped words ("definitions": [...])
+    let defined = 0;
+    const defs = Array.isArray(obj.definitions) ? obj.definitions : [];
+    for (const d of defs) {
+      if (!d || !d.french || !d.english) continue;
+      const fields = { english: d.english, example: d.example || null, level: d.level || null, tag: d.tag || null };
+      const { data: upd, error: defErr } = await supa.from("vocabulary")
+        .update(fields).eq("french", d.french).is("english", null).select("id");
+      if (defErr) { setStatus("Échec pour « " + d.french + " » : " + defErr.message, true); btn.disabled=false; return; }
+      defined += (upd ? upd.length : 0);
+    }
+
+    // 2. Publish the edition
     const { error: insertErr } = await supa.from("news").insert(row);
     if(insertErr){ setStatus("Échec de la publication : " + insertErr.message, true); btn.disabled=false; return; }
 
@@ -141,7 +163,9 @@ async function publish(){
     }
 
     setStatus("✓ Publié — ouvre le Reader pour voir l'édition d'aujourd'hui.", false);
-    previewEl.innerHTML = "<b>" + row.label + "</b><br>" + row.phrases.length + " phrases · niveau " + row.level;
+    previewEl.innerHTML = "<b>" + row.label + "</b><br>" + row.phrases.length + " phrases · niveau " + row.level
+      + (defs.length ? "<br>" + defined + " mot(s) défini(s) pour les flashcards" : "");
+    loadPending();
   } catch(e){
     setStatus("Erreur : " + e.message, true);
   }
@@ -152,6 +176,28 @@ function setStatus(msg, isErr){
   statusEl.textContent = msg;
   statusEl.className = "status " + (isErr ? "err" : "ok");
 }
+
+/* Words tapped in the Reader that still have no English.
+   "Copier la liste" copies them so you can paste them to Claude
+   when asking for today's news. */
+let pendingText = "";
+async function loadPending(){
+  const el = document.getElementById("pendingList");
+  const { data, error } = await supa.from("vocabulary")
+    .select("french, source_sentence").is("english", null).eq("retired", false)
+    .order("created_at", { ascending:true });
+  if (error) { el.textContent = "Lecture impossible : " + error.message; return; }
+  if (!data.length) { el.textContent = "Aucun — tous vos mots ont leur définition."; pendingText = ""; return; }
+  pendingText = "Mots à définir :\n" + data.map(r => "- " + r.french + " | " + (r.source_sentence || "")).join("\n");
+  el.innerHTML = data.map(r => "<b>" + r.french.replace(/</g,"&lt;") + "</b>").join(" · ");
+}
+function copyPending(){
+  if (!pendingText) { setStatus("Rien à copier.", false); return; }
+  navigator.clipboard.writeText(pendingText)
+    .then(() => setStatus("✓ Liste copiée — colle-la dans Claude.", false))
+    .catch(() => setStatus("Copie impossible ici ; sélectionne la liste à la main.", true));
+}
+loadPending();
 </script>
 </body>
 </html>
