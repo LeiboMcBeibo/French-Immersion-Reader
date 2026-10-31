@@ -2,7 +2,7 @@
  "label": "Actualité américaine et parisienne • 31 octobre 2026 • Niveau A1",
  "date": "2026-10-31",
  "level": "A1",
- "generated_at": "2026-10-31T17:20:00-04:00",
+ "generated_at": "2026-10-31T17:10:00-04:00",
  "vocabularyWords": [
   "citrouilles",
   "bonbons",
@@ -54,6 +54,16 @@
   "En France, Halloween est moins populaire.",
   "Les enfants français ne vont pas souvent de maison en maison.",
   "Mais les jeunes aiment les fêtes d'Halloween.",
+  "Halloween est une très vieille fête.",
+  "Elle vient d'Irlande et d'Écosse.",
+  "Les Irlandais apportent la fête en Amérique.",
+  "Avant, on utilise des navets, pas des citrouilles.",
+  "En Amérique, il y a beaucoup de citrouilles.",
+  "Alors, les gens prennent des citrouilles.",
+  "Ce soir, il fait nuit vers six heures.",
+  "Les parents marchent avec les petits enfants.",
+  "Les enfants portent souvent une lampe.",
+  "C'est plus sûr dans la rue.",
   "Deuxième nouvelle : les élections.",
   "Mardi, c'est le trois novembre.",
   "Mardi, les Américains votent.",
@@ -76,6 +86,13 @@
   "Ils parlent dans des réunions publiques.",
   "Ils parlent à la télévision.",
   "Ils demandent aux gens de voter.",
+  "Les électeurs pensent à beaucoup de choses.",
+  "Ils pensent au prix de la vie.",
+  "Ils pensent au travail.",
+  "Ils pensent à la santé et à l'école.",
+  "Mardi soir, les Américains regardent les résultats à la télévision.",
+  "Parfois, les résultats arrivent tard, dans la nuit.",
+  "Parfois, il faut attendre plusieurs jours.",
   "Maintenant, une histoire curieuse en Alaska.",
   "En Alaska, il y a une élection pour le Sénat.",
   "Le sénateur s'appelle Dan Sullivan.",
@@ -96,6 +113,7 @@
   "En Alaska, les électeurs classent les candidats.",
   "Ils écrivent un premier choix, un deuxième choix, et un troisième choix.",
   "C'est un système spécial.",
+  "Le candidat avec la majorité gagne.",
   "Nous allons connaître les résultats après mardi.",
   "Troisième nouvelle : des missiles pour l'Ukraine.",
   "Les États-Unis vendent des missiles à l'Ukraine.",
@@ -112,6 +130,8 @@
   "Il n'y a pas assez de missiles dans le monde.",
   "Le président ukrainien, Volodymyr Zelensky, est prudent.",
   "Il dit que la livraison peut prendre plusieurs années.",
+  "Les entreprises américaines fabriquent les missiles.",
+  "Mais elles ne peuvent pas fabriquer très vite.",
   "L'Ukraine attend les missiles.",
   "Quatrième nouvelle : les élections en Israël.",
   "En Israël aussi, il y a des élections.",
@@ -131,6 +151,7 @@
   "Une enquête commence.",
   "Maintenant, les partis vont discuter.",
   "Ils cherchent une nouvelle majorité.",
+  "Sans majorité, un Premier ministre ne peut pas gouverner.",
   "C'est difficile, et cela peut être long.",
   "Cinquième nouvelle : on change d'heure.",
   "Aux États-Unis, on change d'heure cette nuit.",
@@ -165,6 +186,9 @@
   "Le pétrole est plus rare, donc il est plus cher.",
   "Les syndicats organisent la manifestation.",
   "Les gilets jaunes sont aussi dans la rue.",
+  "Les gilets jaunes sont un mouvement populaire.",
+  "Ils portent un gilet jaune, comme un gilet de sécurité dans la voiture.",
+  "Le mouvement commence en deux mille dix-huit, déjà contre le prix de l'essence.",
   "La police attend entre cent mille et cent cinquante mille personnes.",
   "Le ministre de l'Intérieur s'appelle Laurent Nuñez.",
   "Il parle d'un risque de violence.",
@@ -185,6 +209,11 @@
   "Il est dans deux quartiers : République et Les Halles.",
   "Les habitants et les travailleurs peuvent passer.",
   "Le couvre-feu est valable deux nuits.",
+  "Pour les touristes, c'est compliqué.",
+  "Ils doivent marcher beaucoup.",
+  "Ou ils prennent le bus et le taxi.",
+  "Les magasins près de la manifestation sont souvent fermés.",
+  "Dimanche, le métro marche de nouveau normalement.",
   "Septième nouvelle : la Toussaint.",
   "En France, c'est le week-end de la Toussaint.",
   "Dimanche, c'est le premier novembre.",
@@ -205,6 +234,8 @@
   "Attention aussi, dimanche matin, la ligne treize du métro est fermée.",
   "Et bientôt, c'est Noël.",
   "Le marché de Noël près de la tour Eiffel commence le cinq décembre.",
+  "Il finit le trois janvier.",
+  "Il y a du vin chaud et des crêpes.",
   "Maintenant, quelques mots du jour.",
   "Écoutez et répétez.",
   "Une citrouille.",
@@ -231,6 +262,15 @@
   "Le premier novembre est un jour férié en France.",
   "Le brouillard.",
   "Quand il y a du brouillard, on ne voit pas bien.",
+  "Une enquête.",
+  "Pendant une enquête, on cherche la vérité.",
+  "La colère.",
+  "Quand on est en colère, on n'est pas content.",
+  "Beaucoup de Français sont en colère contre la vie chère.",
+  "Reculer.",
+  "Cette nuit, on recule les montres d'une heure.",
+  "Un siège, une manifestation, un couvre-feu, un jour férié.",
+  "Ce sont des mots utiles pour lire les nouvelles.",
   "Très bien !",
   "Voilà, c'est tout pour aujourd'hui.",
   "Répétons les nouvelles.",
@@ -3096,6 +3136,330 @@
    "english": "to be",
    "level": "A1",
    "tag": "grammar"
+  },
+  "alors": {
+   "french": "alors",
+   "english": "so; then",
+   "level": "A1",
+   "tag": "grammar"
+  },
+  "américaines": {
+   "french": "américain",
+   "english": "American",
+   "level": "A1",
+   "tag": "places"
+  },
+  "amérique": {
+   "french": "l'Amérique",
+   "english": "America",
+   "level": "A1",
+   "tag": "places"
+  },
+  "arrivent": {
+   "french": "arriver",
+   "english": "arrive; come in",
+   "level": "A1",
+   "tag": "general"
+  },
+  "attendre": {
+   "french": "attendre",
+   "english": "to wait",
+   "level": "A1",
+   "tag": "general"
+  },
+  "bus": {
+   "french": "le bus",
+   "english": "bus",
+   "level": "A1",
+   "tag": "transport"
+  },
+  "chaud": {
+   "french": "chaud",
+   "english": "hot (vin chaud = mulled wine)",
+   "level": "A1",
+   "tag": "food"
+  },
+  "choses": {
+   "french": "une chose",
+   "english": "things",
+   "level": "A1",
+   "tag": "general"
+  },
+  "comme": {
+   "french": "comme",
+   "english": "like; as",
+   "level": "A1",
+   "tag": "grammar"
+  },
+  "compliqué": {
+   "french": "compliqué",
+   "english": "complicated",
+   "level": "A2",
+   "tag": "general"
+  },
+  "crêpes": {
+   "french": "une crêpe",
+   "english": "crepes",
+   "level": "A1",
+   "tag": "food"
+  },
+  "d'irlande": {
+   "french": "l'Irlande",
+   "english": "from Ireland",
+   "level": "A1",
+   "tag": "places"
+  },
+  "d'écosse": {
+   "french": "l'Écosse",
+   "english": "from Scotland",
+   "level": "A1",
+   "tag": "places"
+  },
+  "dix-huit": {
+   "french": "dix-huit",
+   "english": "eighteen",
+   "level": "A1",
+   "tag": "numbers"
+  },
+  "doivent": {
+   "french": "devoir",
+   "english": "must; have to",
+   "level": "A2",
+   "tag": "grammar"
+  },
+  "entreprises": {
+   "french": "une entreprise",
+   "english": "companies",
+   "level": "A2",
+   "tag": "economy"
+  },
+  "fabriquent": {
+   "french": "fabriquer",
+   "english": "make; manufacture",
+   "level": "A2",
+   "tag": "economy"
+  },
+  "fabriquer": {
+   "french": "fabriquer",
+   "english": "to make; to manufacture",
+   "level": "A2",
+   "tag": "economy"
+  },
+  "gagne": {
+   "french": "gagner",
+   "english": "wins",
+   "level": "A1",
+   "tag": "elections"
+  },
+  "gilet": {
+   "french": "un gilet",
+   "english": "vest (gilet de sécurité = safety vest)",
+   "level": "B1",
+   "tag": "clothes"
+  },
+  "gouverner": {
+   "french": "gouverner",
+   "english": "to govern",
+   "level": "B1",
+   "tag": "politics"
+  },
+  "irlandais": {
+   "french": "un Irlandais",
+   "english": "Irish people",
+   "level": "A1",
+   "tag": "people"
+  },
+  "janvier": {
+   "french": "janvier",
+   "english": "January",
+   "level": "A1",
+   "tag": "time"
+  },
+  "jaune": {
+   "french": "jaune",
+   "english": "yellow",
+   "level": "A1",
+   "tag": "colors"
+  },
+  "jours": {
+   "french": "un jour",
+   "english": "days",
+   "level": "A1",
+   "tag": "time"
+  },
+  "l'école": {
+   "french": "une école",
+   "english": "school",
+   "level": "A1",
+   "tag": "education"
+  },
+  "lampe": {
+   "french": "une lampe",
+   "english": "flashlight; lamp",
+   "level": "A1",
+   "tag": "home"
+  },
+  "magasins": {
+   "french": "un magasin",
+   "english": "shops; stores",
+   "level": "A1",
+   "tag": "shopping"
+  },
+  "marche": {
+   "french": "marcher",
+   "english": "runs; works",
+   "level": "A1",
+   "tag": "transport"
+  },
+  "marcher": {
+   "french": "marcher",
+   "english": "to walk",
+   "level": "A1",
+   "tag": "general"
+  },
+  "mouvement": {
+   "french": "un mouvement",
+   "english": "movement",
+   "level": "A2",
+   "tag": "politics"
+  },
+  "navets": {
+   "french": "un navet",
+   "english": "turnips",
+   "level": "B1",
+   "tag": "food"
+  },
+  "parents": {
+   "french": "un parent",
+   "english": "parents",
+   "level": "A1",
+   "tag": "people"
+  },
+  "parfois": {
+   "french": "parfois",
+   "english": "sometimes",
+   "level": "A1",
+   "tag": "time"
+  },
+  "petits": {
+   "french": "petit",
+   "english": "little; small",
+   "level": "A1",
+   "tag": "general"
+  },
+  "prennent": {
+   "french": "prendre",
+   "english": "take",
+   "level": "A1",
+   "tag": "general"
+  },
+  "regardent": {
+   "french": "regarder",
+   "english": "watch; look at",
+   "level": "A1",
+   "tag": "general"
+  },
+  "santé": {
+   "french": "la santé",
+   "english": "health",
+   "level": "A1",
+   "tag": "health"
+  },
+  "sûr": {
+   "french": "sûr",
+   "english": "safe",
+   "level": "A2",
+   "tag": "security"
+  },
+  "tard": {
+   "french": "tard",
+   "english": "late",
+   "level": "A1",
+   "tag": "time"
+  },
+  "taxi": {
+   "french": "un taxi",
+   "english": "taxi",
+   "level": "A1",
+   "tag": "transport"
+  },
+  "touristes": {
+   "french": "un touriste",
+   "english": "tourists",
+   "level": "A1",
+   "tag": "people"
+  },
+  "utilise": {
+   "french": "utiliser",
+   "english": "uses (on utilise = people used)",
+   "level": "A2",
+   "tag": "general"
+  },
+  "vers": {
+   "french": "vers",
+   "english": "around (time); toward",
+   "level": "A1",
+   "tag": "time"
+  },
+  "vieille": {
+   "french": "vieux",
+   "english": "old",
+   "level": "A1",
+   "tag": "general"
+  },
+  "vient": {
+   "french": "venir",
+   "english": "comes (venir de = come from)",
+   "level": "A1",
+   "tag": "general"
+  },
+  "vin": {
+   "french": "le vin",
+   "english": "wine",
+   "level": "A1",
+   "tag": "food"
+  },
+  "vite": {
+   "french": "vite",
+   "english": "fast; quickly",
+   "level": "A1",
+   "tag": "general"
+  },
+  "vérité": {
+   "french": "la vérité",
+   "english": "truth",
+   "level": "A2",
+   "tag": "justice"
+  },
+  "content": {
+   "french": "content",
+   "english": "happy; pleased",
+   "level": "A1",
+   "tag": "feelings"
+  },
+  "reculer": {
+   "french": "reculer",
+   "english": "to move back; to set back",
+   "level": "B1",
+   "tag": "time"
+  },
+  "utiles": {
+   "french": "utile",
+   "english": "useful",
+   "level": "A1",
+   "tag": "general"
+  },
+  "lire": {
+   "french": "lire",
+   "english": "to read",
+   "level": "A1",
+   "tag": "learning"
+  },
+  "cherche": {
+   "french": "chercher",
+   "english": "looks for (on cherche = people look for)",
+   "level": "A1",
+   "tag": "general"
   }
  }
 }
