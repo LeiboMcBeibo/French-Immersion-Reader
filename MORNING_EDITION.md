@@ -84,7 +84,10 @@ Commit to `main` with the message `Morning edition YYYY-MM-DD (LEVEL)` and push.
 
 ## 6. Email Mark
 
-Send one email to `email_to` from Mark's Gmail:
+Send **exactly one** email to `email_to` from Mark's Gmail. Before sending, search
+Gmail for `subject:"Ton français du jour" newer_than:1d`; if today's email is already
+there, do not send another. Call the send tool once; if its result is unclear, check
+with that same search instead of sending again.
 - Subject: `Ton français du jour — <date in French> (<level>)`
 - Body (short, plain): one line per story title in French, then a link to
   `reader_url` labeled "Ouvrir le Reader". Nothing else.

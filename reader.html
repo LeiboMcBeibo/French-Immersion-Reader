@@ -166,10 +166,15 @@ function applyContent(c){
 ------------------------------------------------ */
 let glossary = {};
 async function loadLatestEdition(){
-  const [fileEd, supaEd] = await Promise.all([loadEditionFile(), loadNewsFromSupabase()]);
+  // Show whichever edition arrives first, then switch only if the other is newer.
   const stamp = e => e ? (e.edition_date || e.date || "") + "|" + (e.generated_at || e.created_at || "") : "";
-  const pick = (fileEd && (!supaEd || stamp(fileEd) >= stamp(supaEd))) ? fileEd : supaEd;
-  if (pick) { glossary = normalizeGlossary(pick.glossary); applyContent(pick); }
+  let shown = null;
+  const offer = ed => {
+    if (!ed || (shown && stamp(ed) <= stamp(shown))) return;
+    if (shown && (playing || currentIndex > 0)) return;   // never yank the text mid-reading
+    shown = ed; glossary = normalizeGlossary(ed.glossary); applyContent(ed);
+  };
+  await Promise.all([loadEditionFile().then(offer), loadNewsFromSupabase().then(offer)]);
 }
 async function loadEditionFile(){
   try {
