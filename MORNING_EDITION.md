@@ -58,7 +58,8 @@ without `l'`, `d'`, `qu'`…) to:
   Proper names can map to themselves with english like "(name) Karoline Leavitt".
 
 `vocabularyWords` = 8–12 words worth learning at this level; the Reader shows them
-in red. Use dictionary forms that also appear in the glossary.
+in red. Write each one exactly as it appears in a phrase (e.g. `citrouilles`,
+`choisissent`), single words only, so the Reader can match it.
 
 ## 5. Save and check
 
