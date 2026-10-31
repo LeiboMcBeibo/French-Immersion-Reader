@@ -71,7 +71,10 @@ select { background:white; border:1px solid #ddd2d0; color:#333; max-width:100%;
       <h1 class="title">French Flashcards</h1>
       <div class="meta" id="meta">News vocabulary • cumulative library</div>
     </div>
-    <div class="pill">Tap to reveal • Swipe left/right</div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <div class="pill">Tap to reveal • Swipe left/right</div>
+      <button class="secondary" onclick="location.href='reader.html'">← Reader</button>
+    </div>
   </div>
 
   <div class="toolbar">
@@ -82,6 +85,7 @@ select { background:white; border:1px solid #ddd2d0; color:#333; max-width:100%;
     <button class="secondary" onclick="speakCurrentWord()">🔊 Repeat French</button>
     <button class="important" id="importantBtn" onclick="toggleImportant()">Important: Off</button>
     <button class="difficult" id="difficultBtn" onclick="toggleDifficult()">Difficult: Off</button>
+    <button class="secondary" id="retireBtn" onclick="retireCard()">✓ Je connais</button>
     <select id="mode" onchange="setMode()">
       <option value="new">New words only</option>
       <option value="all">Review all in order</option>
@@ -245,8 +249,25 @@ function pickWeightedRandom(){ const deck=weightedDeck(activeCards); const picke
 function nextCard(){ resetCard(); if(currentMode==="random") pickWeightedRandom(); else currentIndex=(currentIndex+1)%activeCards.length; renderCard(); }
 function previousCard(){ resetCard(); if(currentMode==="random") pickWeightedRandom(); else currentIndex=(currentIndex-1+activeCards.length)%activeCards.length; renderCard(); }
 function shuffleCard(){ resetCard(); pickWeightedRandom(); renderCard(); }
-function toggleImportant(){ const c=currentCard(); c.important=!c.important; storedImportance[c.id]=c.important; localStorage.setItem("frenchFlashcardImportance",JSON.stringify(storedImportance)); renderCard(); }
-function toggleDifficult(){ const c=currentCard(); c.difficult=!c.difficult; storedDifficulty[c.id]=c.difficult; localStorage.setItem("frenchFlashcardDifficulty",JSON.stringify(storedDifficulty)); renderCard(); }
+/* Saves a flag to Supabase for synced cards, so it follows you across devices */
+function saveFlag(c, fields){
+  if(supa && c.supaId){
+    supa.from("vocabulary").update(fields).eq("id", c.supaId)
+      .then(({error})=>{ if(error) console.warn("Flag save failed:", error.message); });
+  }
+}
+function toggleImportant(){ const c=currentCard(); c.important=!c.important; storedImportance[c.id]=c.important; localStorage.setItem("frenchFlashcardImportance",JSON.stringify(storedImportance)); saveFlag(c,{important:c.important}); renderCard(); }
+function toggleDifficult(){ const c=currentCard(); c.difficult=!c.difficult; storedDifficulty[c.id]=c.difficult; localStorage.setItem("frenchFlashcardDifficulty",JSON.stringify(storedDifficulty)); saveFlag(c,{difficult:c.difficult}); renderCard(); }
+/* Retire a word you know: hidden from the deck, kept in the database */
+function retireCard(){
+  const c=currentCard(); if(!c) return;
+  if(!c.supaId){ document.getElementById("status").textContent="This card isn't synced yet, so it can't be retired."; return; }
+  saveFlag(c,{retired:true});
+  const i=vocabularyLibrary.indexOf(c); if(i>-1) vocabularyLibrary.splice(i,1);
+  document.getElementById("status").textContent="✓ « "+c.french+" » retiré. "+vocabularyLibrary.length+" mots restent.";
+  document.getElementById("meta").textContent = "News vocabulary • synced • " + vocabularyLibrary.length + " words";
+  if(vocabularyLibrary.length) setMode();
+}
 function loadVoices(){
   if(!("speechSynthesis" in window)){document.getElementById("status").textContent="Speech is not supported.";return;}
   const voices=speechSynthesis.getVoices();
@@ -291,15 +312,18 @@ async function loadFromSupabase(){
       .eq("retired", false)
       .order("created_at", { ascending: true });
     if (error || !data) { console.warn("Supabase read failed:", error && error.message); return; }
-    // Replace the library with Supabase truth (dedupe by french+date)
+    // Supabase words first (dedupe by word), then any file-library words
+    // not yet in Supabase — so older cards are never dropped.
+    const keyOf = s => (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’']/g,"'").trim();
     const seen = new Set();
     const merged = [];
     data.forEach(r => {
-      const key = (r.french||"").toLowerCase()+"|"+(r.date_added||"");
+      const key = keyOf(r.french);
       if (seen.has(key)) return;
       seen.add(key);
       merged.push({
         id: "supa-"+r.id,
+        supaId: r.id,
         date_added: r.date_added || "",
         level: r.level || "—",
         french: r.french,
@@ -311,6 +335,10 @@ async function loadFromSupabase(){
         pending: !r.english
       });
     });
+    // Words retired in Supabase stay hidden even if the file still lists them
+    const { data: gone } = await supa.from("vocabulary").select("french").eq("retired", true);
+    (gone||[]).forEach(r => seen.add(keyOf(r.french)));
+    baseLibrary.forEach(c => { if(!seen.has(keyOf(c.french))){ seen.add(keyOf(c.french)); merged.push(c); } });
     if (merged.length){
       vocabularyLibrary.length = 0;
       merged.forEach(c => vocabularyLibrary.push(c));
