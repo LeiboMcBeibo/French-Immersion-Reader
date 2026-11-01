@@ -85,12 +85,23 @@ Commit to `main` with the message `Morning edition YYYY-MM-DD (LEVEL)` and push.
 ## 6. Email Mark
 
 Send **exactly one** email to `email_to` from Mark's Gmail. Before sending, search
-Gmail for `subject:"Ton français du jour" newer_than:1d`; if today's email is already
-there, do not send another. Call the send tool once; if its result is unclear, check
-with that same search instead of sending again.
+Gmail for `subject:"Ton français du jour" newer_than:1d` and look at the subjects:
+only an email whose subject has **today's** French date counts as already sent
+(yesterday's will usually show up too). If today's is there, do not send another.
+Call the send tool once; if its result is unclear, check with that same search
+instead of sending again.
 - Subject: `Ton français du jour — <date in French> (<level>)`
-- Body (short, plain): one line per story title in French, then a link to
-  `reader_url` labeled "Ouvrir le Reader". Nothing else.
+- Send it as HTML (`htmlBody`) with a plain-text `body` fallback. Mark reads it on
+  his iPad, so the link must be obvious:
+  1. A large tappable button at the top: `<a href="READER_URL">` styled as a blue
+     button (padding 14px 24px, white bold text, rounded corners) reading
+     "▶ Ouvrir le Reader — édition du jour".
+  2. One line under it: "Le Reader s'ouvre directement sur les nouvelles d'aujourd'hui."
+  3. A short list of the story titles in French.
+  4. At the bottom, the full `reader_url` as a plain link, in case the button does
+     not show.
+  The plain-text `body` has the same content, with the URL on its own line.
+  Nothing else.
 
 If saving or pushing failed, send instead a short email saying the edition could
 not be prepared today and why, so Mark knows to ask in the Claude app.
