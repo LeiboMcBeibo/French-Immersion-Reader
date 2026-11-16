@@ -98,9 +98,21 @@ instead of sending again.
      "▶ Ouvrir le Reader — édition du jour".
   2. One line under it: "Le Reader s'ouvre directement sur les nouvelles d'aujourd'hui."
   3. A short list of the story titles in French.
-  4. At the bottom, the full `reader_url` as a plain link, in case the button does
-     not show.
-  The plain-text `body` has the same content, with the URL on its own line.
+  4. The full `reader_url` as a plain link, in case the button does not show.
+  5. Last, below a horizontal rule (`<hr>`), an English translation of the whole
+     edition, so Mark can choose to read it before, during or after listening
+     (he asked for this on Nov 16 2026 because he was often lost with French alone):
+     - Heading: "English translation — optional. Read it before, during or after."
+     - One block per story, in the same order as the edition: the story's French
+       title in bold, then the English as a short paragraph.
+     - Translate the phrases of `data/edition.json` faithfully and in order —
+       every sentence, nothing added, nothing left out, no summarizing — in
+       plain natural English. Include the greeting and the sign-off.
+     - Keep it visually quiet (normal text size, gray heading) and keep it at the
+       very bottom, so the French and the button come first and the English is
+       only seen if Mark scrolls to it.
+  The plain-text `body` has the same content, with the URL on its own line and
+  the English translation at the end.
   Nothing else.
 
 If saving or pushing failed, send instead a short email saying the edition could
