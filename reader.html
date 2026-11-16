@@ -323,7 +323,8 @@ function saveVocabLocal(record){
 function saveReaderSettings(){
   localStorage.setItem("readerSpeed", document.getElementById("speed").value);
   localStorage.setItem("readerGap", document.getElementById("gap").value);
-  if(selectedVoice) localStorage.setItem("readerVoiceName", selectedVoice.name);
+  if(useSystemVoice) localStorage.setItem("readerVoiceName", SYSTEM_VOICE);
+  else if(selectedVoice) localStorage.setItem("readerVoiceName", selectedVoice.name);
 }
 function restoreReaderSettings(){
   const speed = localStorage.getItem("readerSpeed");
@@ -333,19 +334,34 @@ function restoreReaderSettings(){
 }
 
 /* ---------- voices ---------- */
+// "Device voice" (2026-11-16): iPhone/iPad browsers hide downloaded Premium
+// voices (e.g. Audrey Premium) from the list. This choice sets no voice at
+// all, only the language, so the device uses the French voice chosen in
+// Settings > Accessibility > Spoken Content > Voices.
+const SYSTEM_VOICE="__system__";
+let useSystemVoice=false;
 function loadVoices(){
   restoreReaderSettings();
   voices=speechSynthesis.getVoices().filter(v=>v.lang && v.lang.toLowerCase().startsWith("fr"));
   const select=document.getElementById("voiceSelect"); select.innerHTML="";
-  if(!voices.length){ console.warn("Aucune voix française trouvée. Essayez Safari/Chrome ou installez une voix française."); return; }
+  const sysOpt=document.createElement("option"); sysOpt.value=SYSTEM_VOICE; sysOpt.textContent="Voix de l'appareil (Réglages)"; select.appendChild(sysOpt);
+  const pickVoice=()=>{ useSystemVoice=(select.value===SYSTEM_VOICE); selectedVoice=useSystemVoice?null:voices[Number(select.value)]; };
+  select.onchange=()=>{ pickVoice(); saveReaderSettings(); };
+  const savedVoiceName = localStorage.getItem("readerVoiceName");
+  if(!voices.length || savedVoiceName===SYSTEM_VOICE){
+    if(!voices.length) console.warn("Aucune voix française trouvée. Essayez Safari/Chrome ou installez une voix française.");
+    select.value=SYSTEM_VOICE; pickVoice();
+    if(voices.length) voices.forEach((v,i)=>{ const o=document.createElement("option"); o.value=i; o.textContent=v.name+" ("+v.lang+")"; select.appendChild(o); });
+    document.getElementById("speed").onchange=saveReaderSettings;
+    document.getElementById("gap").onchange=saveReaderSettings;
+    return;
+  }
   voices.sort((a,b)=> (a.lang==="fr-FR"?-1:0) - (b.lang==="fr-FR"?-1:0));
   voices.forEach((v,i)=>{ const o=document.createElement("option"); o.value=i; o.textContent=v.name+" ("+v.lang+")"; select.appendChild(o); });
-  const savedVoiceName = localStorage.getItem("readerVoiceName");
   let savedIndex = savedVoiceName ? voices.findIndex(v => v.name === savedVoiceName) : -1;
   if(savedIndex < 0) savedIndex = voices.findIndex(v => /amelie|audrey|marie|siri/i.test(v.name) && !/thomas/i.test(v.name));
   if(savedIndex < 0) savedIndex = 0;
-  selectedVoice=voices[savedIndex]; select.value=savedIndex;
-  select.onchange=()=>{selectedVoice=voices[Number(select.value)]; saveReaderSettings();};
+  select.value=savedIndex; pickVoice();
   document.getElementById("speed").onchange=saveReaderSettings;
   document.getElementById("gap").onchange=saveReaderSettings;
 }
@@ -398,6 +414,7 @@ function speakNow(){
 }
 let badVoices=new Set();
 function switchVoice(){
+  if(useSystemVoice) return false; // never override the device-voice choice
   if(selectedVoice) badVoices.add(selectedVoice.name);
   const pref=/amelie|amélie|audrey|marie|thomas|eddy|siri/i;
   const ok=voices.filter(v=>!badVoices.has(v.name));
