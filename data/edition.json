@@ -1,2207 +1,2299 @@
 {
- "label": "Actualité américaine et française • 23 novembre 2026 • Niveau A1",
- "date": "2026-11-23",
- "level": "A1",
- "generated_at": "2026-11-23T05:55:00-05:00",
- "vocabularyWords": [
-  "bourse",
-  "actions",
-  "ballons",
-  "fanfares",
-  "île",
-  "marées",
-  "reportée",
-  "vent",
-  "neige",
-  "vagues",
-  "avertissement",
-  "parapluie"
- ],
- "phrases": [
-  "Bonjour, et bienvenue.",
-  "Voici les nouvelles du jour, en français très simple.",
-  "Aujourd'hui, nous sommes le lundi vingt-trois novembre.",
-  "C'est le début d'une nouvelle semaine.",
-  "Nous avons quatre nouvelles.",
-  "Trois nouvelles sont des États-Unis.",
-  "Une nouvelle est de France.",
-  "Écoutez bien.",
-  "On commence.",
-  "Première nouvelle : une mauvaise journée à Wall Street.",
-  "Wall Street, c'est la bourse de New York.",
-  "À la bourse, les gens achètent et vendent des actions.",
-  "Une action, c'est une petite partie d'une entreprise.",
-  "Vendredi, les actions baissent beaucoup.",
-  "C'est une très mauvaise journée.",
-  "Il y a un indice très important.",
-  "Il s'appelle le S&P cinq cents.",
-  "Vendredi, cet indice perd presque quatre pour cent.",
-  "Le Nasdaq perd plus de cinq pour cent.",
-  "Le Dow Jones perd presque deux pour cent.",
-  "Les entreprises de technologie perdent le plus.",
-  "Par exemple, il y a Nvidia.",
-  "Nvidia fait des puces pour les ordinateurs.",
-  "Ces puces sont très importantes pour l'intelligence artificielle.",
-  "Vendredi, l'action de Nvidia perd presque quatorze pour cent.",
-  "C'est énorme pour une si grande entreprise.",
-  "Pourquoi ?",
-  "La SEC surveille la bourse américaine.",
-  "Selon l'agence Reuters, la SEC regarde les comptes de Nvidia.",
-  "Elle cherche peut-être des problèmes.",
-  "Alors, beaucoup de gens ont peur.",
-  "Ils vendent leurs actions.",
-  "Quand beaucoup de gens vendent, le prix baisse.",
-  "C'est simple.",
-  "Le Nasdaq est maintenant presque vingt pour cent plus bas qu'en octobre.",
-  "En octobre, il est à un record.",
-  "Les experts parlent d'une correction.",
-  "Une correction, c'est une baisse de dix pour cent ou plus.",
-  "Cette semaine, la bourse travaille moins.",
-  "Jeudi, c'est Thanksgiving, et la bourse est fermée.",
-  "Vendredi, elle ferme tôt.",
-  "Deuxième nouvelle : une grande fête à New York.",
-  "Jeudi, c'est Thanksgiving.",
-  "À New York, il y a une parade très célèbre.",
-  "C'est la parade de Macy's.",
-  "Macy's est un grand magasin.",
-  "Cette année, c'est une parade très spéciale.",
-  "C'est la centième parade.",
-  "La première parade est en mille neuf cent vingt-quatre.",
-  "Pendant la guerre, de mille neuf cent quarante-deux à mille neuf cent quarante-quatre, il n'y a pas de parade.",
-  "Jeudi, la parade commence à huit heures et demie du matin.",
-  "Elle passe dans les rues de Manhattan.",
-  "Elle fait environ quatre kilomètres.",
-  "Elle finit devant le grand magasin Macy's, à Herald Square.",
-  "Dans la parade, il y a des ballons géants.",
-  "Certains ballons sont plus grands qu'une maison.",
-  "Des personnes tiennent les ballons avec des cordes.",
-  "Il y a aussi des chars.",
-  "Un char, c'est une grande décoration sur des roues.",
-  "Cette année, il y a cent ballons et chars.",
-  "C'est un record.",
-  "Il y a de nouveaux ballons.",
-  "Par exemple, il y a Bluey, un petit chien bleu.",
-  "Il y a Hello Kitty.",
-  "Il y a aussi Mickey.",
-  "Il y a beaucoup de musique.",
-  "Dix fanfares marchent dans les rues.",
-  "Beaucoup de chanteurs chantent.",
-  "Plus de onze mille personnes participent.",
-  "À la fin, le Père Noël arrive.",
-  "Pour les enfants, c'est le début de la saison de Noël.",
-  "Beaucoup d'Américains regardent la parade à la télévision.",
-  "Elle est sur NBC.",
-  "C'est une tradition américaine.",
-  "Troisième nouvelle : une cérémonie reportée à San Francisco.",
-  "San Francisco est une ville de Californie.",
-  "Dans la baie de San Francisco, il y a une petite île.",
-  "Elle s'appelle Alcatraz.",
-  "Avant, sur cette île, il y a une prison célèbre.",
-  "Aujourd'hui, c'est un parc, et les touristes visitent l'île.",
-  "Chaque année, le jour de Thanksgiving, il y a une cérémonie sur l'île.",
-  "C'est une cérémonie des peuples autochtones.",
-  "Les peuples autochtones, ce sont les premiers habitants de l'Amérique.",
-  "La cérémonie commence très tôt, avant le lever du soleil.",
-  "Beaucoup de personnes viennent en bateau.",
-  "Cette année, c'est la quarante-septième cérémonie.",
-  "Mais cette année, la cérémonie est reportée.",
-  "Reporter, c'est faire plus tard.",
-  "Pourquoi ?",
-  "À cause de la mer.",
-  "Cette semaine, la mer monte très haut.",
-  "Ce sont des marées très fortes.",
-  "En anglais, on les appelle king tides.",
-  "Les garde-côtes américains annoncent de très grandes marées du vingt-quatre au vingt-six novembre.",
-  "La mer peut monter à plus de deux mètres.",
-  "Il y a aussi El Niño, et une grosse tempête.",
-  "Pour les bateaux, c'est dangereux.",
-  "Alors, les organisateurs préfèrent attendre.",
-  "La sécurité est plus importante.",
-  "La cérémonie est pour un autre jour.",
-  "Quatrième nouvelle : maintenant, une nouvelle de France.",
-  "Hier, dimanche, il y a une grosse tempête en France.",
-  "Il y a beaucoup de vent.",
-  "Dans le sud-ouest, le vent souffle très fort.",
-  "Près de la mer, il souffle jusqu'à cent vingt kilomètres à l'heure.",
-  "Il y a aussi beaucoup de pluie.",
-  "Dans les montagnes de l'est, il tombe jusqu'à huit centimètres de pluie.",
-  "Dans les Alpes, il neige.",
-  "En haut des montagnes, il y a beaucoup de neige fraîche.",
-  "Dans certains endroits, il y a peut-être plus de cinquante centimètres de neige.",
-  "Sur la mer, les vagues sont très hautes.",
-  "Elles font trois ou quatre mètres.",
-  "Dans le nord, il fait froid : cinq à sept degrés.",
-  "Dans le sud-ouest, il fait plus doux : douze à quinze degrés.",
-  "Près de la côte, un bateau est bloqué.",
-  "Beaucoup de départements sont en vigilance jaune.",
-  "La vigilance jaune, c'est un avertissement.",
-  "Ça veut dire : attention, soyez prudents.",
-  "Et à Paris ?",
-  "À Paris, il pleut beaucoup.",
-  "Il pleut dimanche, et il pleut encore ce matin.",
-  "Météo-France met une partie de l'Île-de-France en vigilance jaune.",
-  "C'est pour la pluie et les inondations.",
-  "L'Île-de-France, c'est la région de Paris.",
-  "Dans le nord et l'ouest du pays, il y a déjà des inondations.",
-  "Aujourd'hui, lundi, le temps est un peu meilleur.",
-  "Mais d'autres tempêtes arrivent peut-être.",
-  "Alors, à Paris, on garde son parapluie.",
-  "C'est la fin de ce résumé.",
-  "Merci, et bonne semaine.",
-  "À demain !"
- ],
- "glossary": {
-  "bonjour": {
-   "french": "bonjour",
-   "english": "hello",
-   "level": "A1",
-   "tag": "greetings"
-  },
-  "et": {
-   "french": "et",
-   "english": "and",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "bienvenue": {
-   "french": "bienvenue",
-   "english": "welcome",
-   "level": "A1",
-   "tag": "greetings"
-  },
-  "voici": {
-   "french": "voici",
-   "english": "here is; here are",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "les": {
-   "french": "les",
-   "english": "the (plural)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "nouvelles": {
-   "french": "la nouvelle",
-   "english": "news stories; the news",
-   "level": "A1",
-   "tag": "media"
-  },
-  "du": {
-   "french": "du",
-   "english": "of the; from the",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "jour": {
-   "french": "le jour",
-   "english": "day",
-   "level": "A1",
-   "tag": "time"
-  },
-  "en": {
-   "french": "en",
-   "english": "in",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "français": {
-   "french": "le français",
-   "english": "French (language)",
-   "level": "A1",
-   "tag": "language"
-  },
-  "très": {
-   "french": "très",
-   "english": "very",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "simple": {
-   "french": "simple",
-   "english": "simple",
-   "level": "A1",
-   "tag": "general"
-  },
-  "aujourd'hui": {
-   "french": "aujourd'hui",
-   "english": "today",
-   "level": "A1",
-   "tag": "time"
-  },
-  "nous": {
-   "french": "nous",
-   "english": "we",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "sommes": {
-   "french": "être",
-   "english": "(we) are",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "le": {
-   "french": "le",
-   "english": "the; it",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "lundi": {
-   "french": "lundi",
-   "english": "Monday",
-   "level": "A1",
-   "tag": "time"
-  },
-  "vingt-trois": {
-   "french": "vingt-trois",
-   "english": "twenty-three",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "novembre": {
-   "french": "novembre",
-   "english": "November",
-   "level": "A1",
-   "tag": "time"
-  },
-  "c'est": {
-   "french": "c'est",
-   "english": "it is; this is",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "début": {
-   "french": "le début",
-   "english": "beginning; start",
-   "level": "A2",
-   "tag": "time"
-  },
-  "d'une": {
-   "french": "une",
-   "english": "a; an; one",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "nouvelle": {
-   "french": "la nouvelle",
-   "english": "news story",
-   "level": "A1",
-   "tag": "media"
-  },
-  "semaine": {
-   "french": "la semaine",
-   "english": "week",
-   "level": "A1",
-   "tag": "time"
-  },
-  "avons": {
-   "french": "avoir",
-   "english": "(we) have",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "quatre": {
-   "french": "quatre",
-   "english": "four",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "trois": {
-   "french": "trois",
-   "english": "three",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "sont": {
-   "french": "être",
-   "english": "(they) are",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "des": {
-   "french": "des",
-   "english": "some; of the; from the",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "états-unis": {
-   "french": "les États-Unis",
-   "english": "the United States",
-   "level": "A1",
-   "tag": "places"
-  },
-  "une": {
-   "french": "une",
-   "english": "a; one",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "est": {
-   "french": "être",
-   "english": "is",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "de": {
-   "french": "de",
-   "english": "of; from",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "france": {
-   "french": "la France",
-   "english": "France",
-   "level": "A1",
-   "tag": "geography"
-  },
-  "écoutez": {
-   "french": "écouter",
-   "english": "listen",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "bien": {
-   "french": "bien",
-   "english": "well; carefully",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "on": {
-   "french": "on",
-   "english": "we; one; people",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "commence": {
-   "french": "commencer",
-   "english": "start; begins",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "première": {
-   "french": "premier",
-   "english": "first",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "mauvaise": {
-   "french": "mauvais",
-   "english": "bad",
-   "level": "A1",
-   "tag": "description"
-  },
-  "journée": {
-   "french": "la journée",
-   "english": "day (the whole day)",
-   "level": "A1",
-   "tag": "time"
-  },
-  "à": {
-   "french": "à",
-   "english": "at; to; in",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "wall": {
-   "french": "Wall Street",
-   "english": "(name) Wall Street, the New York stock market",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "street": {
-   "french": "Wall Street",
-   "english": "(name) Wall Street, the New York stock market",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "la": {
-   "french": "la",
-   "english": "the (feminine)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "bourse": {
-   "french": "la Bourse",
-   "english": "stock market",
-   "level": "B1",
-   "tag": "economy"
-  },
-  "new": {
-   "french": "New York",
-   "english": "(name) New York",
-   "level": "A1",
-   "tag": "places"
-  },
-  "york": {
-   "french": "New York",
-   "english": "(name) New York",
-   "level": "A1",
-   "tag": "places"
-  },
-  "gens": {
-   "french": "les gens",
-   "english": "people",
-   "level": "A1",
-   "tag": "people"
-  },
-  "achètent": {
-   "french": "acheter",
-   "english": "(they) buy",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "vendent": {
-   "french": "vendre",
-   "english": "(they) sell",
-   "level": "A1",
-   "tag": "general"
-  },
-  "actions": {
-   "french": "une action",
-   "english": "shares (of stock)",
-   "level": "B1",
-   "tag": "economy"
-  },
-  "action": {
-   "french": "l'action",
-   "english": "a share (of stock)",
-   "level": "A2",
-   "tag": "economy"
-  },
-  "petite": {
-   "french": "petit",
-   "english": "small; little",
-   "level": "A1",
-   "tag": "general"
-  },
-  "partie": {
-   "french": "la partie",
-   "english": "part",
-   "level": "A1",
-   "tag": "general"
-  },
-  "entreprise": {
-   "french": "l'entreprise",
-   "english": "company; business",
-   "level": "A2",
-   "tag": "business"
-  },
-  "vendredi": {
-   "french": "le vendredi",
-   "english": "Friday",
-   "level": "A1",
-   "tag": "time"
-  },
-  "baissent": {
-   "french": "baisser",
-   "english": "fall; go down",
-   "level": "A2",
-   "tag": "economy"
-  },
-  "beaucoup": {
-   "french": "beaucoup",
-   "english": "a lot; many; much",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "il": {
-   "french": "il",
-   "english": "he; it",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "y": {
-   "french": "y",
-   "english": "there (in il y a)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "a": {
-   "french": "avoir",
-   "english": "has (il y a = there is)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "un": {
-   "french": "un",
-   "english": "a; one",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "indice": {
-   "french": "un indice",
-   "english": "stock index",
-   "level": "B1",
-   "tag": "economy"
-  },
-  "important": {
-   "french": "important",
-   "english": "important",
-   "level": "A1",
-   "tag": "general"
-  },
-  "s'appelle": {
-   "french": "s'appeler",
-   "english": "is called; is named",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "s&p": {
-   "french": "S&P 500",
-   "english": "(name) S&P 500, a US stock index",
-   "level": "A1",
-   "tag": "names"
-  },
-  "cinq": {
-   "french": "cinq",
-   "english": "five",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "cents": {
-   "french": "cent",
-   "english": "hundred",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "cet": {
-   "french": "ce",
-   "english": "this (before a vowel)",
-   "level": "A1",
-   "tag": "general"
-  },
-  "perd": {
-   "french": "perdre",
-   "english": "loses",
-   "level": "A1",
-   "tag": "politics"
-  },
-  "presque": {
-   "french": "presque",
-   "english": "almost; nearly",
-   "level": "A1",
-   "tag": "general"
-  },
-  "pour": {
-   "french": "pour",
-   "english": "for",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "cent": {
-   "french": "cent",
-   "english": "hundred",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "nasdaq": {
-   "french": "Nasdaq",
-   "english": "(name) Nasdaq, a US stock index",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "plus": {
-   "french": "plus",
-   "english": "more (le plus = the most)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "dow": {
-   "french": "Dow Jones",
-   "english": "(name) Dow Jones, a US stock index",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "jones": {
-   "french": "Dow Jones",
-   "english": "(name) Dow Jones, a US stock index",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "deux": {
-   "french": "deux",
-   "english": "two",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "entreprises": {
-   "french": "une entreprise",
-   "english": "companies",
-   "level": "A2",
-   "tag": "economy"
-  },
-  "technologie": {
-   "french": "la technologie",
-   "english": "technology",
-   "level": "A2",
-   "tag": "technology"
-  },
-  "perdent": {
-   "french": "perdre",
-   "english": "(they) lose",
-   "level": "A1",
-   "tag": "general"
-  },
-  "par": {
-   "french": "par",
-   "english": "by; through",
-   "level": "A1",
-   "tag": "basic"
-  },
-  "exemple": {
-   "french": "un exemple",
-   "english": "example (par exemple = for example)",
-   "level": "A1",
-   "tag": "general"
-  },
-  "nvidia": {
-   "french": "Nvidia",
-   "english": "(name) Nvidia, an American chip company",
-   "level": "A1",
-   "tag": "technology"
-  },
-  "fait": {
-   "french": "faire",
-   "english": "makes; (elle fait 4 km) it is 4 km long; (il fait froid) it is cold",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "puces": {
-   "french": "une puce",
-   "english": "chips (computer chips)",
-   "level": "B1",
-   "tag": "technology"
-  },
-  "ordinateurs": {
-   "french": "un ordinateur",
-   "english": "computers",
-   "level": "A1",
-   "tag": "technology"
-  },
-  "ces": {
-   "french": "ces",
-   "english": "these",
-   "level": "A1",
-   "tag": "general"
-  },
-  "importantes": {
-   "french": "important",
-   "english": "important",
-   "level": "A1",
-   "tag": "general"
-  },
-  "l'intelligence": {
-   "french": "l'intelligence",
-   "english": "intelligence (l'intelligence artificielle = artificial intelligence)",
-   "level": "A2",
-   "tag": "technology"
-  },
-  "artificielle": {
-   "french": "artificiel",
-   "english": "artificial",
-   "level": "B1",
-   "tag": "technology"
-  },
-  "l'action": {
-   "french": "l'action",
-   "english": "the share; the stock",
-   "level": "B1",
-   "tag": "economy"
-  },
-  "quatorze": {
-   "french": "quatorze",
-   "english": "fourteen",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "énorme": {
-   "french": "énorme",
-   "english": "huge",
-   "level": "A2",
-   "tag": "general"
-  },
-  "si": {
-   "french": "si",
-   "english": "so (si grande = so big)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "grande": {
-   "french": "grand",
-   "english": "big; great",
-   "level": "A1",
-   "tag": "general"
-  },
-  "pourquoi": {
-   "french": "pourquoi",
-   "english": "why",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "sec": {
-   "french": "la SEC",
-   "english": "(name) the SEC, the US agency that watches the stock market",
-   "level": "B1",
-   "tag": "economy"
-  },
-  "surveille": {
-   "french": "surveiller",
-   "english": "watches over; monitors",
-   "level": "A2",
-   "tag": "economy"
-  },
-  "américaine": {
-   "french": "américain",
-   "english": "American",
-   "level": "A1",
-   "tag": "countries"
-  },
-  "selon": {
-   "french": "selon",
-   "english": "according to",
-   "level": "A2",
-   "tag": "general"
-  },
-  "l'agence": {
-   "french": "l'agence",
-   "english": "agency",
-   "level": "A2",
-   "tag": "government"
-  },
-  "reuters": {
-   "french": "Reuters",
-   "english": "(name) Reuters, a news agency",
-   "level": "A1",
-   "tag": "media"
-  },
-  "regarde": {
-   "french": "regarder",
-   "english": "looks at",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "comptes": {
-   "french": "le compte",
-   "english": "accounts (a company's financial accounts)",
-   "level": "A2",
-   "tag": "economy"
-  },
-  "elle": {
-   "french": "elle",
-   "english": "she; it",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "cherche": {
-   "french": "chercher",
-   "english": "looks for",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "peut-être": {
-   "french": "peut-être",
-   "english": "maybe; perhaps",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "problèmes": {
-   "french": "le problème",
-   "english": "problems",
-   "level": "A1",
-   "tag": "general"
-  },
-  "alors": {
-   "french": "alors",
-   "english": "so; then",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "ont": {
-   "french": "avoir",
-   "english": "have (ont peur = are afraid)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "peur": {
-   "french": "la peur",
-   "english": "fear (avoir peur = to be afraid)",
-   "level": "A1",
-   "tag": "feelings"
-  },
-  "ils": {
-   "french": "ils",
-   "english": "they",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "leurs": {
-   "french": "leur",
-   "english": "their (plural)",
-   "level": "A1",
-   "tag": "general"
-  },
-  "quand": {
-   "french": "quand",
-   "english": "when",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "prix": {
-   "french": "le prix",
-   "english": "price",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "baisse": {
-   "french": "baisser",
-   "english": "goes down; falls (une baisse = a drop)",
-   "level": "A2",
-   "tag": "economy"
-  },
-  "maintenant": {
-   "french": "maintenant",
-   "english": "now",
-   "level": "A1",
-   "tag": "time"
-  },
-  "vingt": {
-   "french": "vingt",
-   "english": "twenty",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "bas": {
-   "french": "bas",
-   "english": "low (plus bas = lower)",
-   "level": "A1",
-   "tag": "description"
-  },
-  "qu'en": {
-   "french": "que",
-   "english": "than in (plus bas qu'en octobre = lower than in October)",
-   "level": "A2",
-   "tag": "grammar"
-  },
-  "octobre": {
-   "french": "octobre",
-   "english": "October",
-   "level": "A1",
-   "tag": "time"
-  },
-  "record": {
-   "french": "le record",
-   "english": "record",
-   "level": "A2",
-   "tag": "general"
-  },
-  "experts": {
-   "french": "l'expert",
-   "english": "experts",
-   "level": "A2",
-   "tag": "general"
-  },
-  "parlent": {
-   "french": "parler",
-   "english": "(they) talk",
-   "level": "A1",
-   "tag": "general"
-  },
-  "correction": {
-   "french": "une correction",
-   "english": "correction (a drop of more than 10% in the stock market)",
-   "level": "B2",
-   "tag": "economy"
-  },
-  "dix": {
-   "french": "dix",
-   "english": "ten",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "ou": {
-   "french": "ou",
-   "english": "or",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "cette": {
-   "french": "ce",
-   "english": "this",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "travaille": {
-   "french": "travailler",
-   "english": "works",
-   "level": "A1",
-   "tag": "work"
-  },
-  "moins": {
-   "french": "moins",
-   "english": "less",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "jeudi": {
-   "french": "le jeudi",
-   "english": "Thursday",
-   "level": "A1",
-   "tag": "time"
-  },
-  "thanksgiving": {
-   "french": "Thanksgiving",
-   "english": "(name) Thanksgiving",
-   "level": "A1",
-   "tag": "holidays"
-  },
-  "fermée": {
-   "french": "fermer",
-   "english": "closed",
-   "level": "A1",
-   "tag": "general"
-  },
-  "ferme": {
-   "french": "fermer",
-   "english": "closes",
-   "level": "A1",
-   "tag": "economy"
-  },
-  "tôt": {
-   "french": "tôt",
-   "english": "early",
-   "level": "A1",
-   "tag": "time"
-  },
-  "deuxième": {
-   "french": "deuxième",
-   "english": "second",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "fête": {
-   "french": "la fête",
-   "english": "party; celebration",
-   "level": "A1",
-   "tag": "holidays"
-  },
-  "parade": {
-   "french": "la parade",
-   "english": "parade",
-   "level": "A2",
-   "tag": "culture"
-  },
-  "célèbre": {
-   "french": "célèbre",
-   "english": "famous",
-   "level": "A2",
-   "tag": "general"
-  },
-  "macy's": {
-   "french": "Macy's",
-   "english": "(name) Macy's, a big New York department store",
-   "level": "A1",
-   "tag": "shopping"
-  },
-  "grand": {
-   "french": "grand",
-   "english": "big; great",
-   "level": "A1",
-   "tag": "general"
-  },
-  "magasin": {
-   "french": "le magasin",
-   "english": "store; shop",
-   "level": "A1",
-   "tag": "shopping"
-  },
-  "année": {
-   "french": "l'année",
-   "english": "year",
-   "level": "A1",
-   "tag": "time"
-  },
-  "spéciale": {
-   "french": "spécial",
-   "english": "special",
-   "level": "A1",
-   "tag": "general"
-  },
-  "centième": {
-   "french": "centième",
-   "english": "hundredth",
-   "level": "A2",
-   "tag": "numbers"
-  },
-  "mille": {
-   "french": "mille",
-   "english": "thousand",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "neuf": {
-   "french": "neuf",
-   "english": "nine",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "vingt-quatre": {
-   "french": "vingt-quatre",
-   "english": "twenty-four",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "pendant": {
-   "french": "pendant",
-   "english": "during",
-   "level": "A1",
-   "tag": "time"
-  },
-  "guerre": {
-   "french": "la guerre",
-   "english": "war",
-   "level": "A2",
-   "tag": "general"
-  },
-  "quarante-deux": {
-   "french": "quarante-deux",
-   "english": "forty-two",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "quarante-quatre": {
-   "french": "quarante-quatre",
-   "english": "forty-four",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "n'y": {
-   "french": "il n'y a pas",
-   "english": "(there is) not",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "pas": {
-   "french": "pas",
-   "english": "not (ne... pas)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "huit": {
-   "french": "huit",
-   "english": "eight",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "heures": {
-   "french": "l'heure",
-   "english": "o'clock; hours",
-   "level": "A1",
-   "tag": "time"
-  },
-  "demie": {
-   "french": "demi",
-   "english": "half (huit heures et demie = 8:30)",
-   "level": "A1",
-   "tag": "time"
-  },
-  "matin": {
-   "french": "le matin",
-   "english": "morning",
-   "level": "A1",
-   "tag": "time"
-  },
-  "passe": {
-   "french": "passer",
-   "english": "passes; goes by",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "dans": {
-   "french": "dans",
-   "english": "in; into",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "rues": {
-   "french": "la rue",
-   "english": "streets",
-   "level": "A1",
-   "tag": "city"
-  },
-  "manhattan": {
-   "french": "Manhattan",
-   "english": "(name) Manhattan, in New York",
-   "level": "A1",
-   "tag": "places"
-  },
-  "environ": {
-   "french": "environ",
-   "english": "about; around",
-   "level": "A2",
-   "tag": "numbers"
-  },
-  "kilomètres": {
-   "french": "le kilomètre",
-   "english": "kilometers",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "finit": {
-   "french": "finir",
-   "english": "ends; finishes",
-   "level": "A1",
-   "tag": "general"
-  },
-  "devant": {
-   "french": "devant",
-   "english": "in front of",
-   "level": "A1",
-   "tag": "general"
-  },
-  "herald": {
-   "french": "Herald Square",
-   "english": "(name) Herald Square, a square in New York",
-   "level": "A1",
-   "tag": "places"
-  },
-  "square": {
-   "french": "Herald Square",
-   "english": "(name) Herald Square, a square in New York",
-   "level": "A1",
-   "tag": "places"
-  },
-  "ballons": {
-   "french": "le ballon",
-   "english": "balloons",
-   "level": "A1",
-   "tag": "celebration"
-  },
-  "géants": {
-   "french": "géant",
-   "english": "giant",
-   "level": "A2",
-   "tag": "description"
-  },
-  "certains": {
-   "french": "certain",
-   "english": "some",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "grands": {
-   "french": "grand",
-   "english": "big; tall (plural)",
-   "level": "A1",
-   "tag": "description"
-  },
-  "qu'une": {
-   "french": "que",
-   "english": "than a (plus grands qu'une maison = bigger than a house)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "maison": {
-   "french": "la maison",
-   "english": "house",
-   "level": "A1",
-   "tag": "home"
-  },
-  "personnes": {
-   "french": "la personne",
-   "english": "people",
-   "level": "A1",
-   "tag": "people"
-  },
-  "tiennent": {
-   "french": "tenir",
-   "english": "(they) hold",
-   "level": "A2",
-   "tag": "actions"
-  },
-  "avec": {
-   "french": "avec",
-   "english": "with",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "cordes": {
-   "french": "la corde",
-   "english": "ropes",
-   "level": "A2",
-   "tag": "objects"
-  },
-  "aussi": {
-   "french": "aussi",
-   "english": "also; too",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "chars": {
-   "french": "le char",
-   "english": "floats (parade floats)",
-   "level": "B1",
-   "tag": "celebration"
-  },
-  "char": {
-   "french": "le char",
-   "english": "a float (parade float)",
-   "level": "B1",
-   "tag": "celebration"
-  },
-  "décoration": {
-   "french": "la décoration",
-   "english": "decoration",
-   "level": "A2",
-   "tag": "celebration"
-  },
-  "sur": {
-   "french": "sur",
-   "english": "on",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "roues": {
-   "french": "la roue",
-   "english": "wheels",
-   "level": "A2",
-   "tag": "objects"
-  },
-  "nouveaux": {
-   "french": "nouveau",
-   "english": "new",
-   "level": "A1",
-   "tag": "general"
-  },
-  "bluey": {
-   "french": "Bluey",
-   "english": "(name) Bluey, a cartoon dog",
-   "level": "A1",
-   "tag": "culture"
-  },
-  "petit": {
-   "french": "petit",
-   "english": "small; little",
-   "level": "A1",
-   "tag": "general"
-  },
-  "chien": {
-   "french": "le chien",
-   "english": "dog",
-   "level": "A1",
-   "tag": "animals"
-  },
-  "bleu": {
-   "french": "bleu",
-   "english": "blue",
-   "level": "A1",
-   "tag": "colors"
-  },
-  "hello": {
-   "french": "Hello Kitty",
-   "english": "(name) Hello Kitty, a cartoon cat",
-   "level": "A1",
-   "tag": "culture"
-  },
-  "kitty": {
-   "french": "Hello Kitty",
-   "english": "(name) Hello Kitty, a cartoon cat",
-   "level": "A1",
-   "tag": "culture"
-  },
-  "mickey": {
-   "french": "Mickey",
-   "english": "(name) Mickey Mouse",
-   "level": "A1",
-   "tag": "culture"
-  },
-  "musique": {
-   "french": "la musique",
-   "english": "music",
-   "level": "A1",
-   "tag": "culture"
-  },
-  "fanfares": {
-   "french": "la fanfare",
-   "english": "marching bands",
-   "level": "B1",
-   "tag": "music"
-  },
-  "marchent": {
-   "french": "marcher",
-   "english": "walk; march",
-   "level": "A1",
-   "tag": "politics"
-  },
-  "chanteurs": {
-   "french": "le chanteur",
-   "english": "singers",
-   "level": "A1",
-   "tag": "music"
-  },
-  "chantent": {
-   "french": "chanter",
-   "english": "(they) sing",
-   "level": "A1",
-   "tag": "music"
-  },
-  "onze": {
-   "french": "onze",
-   "english": "eleven",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "participent": {
-   "french": "participer",
-   "english": "take part",
-   "level": "A2",
-   "tag": "politics"
-  },
-  "fin": {
-   "french": "la fin",
-   "english": "end",
-   "level": "A1",
-   "tag": "general"
-  },
-  "père": {
-   "french": "le père",
-   "english": "father (Père Noël = Santa Claus)",
-   "level": "A1",
-   "tag": "holidays"
-  },
-  "noël": {
-   "french": "Noël",
-   "english": "Christmas",
-   "level": "A1",
-   "tag": "holidays"
-  },
-  "arrive": {
-   "french": "arriver",
-   "english": "arrives",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "enfants": {
-   "french": "l'enfant",
-   "english": "children",
-   "level": "A1",
-   "tag": "family"
-  },
-  "saison": {
-   "french": "la saison",
-   "english": "season",
-   "level": "A1",
-   "tag": "time"
-  },
-  "d'américains": {
-   "french": "l'Américain",
-   "english": "(of) Americans",
-   "level": "A1",
-   "tag": "people"
-  },
-  "regardent": {
-   "french": "regarder",
-   "english": "(they) look at",
-   "level": "A1",
-   "tag": "general"
-  },
-  "télévision": {
-   "french": "la télévision",
-   "english": "television",
-   "level": "A1",
-   "tag": "media"
-  },
-  "nbc": {
-   "french": "NBC",
-   "english": "(name) NBC, a US TV network",
-   "level": "A1",
-   "tag": "media"
-  },
-  "tradition": {
-   "french": "la tradition",
-   "english": "tradition",
-   "level": "A2",
-   "tag": "culture"
-  },
-  "troisième": {
-   "french": "troisième",
-   "english": "third",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "cérémonie": {
-   "french": "la cérémonie",
-   "english": "ceremony",
-   "level": "A2",
-   "tag": "culture"
-  },
-  "reportée": {
-   "french": "reporter",
-   "english": "postponed",
-   "level": "B1",
-   "tag": "events"
-  },
-  "san": {
-   "french": "San Francisco",
-   "english": "(name) San Francisco",
-   "level": "A1",
-   "tag": "places"
-  },
-  "francisco": {
-   "french": "San Francisco",
-   "english": "(name) San Francisco",
-   "level": "A1",
-   "tag": "places"
-  },
-  "ville": {
-   "french": "la ville",
-   "english": "town; city",
-   "level": "A1",
-   "tag": "places"
-  },
-  "californie": {
-   "french": "la Californie",
-   "english": "(name) California",
-   "level": "A1",
-   "tag": "places"
-  },
-  "baie": {
-   "french": "la baie",
-   "english": "bay",
-   "level": "A2",
-   "tag": "nature"
-  },
-  "île": {
-   "french": "une île",
-   "english": "island",
-   "level": "A1",
-   "tag": "geography"
-  },
-  "alcatraz": {
-   "french": "Alcatraz",
-   "english": "(name) Alcatraz, an island in San Francisco Bay",
-   "level": "A1",
-   "tag": "places"
-  },
-  "avant": {
-   "french": "avant",
-   "english": "before",
-   "level": "A1",
-   "tag": "time"
-  },
-  "prison": {
-   "french": "la prison",
-   "english": "prison",
-   "level": "A2",
-   "tag": "justice"
-  },
-  "parc": {
-   "french": "le parc",
-   "english": "park",
-   "level": "A1",
-   "tag": "places"
-  },
-  "touristes": {
-   "french": "le touriste",
-   "english": "tourists",
-   "level": "A1",
-   "tag": "travel"
-  },
-  "visitent": {
-   "french": "visiter",
-   "english": "(they) visit",
-   "level": "A1",
-   "tag": "travel"
-  },
-  "l'île": {
-   "french": "l'île",
-   "english": "the island",
-   "level": "A1",
-   "tag": "nature"
-  },
-  "chaque": {
-   "french": "chaque",
-   "english": "each; every",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "peuples": {
-   "french": "le peuple",
-   "english": "peoples",
-   "level": "A2",
-   "tag": "society"
-  },
-  "autochtones": {
-   "french": "autochtone",
-   "english": "Indigenous; Native",
-   "level": "B1",
-   "tag": "society"
-  },
-  "ce": {
-   "french": "ce",
-   "english": "it; this (ce sont = they are)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "premiers": {
-   "french": "premier",
-   "english": "first (plural)",
-   "level": "A1",
-   "tag": "general"
-  },
-  "habitants": {
-   "french": "l'habitant",
-   "english": "residents; inhabitants",
-   "level": "A2",
-   "tag": "people"
-  },
-  "l'amérique": {
-   "french": "l'Amérique",
-   "english": "America",
-   "level": "A1",
-   "tag": "places"
-  },
-  "lever": {
-   "french": "le lever",
-   "english": "rise (le lever du soleil = sunrise)",
-   "level": "A2",
-   "tag": "time"
-  },
-  "soleil": {
-   "french": "le soleil",
-   "english": "sun (le lever du soleil = sunrise)",
-   "level": "A1",
-   "tag": "nature"
-  },
-  "viennent": {
-   "french": "venir",
-   "english": "(they) come",
-   "level": "A1",
-   "tag": "general"
-  },
-  "bateau": {
-   "french": "le bateau",
-   "english": "boat",
-   "level": "A1",
-   "tag": "travel"
-  },
-  "quarante-septième": {
-   "french": "quarante-septième",
-   "english": "forty-seventh",
-   "level": "A2",
-   "tag": "numbers"
-  },
-  "mais": {
-   "french": "mais",
-   "english": "but",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "reporter": {
-   "french": "reporter",
-   "english": "to postpone; to put off until later",
-   "level": "B1",
-   "tag": "events"
-  },
-  "faire": {
-   "french": "faire",
-   "english": "to do",
-   "level": "A1",
-   "tag": "general"
-  },
-  "tard": {
-   "french": "tard",
-   "english": "late",
-   "level": "A1",
-   "tag": "time"
-  },
-  "cause": {
-   "french": "la cause",
-   "english": "cause (à cause de = because of)",
-   "level": "A2",
-   "tag": "grammar"
-  },
-  "mer": {
-   "french": "la mer",
-   "english": "sea",
-   "level": "A1",
-   "tag": "nature"
-  },
-  "monte": {
-   "french": "monter",
-   "english": "rises; goes up",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "haut": {
-   "french": "haut",
-   "english": "high",
-   "level": "A1",
-   "tag": "description"
-  },
-  "marées": {
-   "french": "la marée",
-   "english": "tides",
-   "level": "B1",
-   "tag": "nature"
-  },
-  "fortes": {
-   "french": "fort",
-   "english": "strong (feminine plural)",
-   "level": "A1",
-   "tag": "description"
-  },
-  "anglais": {
-   "french": "l'anglais",
-   "english": "English (language)",
-   "level": "A1",
-   "tag": "general"
-  },
-  "appelle": {
-   "french": "appeler",
-   "english": "(one) calls",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "king": {
-   "french": "king tides",
-   "english": "(English) king tides, very high tides",
-   "level": "A1",
-   "tag": "nature"
-  },
-  "tides": {
-   "french": "king tides",
-   "english": "(English) king tides, very high tides",
-   "level": "A1",
-   "tag": "nature"
-  },
-  "garde-côtes": {
-   "french": "le garde-côte",
-   "english": "coast guard",
-   "level": "B1",
-   "tag": "safety"
-  },
-  "américains": {
-   "french": "américain",
-   "english": "American (plural)",
-   "level": "A1",
-   "tag": "countries"
-  },
-  "annoncent": {
-   "french": "annoncer",
-   "english": "announce; forecast",
-   "level": "A2",
-   "tag": "verbs"
-  },
-  "grandes": {
-   "french": "grand",
-   "english": "big; great",
-   "level": "A1",
-   "tag": "general"
-  },
-  "au": {
-   "french": "au",
-   "english": "at the; in the",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "vingt-six": {
-   "french": "vingt-six",
-   "english": "twenty-six",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "peut": {
-   "french": "pouvoir",
-   "english": "can; may",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "monter": {
-   "french": "monter",
-   "english": "to rise; to go up",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "mètres": {
-   "french": "le mètre",
-   "english": "meters",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "el": {
-   "french": "El Niño",
-   "english": "(name) El Niño, a warm-ocean weather pattern",
-   "level": "A2",
-   "tag": "weather"
-  },
-  "niño": {
-   "french": "El Niño",
-   "english": "(name) El Niño, a warm-ocean weather pattern",
-   "level": "A2",
-   "tag": "weather"
-  },
-  "grosse": {
-   "french": "gros",
-   "english": "big; heavy",
-   "level": "A1",
-   "tag": "description"
-  },
-  "tempête": {
-   "french": "la tempête",
-   "english": "storm",
-   "level": "A2",
-   "tag": "weather"
-  },
-  "bateaux": {
-   "french": "le bateau",
-   "english": "boats",
-   "level": "A1",
-   "tag": "transport"
-  },
-  "dangereux": {
-   "french": "dangereux",
-   "english": "dangerous",
-   "level": "A1",
-   "tag": "general"
-  },
-  "organisateurs": {
-   "french": "l'organisateur",
-   "english": "organizers",
-   "level": "A2",
-   "tag": "events"
-  },
-  "préfèrent": {
-   "french": "préférer",
-   "english": "(they) prefer",
-   "level": "A1",
-   "tag": "opinion"
-  },
-  "attendre": {
-   "french": "attendre",
-   "english": "to wait",
-   "level": "A1",
-   "tag": "general"
-  },
-  "sécurité": {
-   "french": "la sécurité",
-   "english": "security; safety",
-   "level": "A2",
-   "tag": "security"
-  },
-  "importante": {
-   "french": "important",
-   "english": "important (feminine)",
-   "level": "A1",
-   "tag": "general"
-  },
-  "autre": {
-   "french": "autre",
-   "english": "other; another",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "quatrième": {
-   "french": "quatrième",
-   "english": "fourth",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "hier": {
-   "french": "hier",
-   "english": "yesterday",
-   "level": "A1",
-   "tag": "general"
-  },
-  "dimanche": {
-   "french": "le dimanche",
-   "english": "Sunday",
-   "level": "A1",
-   "tag": "time"
-  },
-  "vent": {
-   "french": "le vent",
-   "english": "wind",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "sud-ouest": {
-   "french": "le sud-ouest",
-   "english": "southwest",
-   "level": "A1",
-   "tag": "places"
-  },
-  "souffle": {
-   "french": "souffler",
-   "english": "blows (le vent souffle = the wind blows)",
-   "level": "A2",
-   "tag": "weather"
-  },
-  "fort": {
-   "french": "fort",
-   "english": "strongly; hard",
-   "level": "A1",
-   "tag": "description"
-  },
-  "près": {
-   "french": "près",
-   "english": "near",
-   "level": "A1",
-   "tag": "places"
-  },
-  "jusqu'à": {
-   "french": "jusqu'à",
-   "english": "up to; until",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "l'heure": {
-   "french": "l'heure",
-   "english": "hour (à l'heure = per hour)",
-   "level": "A1",
-   "tag": "general"
-  },
-  "pluie": {
-   "french": "la pluie",
-   "english": "rain",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "montagnes": {
-   "french": "la montagne",
-   "english": "mountains",
-   "level": "A1",
-   "tag": "nature"
-  },
-  "l'est": {
-   "french": "l'est",
-   "english": "the east",
-   "level": "A1",
-   "tag": "places"
-  },
-  "tombe": {
-   "french": "tomber",
-   "english": "falls",
-   "level": "A1",
-   "tag": "verbs"
-  },
-  "centimètres": {
-   "french": "le centimètre",
-   "english": "centimeters",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "alpes": {
-   "french": "les Alpes",
-   "english": "(name) the Alps, mountains in France",
-   "level": "A1",
-   "tag": "places"
-  },
-  "neige": {
-   "french": "la neige",
-   "english": "snow; (il neige) it snows",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "fraîche": {
-   "french": "frais",
-   "english": "fresh",
-   "level": "A1",
-   "tag": "description"
-  },
-  "endroits": {
-   "french": "l'endroit",
-   "english": "places; spots",
-   "level": "A2",
-   "tag": "places"
-  },
-  "cinquante": {
-   "french": "cinquante",
-   "english": "fifty",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "vagues": {
-   "french": "une vague",
-   "english": "waves",
-   "level": "A1",
-   "tag": "daily life"
-  },
-  "hautes": {
-   "french": "haut",
-   "english": "high; tall (feminine plural)",
-   "level": "A1",
-   "tag": "description"
-  },
-  "elles": {
-   "french": "elles",
-   "english": "they (feminine)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "font": {
-   "french": "faire",
-   "english": "(they) are (elles font 3 m = they are 3 m high)",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "nord": {
-   "french": "le nord",
-   "english": "north",
-   "level": "A1",
-   "tag": "places"
-  },
-  "froid": {
-   "french": "froid",
-   "english": "cold",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "sept": {
-   "french": "sept",
-   "english": "seven",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "degrés": {
-   "french": "le degré",
-   "english": "degrees",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "doux": {
-   "french": "doux",
-   "english": "mild; soft",
-   "level": "A2",
-   "tag": "weather"
-  },
-  "douze": {
-   "french": "douze",
-   "english": "twelve",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "quinze": {
-   "french": "quinze",
-   "english": "fifteen",
-   "level": "A1",
-   "tag": "numbers"
-  },
-  "côte": {
-   "french": "la côte",
-   "english": "coast",
-   "level": "A2",
-   "tag": "nature"
-  },
-  "bloqué": {
-   "french": "bloquer",
-   "english": "stuck; blocked",
-   "level": "A2",
-   "tag": "events"
-  },
-  "départements": {
-   "french": "le département",
-   "english": "departments (French administrative areas, like counties)",
-   "level": "A2",
-   "tag": "places"
-  },
-  "vigilance": {
-   "french": "la vigilance",
-   "english": "alert; watch (weather warning level)",
-   "level": "B1",
-   "tag": "weather"
-  },
-  "jaune": {
-   "french": "jaune",
-   "english": "yellow",
-   "level": "A1",
-   "tag": "colors"
-  },
-  "avertissement": {
-   "french": "l'avertissement",
-   "english": "warning",
-   "level": "B1",
-   "tag": "weather"
-  },
-  "ça": {
-   "french": "ça",
-   "english": "that; this",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "veut": {
-   "french": "vouloir",
-   "english": "wants",
-   "level": "A1",
-   "tag": "general"
-  },
-  "dire": {
-   "french": "dire",
-   "english": "to say",
-   "level": "A1",
-   "tag": "general"
-  },
-  "attention": {
-   "french": "attention",
-   "english": "watch out; careful",
-   "level": "A1",
-   "tag": "safety"
-  },
-  "soyez": {
-   "french": "être",
-   "english": "be",
-   "level": "A2",
-   "tag": "verbs"
-  },
-  "prudents": {
-   "french": "prudent",
-   "english": "careful",
-   "level": "A2",
-   "tag": "safety"
-  },
-  "paris": {
-   "french": "Paris",
-   "english": "(name) Paris",
-   "level": "A1",
-   "tag": "places"
-  },
-  "pleut": {
-   "french": "pleuvoir",
-   "english": "rains (il pleut = it is raining)",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "encore": {
-   "french": "encore",
-   "english": "again; still",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "météo-france": {
-   "french": "Météo-France",
-   "english": "(name) Météo-France, the weather service",
-   "level": "A1",
-   "tag": "names"
-  },
-  "met": {
-   "french": "mettre",
-   "english": "puts",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "l'île-de-france": {
-   "french": "l'Île-de-France",
-   "english": "(name) Île-de-France, the Paris region",
-   "level": "A1",
-   "tag": "places"
-  },
-  "inondations": {
-   "french": "une inondation",
-   "english": "floods",
-   "level": "B1",
-   "tag": "weather"
-  },
-  "région": {
-   "french": "une région",
-   "english": "region",
-   "level": "A1",
-   "tag": "general"
-  },
-  "l'ouest": {
-   "french": "l'ouest",
-   "english": "the west",
-   "level": "A1",
-   "tag": "geography"
-  },
-  "pays": {
-   "french": "un pays",
-   "english": "country; countries",
-   "level": "A1",
-   "tag": "general"
-  },
-  "déjà": {
-   "french": "déjà",
-   "english": "already",
-   "level": "A1",
-   "tag": "general"
-  },
-  "temps": {
-   "french": "le temps",
-   "english": "weather; time",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "peu": {
-   "french": "peu",
-   "english": "little (un peu = a little)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "meilleur": {
-   "french": "meilleur",
-   "english": "better",
-   "level": "A1",
-   "tag": "description"
-  },
-  "d'autres": {
-   "french": "d'autres",
-   "english": "other (d'autres chefs = other leaders)",
-   "level": "A1",
-   "tag": "grammar"
-  },
-  "tempêtes": {
-   "french": "la tempête",
-   "english": "storms",
-   "level": "A2",
-   "tag": "weather"
-  },
-  "arrivent": {
-   "french": "arriver",
-   "english": "arrive",
-   "level": "A1",
-   "tag": "general"
-  },
-  "garde": {
-   "french": "garder",
-   "english": "keeps",
-   "level": "A1",
-   "tag": "actions"
-  },
-  "son": {
-   "french": "son",
-   "english": "his; her; its",
-   "level": "A1",
-   "tag": "general"
-  },
-  "parapluie": {
-   "french": "le parapluie",
-   "english": "umbrella",
-   "level": "A1",
-   "tag": "weather"
-  },
-  "résumé": {
-   "french": "le résumé",
-   "english": "summary",
-   "level": "A2",
-   "tag": "media"
-  },
-  "merci": {
-   "french": "merci",
-   "english": "thank you",
-   "level": "A1",
-   "tag": "greetings"
-  },
-  "bonne": {
-   "french": "bon",
-   "english": "good",
-   "level": "A1",
-   "tag": "general"
-  },
-  "demain": {
-   "french": "demain",
-   "english": "tomorrow",
-   "level": "A1",
-   "tag": "time"
+  "label": "Actualité américaine et parisienne • 24 novembre 2026 • Niveau A1",
+  "date": "2026-11-24",
+  "level": "A1",
+  "generated_at": "2026-11-24T05:55:00-05:00",
+  "vocabularyWords": [
+    "patron",
+    "voyagent",
+    "voiture",
+    "billets",
+    "dindes",
+    "pardonne",
+    "patinoire",
+    "toit",
+    "glace",
+    "verglas",
+    "flocons",
+    "lune"
+  ],
+  "phrases": [
+    "Bonjour, et bienvenue.",
+    "Voici les nouvelles du jour, en français très simple.",
+    "Aujourd'hui, nous sommes le mardi vingt-quatre novembre.",
+    "Jeudi, c'est Thanksgiving.",
+    "Nous avons quatre nouvelles.",
+    "Trois nouvelles sont des États-Unis.",
+    "Une nouvelle est de Paris.",
+    "Écoutez bien.",
+    "On commence.",
+    "Première nouvelle : une très bonne journée à Wall Street.",
+    "Hier, nous parlons d'une très mauvaise journée à la bourse.",
+    "Vendredi, les actions baissent beaucoup.",
+    "Mais lundi, c'est le contraire.",
+    "Lundi, les actions montent beaucoup.",
+    "Beaucoup de gens achètent à nouveau des actions.",
+    "L'indice S&P cinq cents gagne presque cinq pour cent.",
+    "Le Nasdaq gagne six pour cent et demi.",
+    "Le Dow Jones gagne environ trois pour cent.",
+    "C'est la meilleure journée depuis avril deux mille vingt-cinq.",
+    "Pourquoi ?",
+    "À cause de Nvidia.",
+    "Nvidia fait des puces pour l'intelligence artificielle.",
+    "Le patron de Nvidia s'appelle Jensen Huang.",
+    "Le douze novembre, Jensen Huang quitte son poste.",
+    "Il part après un scandale dans sa vie privée.",
+    "Une autre personne dirige l'entreprise pour un moment.",
+    "Elle s'appelle Colette Kress.",
+    "Mais lundi, le conseil d'administration change d'avis.",
+    "Jensen Huang redevient le patron de Nvidia.",
+    "Le président Donald Trump soutient cette décision.",
+    "Il dit : il n'y a pas de risque pour la sécurité nationale.",
+    "Alors, les investisseurs sont contents.",
+    "Un investisseur, c'est une personne qui achète des actions.",
+    "Lundi, l'action de Nvidia monte de trente et un pour cent.",
+    "C'est énorme.",
+    "C'est la plus forte hausse en une journée depuis plus de vingt ans.",
+    "En une journée, Nvidia gagne presque mille milliards de dollars de valeur.",
+    "Mais il y a encore des questions.",
+    "La SEC regarde toujours les comptes de Nvidia.",
+    "Et des élus, au Congrès, veulent des réponses.",
+    "Deuxième nouvelle : les Américains voyagent pour Thanksgiving.",
+    "Thanksgiving, c'est une grande fête de famille.",
+    "Beaucoup de personnes voyagent pour voir leur famille.",
+    "Selon l'AAA, cette année, quatre-vingt-un millions et demi d'Américains voyagent.",
+    "C'est un peu moins que l'année dernière.",
+    "Ils voyagent de mardi à lundi prochain.",
+    "Ils voyagent à plus de quatre-vingts kilomètres de leur maison.",
+    "La plupart des gens prennent la voiture.",
+    "Presque soixante-treize millions de personnes voyagent en voiture.",
+    "Presque six millions de personnes prennent l'avion.",
+    "D'autres prennent le train, le bus ou le bateau.",
+    "Où vont les Américains ?",
+    "Beaucoup vont en Floride, à Orlando ou à Miami.",
+    "D'autres vont à Los Angeles ou à New York.",
+    "Aujourd'hui, mardi, et demain, mercredi, il y a beaucoup de voitures sur les routes.",
+    "Le jour de Thanksgiving, les routes sont plus calmes.",
+    "Dans les aéroports aussi, il y a beaucoup de monde.",
+    "La TSA contrôle les passagers dans les aéroports.",
+    "Cette semaine, la TSA attend presque dix-sept millions six cent mille passagers.",
+    "Dimanche, c'est le jour le plus difficile.",
+    "Dimanche, plus de trois millions de passagers prennent l'avion.",
+    "Voyager coûte cher cette année.",
+    "L'essence est chère.",
+    "Selon l'AAA, un gallon d'essence coûte en moyenne trois dollars quatre-vingt-sept.",
+    "Les billets d'avion sont aussi plus chers.",
+    "Selon Hopper, ils coûtent trente-neuf pour cent de plus que l'année dernière.",
+    "La TSA donne un conseil : arrivez tôt.",
+    "Amtrak, le train américain, attend aussi un record de passagers.",
+    "Il y a des trains en plus entre Washington et New York.",
+    "Alors, si vous voyagez cette semaine, soyez patients !",
+    "Troisième nouvelle : deux dindes à la Maison-Blanche.",
+    "Pour Thanksgiving, beaucoup d'Américains mangent de la dinde.",
+    "La dinde, c'est un grand oiseau.",
+    "Mais chaque année, il y a une tradition amusante.",
+    "Le président pardonne une dinde.",
+    "Alors, cette dinde ne finit pas sur la table.",
+    "Elle reste en vie.",
+    "Aujourd'hui, mardi, le président Trump pardonne deux dindes.",
+    "Elles s'appellent Freedom et Feather.",
+    "En français : Liberté et Plume.",
+    "Elles viennent de Virginie-Occidentale.",
+    "Lundi, elles sont dans un grand hôtel de Washington.",
+    "Les deux dindes sont pardonnées.",
+    "Mais une seule dinde participe à la cérémonie.",
+    "Les Américains votent sur Internet pour choisir cette dinde.",
+    "Après, les deux dindes vont au Texas.",
+    "Elles vont vivre à l'université Texas A&M.",
+    "Là-bas, elles sont tranquilles.",
+    "Cette tradition existe chaque année depuis mille neuf cent quatre-vingt-neuf.",
+    "Elle commence avec le président George H. W. Bush.",
+    "Quatrième nouvelle : maintenant, une nouvelle de Paris.",
+    "À Paris, c'est bientôt Noël.",
+    "Aujourd'hui, une patinoire ouvre sur le toit des Galeries Lafayette.",
+    "Les Galeries Lafayette, c'est un très grand magasin à Paris.",
+    "Sur le toit, il y a une très belle vue sur Paris.",
+    "On peut voir la tour Eiffel.",
+    "Pour les touristes, c'est une très bonne photo.",
+    "Une patinoire, c'est une piste de glace.",
+    "Sur la glace, on patine.",
+    "La patinoire est ouverte jusqu'au trois janvier.",
+    "Il y a aussi des marchés de Noël.",
+    "Par exemple, il y a un marché de Noël au jardin des Tuileries.",
+    "Il est ouvert jusqu'au trois janvier.",
+    "Le marché de Noël des Champs-Élysées est aussi de retour.",
+    "Dans les marchés de Noël, on achète des cadeaux.",
+    "On mange et on boit des choses chaudes.",
+    "Par exemple, il y a du vin chaud et des crêpes.",
+    "Et il fait de plus en plus froid.",
+    "Au milieu de la semaine, de l'air froid arrive à Paris.",
+    "Il y a peut-être du verglas.",
+    "Le verglas, c'est de la glace sur les routes.",
+    "C'est dangereux pour les voitures et pour les piétons.",
+    "Il y a peut-être aussi quelques flocons de neige.",
+    "Alors, prenez un manteau et un bonnet !",
+    "Ce soir, regardez le ciel.",
+    "C'est la pleine lune.",
+    "On peut voir la lune sans télescope, s'il n'y a pas de nuages.",
+    "C'est la fin de ce résumé.",
+    "Merci, et bonne journée.",
+    "Et joyeux Thanksgiving !",
+    "À demain !"
+  ],
+  "glossary": {
+    "bonjour": {
+      "french": "bonjour",
+      "english": "hello",
+      "level": "A1",
+      "tag": "greetings"
+    },
+    "et": {
+      "french": "et",
+      "english": "and",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "bienvenue": {
+      "french": "bienvenue",
+      "english": "welcome",
+      "level": "A1",
+      "tag": "greetings"
+    },
+    "voici": {
+      "french": "voici",
+      "english": "here is; here are",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "les": {
+      "french": "les",
+      "english": "the (plural)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "nouvelles": {
+      "french": "la nouvelle",
+      "english": "news stories; the news",
+      "level": "A1",
+      "tag": "media"
+    },
+    "du": {
+      "french": "du",
+      "english": "of the; from the",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "jour": {
+      "french": "le jour",
+      "english": "day",
+      "level": "A1",
+      "tag": "time"
+    },
+    "en": {
+      "french": "en",
+      "english": "in; by (en voiture = by car)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "français": {
+      "french": "le français",
+      "english": "French (language)",
+      "level": "A1",
+      "tag": "language"
+    },
+    "très": {
+      "french": "très",
+      "english": "very",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "simple": {
+      "french": "simple",
+      "english": "simple",
+      "level": "A1",
+      "tag": "general"
+    },
+    "aujourd'hui": {
+      "french": "aujourd'hui",
+      "english": "today",
+      "level": "A1",
+      "tag": "time"
+    },
+    "nous": {
+      "french": "nous",
+      "english": "we",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "sommes": {
+      "french": "être",
+      "english": "(we) are",
+      "level": "A1",
+      "tag": "verbs"
+    },
+    "le": {
+      "french": "le",
+      "english": "the; it",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "mardi": {
+      "french": "le mardi",
+      "english": "Tuesday",
+      "level": "A1",
+      "tag": "time"
+    },
+    "vingt-quatre": {
+      "french": "vingt-quatre",
+      "english": "twenty-four",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "novembre": {
+      "french": "novembre",
+      "english": "November",
+      "level": "A1",
+      "tag": "time"
+    },
+    "jeudi": {
+      "french": "le jeudi",
+      "english": "Thursday",
+      "level": "A1",
+      "tag": "time"
+    },
+    "c'est": {
+      "french": "c'est",
+      "english": "it is; this is",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "thanksgiving": {
+      "french": "Thanksgiving",
+      "english": "(name) Thanksgiving",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "avons": {
+      "french": "avoir",
+      "english": "(we) have",
+      "level": "A1",
+      "tag": "verbs"
+    },
+    "quatre": {
+      "french": "quatre",
+      "english": "four",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "trois": {
+      "french": "trois",
+      "english": "three",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "sont": {
+      "french": "être",
+      "english": "(they) are",
+      "level": "A1",
+      "tag": "verbs"
+    },
+    "des": {
+      "french": "des",
+      "english": "some; of the; from the",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "états-unis": {
+      "french": "les États-Unis",
+      "english": "the United States",
+      "level": "A1",
+      "tag": "places"
+    },
+    "une": {
+      "french": "une",
+      "english": "a; one",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "nouvelle": {
+      "french": "la nouvelle",
+      "english": "news story",
+      "level": "A1",
+      "tag": "media"
+    },
+    "est": {
+      "french": "être",
+      "english": "is",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "de": {
+      "french": "de",
+      "english": "of; from",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "paris": {
+      "french": "Paris",
+      "english": "(name) Paris",
+      "level": "A1",
+      "tag": "places"
+    },
+    "écoutez": {
+      "french": "écouter",
+      "english": "listen",
+      "level": "A1",
+      "tag": "verbs"
+    },
+    "bien": {
+      "french": "bien",
+      "english": "well; carefully",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "on": {
+      "french": "on",
+      "english": "we; one; people",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "commence": {
+      "french": "commencer",
+      "english": "start; begins",
+      "level": "A1",
+      "tag": "verbs"
+    },
+    "première": {
+      "french": "premier",
+      "english": "first",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "bonne": {
+      "french": "bon",
+      "english": "good",
+      "level": "A1",
+      "tag": "general"
+    },
+    "journée": {
+      "french": "la journée",
+      "english": "day (the whole day)",
+      "level": "A1",
+      "tag": "time"
+    },
+    "à": {
+      "french": "à",
+      "english": "to; at; in",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "wall": {
+      "french": "Wall Street",
+      "english": "(name) Wall Street, the New York stock market",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "street": {
+      "french": "Wall Street",
+      "english": "(name) Wall Street, the New York stock market",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "hier": {
+      "french": "hier",
+      "english": "yesterday",
+      "level": "A1",
+      "tag": "general"
+    },
+    "parlons": {
+      "french": "parler",
+      "english": "(we) talk; we are talking",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "d'une": {
+      "french": "une",
+      "english": "a; an; one",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "mauvaise": {
+      "french": "mauvais",
+      "english": "bad",
+      "level": "A1",
+      "tag": "description"
+    },
+    "la": {
+      "french": "la",
+      "english": "the (feminine)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "bourse": {
+      "french": "la Bourse",
+      "english": "stock market",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "vendredi": {
+      "french": "le vendredi",
+      "english": "Friday",
+      "level": "A1",
+      "tag": "time"
+    },
+    "actions": {
+      "french": "une action",
+      "english": "shares (of stock)",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "baissent": {
+      "french": "baisser",
+      "english": "fall; go down",
+      "level": "A2",
+      "tag": "economy"
+    },
+    "beaucoup": {
+      "french": "beaucoup",
+      "english": "a lot; many; much",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "mais": {
+      "french": "mais",
+      "english": "but",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "lundi": {
+      "french": "lundi",
+      "english": "Monday",
+      "level": "A1",
+      "tag": "time"
+    },
+    "contraire": {
+      "french": "le contraire",
+      "english": "the opposite",
+      "level": "A2",
+      "tag": "grammar"
+    },
+    "montent": {
+      "french": "monter",
+      "english": "go up; rise",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "gens": {
+      "french": "les gens",
+      "english": "people",
+      "level": "A1",
+      "tag": "people"
+    },
+    "achètent": {
+      "french": "acheter",
+      "english": "(they) buy",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "nouveau": {
+      "french": "à nouveau",
+      "english": "again (à nouveau)",
+      "level": "A2",
+      "tag": "grammar"
+    },
+    "indice": {
+      "french": "un indice",
+      "english": "stock index",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "s&p": {
+      "french": "S&P 500",
+      "english": "(name) S&P 500, a US stock index",
+      "level": "A1",
+      "tag": "names"
+    },
+    "cinq": {
+      "french": "cinq",
+      "english": "five",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "cents": {
+      "french": "cent",
+      "english": "hundred",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "gagne": {
+      "french": "gagner",
+      "english": "gains; earns",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "presque": {
+      "french": "presque",
+      "english": "almost; nearly",
+      "level": "A1",
+      "tag": "general"
+    },
+    "pour": {
+      "french": "pour",
+      "english": "for",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "cent": {
+      "french": "cent",
+      "english": "hundred",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "nasdaq": {
+      "french": "Nasdaq",
+      "english": "(name) Nasdaq, a US stock index",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "six": {
+      "french": "six",
+      "english": "six",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "demi": {
+      "french": "demi",
+      "english": "half",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "dow": {
+      "french": "Dow Jones",
+      "english": "(name) Dow Jones, a US stock index",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "jones": {
+      "french": "Dow Jones",
+      "english": "(name) Dow Jones, a US stock index",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "environ": {
+      "french": "environ",
+      "english": "about; around",
+      "level": "A2",
+      "tag": "numbers"
+    },
+    "meilleure": {
+      "french": "meilleur",
+      "english": "best",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "depuis": {
+      "french": "depuis",
+      "english": "since; for (time)",
+      "level": "A1",
+      "tag": "time"
+    },
+    "avril": {
+      "french": "avril",
+      "english": "April",
+      "level": "A1",
+      "tag": "time"
+    },
+    "deux": {
+      "french": "deux",
+      "english": "two",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "mille": {
+      "french": "mille",
+      "english": "thousand",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "vingt-cinq": {
+      "french": "vingt-cinq",
+      "english": "twenty-five",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "pourquoi": {
+      "french": "pourquoi",
+      "english": "why",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "cause": {
+      "french": "la cause",
+      "english": "cause (à cause de = because of)",
+      "level": "A2",
+      "tag": "grammar"
+    },
+    "nvidia": {
+      "french": "Nvidia",
+      "english": "(name) Nvidia, an American chip company",
+      "level": "A1",
+      "tag": "technology"
+    },
+    "fait": {
+      "french": "faire",
+      "english": "makes; (elle fait 4 km) it is 4 km long; (il fait froid) it is cold",
+      "level": "A1",
+      "tag": "actions"
+    },
+    "puces": {
+      "french": "une puce",
+      "english": "chips (computer chips)",
+      "level": "B1",
+      "tag": "technology"
+    },
+    "l'intelligence": {
+      "french": "l'intelligence",
+      "english": "intelligence (l'intelligence artificielle = artificial intelligence)",
+      "level": "A2",
+      "tag": "technology"
+    },
+    "artificielle": {
+      "french": "artificiel",
+      "english": "artificial",
+      "level": "B1",
+      "tag": "technology"
+    },
+    "patron": {
+      "french": "le patron",
+      "english": "boss; CEO",
+      "level": "A2",
+      "tag": "economy"
+    },
+    "s'appelle": {
+      "french": "s'appeler",
+      "english": "is called; is named",
+      "level": "A1",
+      "tag": "verbs"
+    },
+    "jensen": {
+      "french": "Jensen",
+      "english": "(name) Jensen Huang",
+      "level": "A1",
+      "tag": "news"
+    },
+    "huang": {
+      "french": "Huang",
+      "english": "(name) Jensen Huang",
+      "level": "A1",
+      "tag": "news"
+    },
+    "douze": {
+      "french": "douze",
+      "english": "twelve",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "quitte": {
+      "french": "quitter",
+      "english": "leaves",
+      "level": "A1",
+      "tag": "news"
+    },
+    "son": {
+      "french": "son",
+      "english": "his; her; its",
+      "level": "A1",
+      "tag": "general"
+    },
+    "poste": {
+      "french": "le poste",
+      "english": "job; position",
+      "level": "A2",
+      "tag": "news"
+    },
+    "il": {
+      "french": "il",
+      "english": "he; it",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "part": {
+      "french": "partir",
+      "english": "leaves; goes away",
+      "level": "A1",
+      "tag": "news"
+    },
+    "après": {
+      "french": "après",
+      "english": "after; afterwards",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "un": {
+      "french": "un",
+      "english": "a; one",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "scandale": {
+      "french": "le scandale",
+      "english": "scandal",
+      "level": "B1",
+      "tag": "news"
+    },
+    "dans": {
+      "french": "dans",
+      "english": "in; into",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "sa": {
+      "french": "sa",
+      "english": "his; her",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "vie": {
+      "french": "la vie",
+      "english": "life",
+      "level": "A1",
+      "tag": "news"
+    },
+    "privée": {
+      "french": "privé",
+      "english": "private",
+      "level": "A2",
+      "tag": "news"
+    },
+    "autre": {
+      "french": "autre",
+      "english": "other; another",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "personne": {
+      "french": "la personne",
+      "english": "person",
+      "level": "A1",
+      "tag": "news"
+    },
+    "dirige": {
+      "french": "diriger",
+      "english": "runs; leads",
+      "level": "A2",
+      "tag": "economy"
+    },
+    "entreprise": {
+      "french": "l'entreprise",
+      "english": "company; business",
+      "level": "A2",
+      "tag": "business"
+    },
+    "moment": {
+      "french": "le moment",
+      "english": "moment; while",
+      "level": "A1",
+      "tag": "time"
+    },
+    "elle": {
+      "french": "elle",
+      "english": "she; it",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "colette": {
+      "french": "Colette",
+      "english": "(name) Colette Kress",
+      "level": "A1",
+      "tag": "news"
+    },
+    "kress": {
+      "french": "Kress",
+      "english": "(name) Colette Kress",
+      "level": "A1",
+      "tag": "news"
+    },
+    "conseil": {
+      "french": "le conseil",
+      "english": "board; advice",
+      "level": "A2",
+      "tag": "economy"
+    },
+    "d'administration": {
+      "french": "l'administration",
+      "english": "of directors (conseil d'administration = board of directors)",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "change": {
+      "french": "changer",
+      "english": "changes",
+      "level": "A1",
+      "tag": "news"
+    },
+    "d'avis": {
+      "french": "l'avis",
+      "english": "its mind (changer d'avis = to change one's mind)",
+      "level": "A2",
+      "tag": "news"
+    },
+    "redevient": {
+      "french": "redevenir",
+      "english": "becomes again",
+      "level": "B1",
+      "tag": "news"
+    },
+    "président": {
+      "french": "le président",
+      "english": "president",
+      "level": "A1",
+      "tag": "news"
+    },
+    "donald": {
+      "french": "Donald",
+      "english": "(name) Donald Trump",
+      "level": "A1",
+      "tag": "news"
+    },
+    "trump": {
+      "french": "Trump",
+      "english": "(name) Donald Trump",
+      "level": "A1",
+      "tag": "news"
+    },
+    "soutient": {
+      "french": "soutenir",
+      "english": "supports",
+      "level": "B1",
+      "tag": "news"
+    },
+    "cette": {
+      "french": "ce",
+      "english": "this",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "décision": {
+      "french": "la décision",
+      "english": "decision",
+      "level": "A2",
+      "tag": "economy"
+    },
+    "dit": {
+      "french": "dire",
+      "english": "says",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "n'y": {
+      "french": "il n'y a pas",
+      "english": "(there is) not",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "pas": {
+      "french": "pas",
+      "english": "not (ne... pas)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "risque": {
+      "french": "le risque",
+      "english": "risk",
+      "level": "A2",
+      "tag": "news"
+    },
+    "sécurité": {
+      "french": "la sécurité",
+      "english": "security; safety",
+      "level": "A2",
+      "tag": "security"
+    },
+    "nationale": {
+      "french": "national",
+      "english": "national",
+      "level": "A2",
+      "tag": "news"
+    },
+    "alors": {
+      "french": "alors",
+      "english": "so; then",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "investisseurs": {
+      "french": "l'investisseur",
+      "english": "investors",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "contents": {
+      "french": "content",
+      "english": "happy; pleased",
+      "level": "A1",
+      "tag": "news"
+    },
+    "investisseur": {
+      "french": "l'investisseur",
+      "english": "investor",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "qui": {
+      "french": "qui",
+      "english": "who; that",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "achète": {
+      "french": "acheter",
+      "english": "buys",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "l'action": {
+      "french": "l'action",
+      "english": "the share; the stock",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "monte": {
+      "french": "monter",
+      "english": "rises; goes up",
+      "level": "A1",
+      "tag": "verbs"
+    },
+    "trente": {
+      "french": "trente",
+      "english": "thirty",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "énorme": {
+      "french": "énorme",
+      "english": "huge",
+      "level": "A2",
+      "tag": "general"
+    },
+    "plus": {
+      "french": "plus",
+      "english": "more (le plus = the most)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "forte": {
+      "french": "fort",
+      "english": "strong; big",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "hausse": {
+      "french": "la hausse",
+      "english": "rise; increase",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "vingt": {
+      "french": "vingt",
+      "english": "twenty",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "ans": {
+      "french": "l'an",
+      "english": "years",
+      "level": "A1",
+      "tag": "time"
+    },
+    "milliards": {
+      "french": "le milliard",
+      "english": "billions (mille milliards = a trillion)",
+      "level": "A2",
+      "tag": "numbers"
+    },
+    "dollars": {
+      "french": "le dollar",
+      "english": "dollars",
+      "level": "A1",
+      "tag": "economy"
+    },
+    "valeur": {
+      "french": "la valeur",
+      "english": "value",
+      "level": "A2",
+      "tag": "economy"
+    },
+    "y": {
+      "french": "y",
+      "english": "there (in il y a)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "encore": {
+      "french": "encore",
+      "english": "again; still",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "questions": {
+      "french": "la question",
+      "english": "questions",
+      "level": "A1",
+      "tag": "news"
+    },
+    "sec": {
+      "french": "la SEC",
+      "english": "(name) the SEC, the US agency that watches the stock market",
+      "level": "B1",
+      "tag": "economy"
+    },
+    "regarde": {
+      "french": "regarder",
+      "english": "looks at",
+      "level": "A1",
+      "tag": "actions"
+    },
+    "toujours": {
+      "french": "toujours",
+      "english": "still; always",
+      "level": "A1",
+      "tag": "time"
+    },
+    "comptes": {
+      "french": "le compte",
+      "english": "accounts (a company's financial accounts)",
+      "level": "A2",
+      "tag": "economy"
+    },
+    "élus": {
+      "french": "l'élu",
+      "english": "elected officials",
+      "level": "B1",
+      "tag": "news"
+    },
+    "au": {
+      "french": "au",
+      "english": "at the; in the",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "congrès": {
+      "french": "le Congrès",
+      "english": "Congress",
+      "level": "A2",
+      "tag": "news"
+    },
+    "veulent": {
+      "french": "vouloir",
+      "english": "want",
+      "level": "A1",
+      "tag": "news"
+    },
+    "réponses": {
+      "french": "la réponse",
+      "english": "answers",
+      "level": "A1",
+      "tag": "news"
+    },
+    "deuxième": {
+      "french": "deuxième",
+      "english": "second",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "américains": {
+      "french": "américain",
+      "english": "American (plural)",
+      "level": "A1",
+      "tag": "countries"
+    },
+    "voyagent": {
+      "french": "voyager",
+      "english": "travel",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "grande": {
+      "french": "grand",
+      "english": "big; great",
+      "level": "A1",
+      "tag": "general"
+    },
+    "fête": {
+      "french": "la fête",
+      "english": "party; celebration",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "famille": {
+      "french": "la famille",
+      "english": "family",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "personnes": {
+      "french": "la personne",
+      "english": "people",
+      "level": "A1",
+      "tag": "people"
+    },
+    "voir": {
+      "french": "voir",
+      "english": "to see",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "leur": {
+      "french": "leur",
+      "english": "their",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "selon": {
+      "french": "selon",
+      "english": "according to",
+      "level": "A2",
+      "tag": "general"
+    },
+    "l'aaa": {
+      "french": "l'AAA",
+      "english": "(name) AAA, the American Automobile Association",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "année": {
+      "french": "l'année",
+      "english": "year",
+      "level": "A1",
+      "tag": "time"
+    },
+    "quatre-vingt-un": {
+      "french": "quatre-vingt-un",
+      "english": "eighty-one",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "millions": {
+      "french": "le million",
+      "english": "millions",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "d'américains": {
+      "french": "l'Américain",
+      "english": "(of) Americans",
+      "level": "A1",
+      "tag": "people"
+    },
+    "peu": {
+      "french": "peu",
+      "english": "little (un peu = a little)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "moins": {
+      "french": "moins",
+      "english": "less",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "que": {
+      "french": "que",
+      "english": "than",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "annee": {
+      "french": "l'année",
+      "english": "year",
+      "level": "A1",
+      "tag": "time"
+    },
+    "dernière": {
+      "french": "dernier",
+      "english": "last",
+      "level": "A1",
+      "tag": "time"
+    },
+    "ils": {
+      "french": "ils",
+      "english": "they",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "prochain": {
+      "french": "prochain",
+      "english": "next",
+      "level": "A1",
+      "tag": "time"
+    },
+    "quatre-vingts": {
+      "french": "quatre-vingts",
+      "english": "eighty",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "kilomètres": {
+      "french": "le kilomètre",
+      "english": "kilometers",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "maison": {
+      "french": "la maison",
+      "english": "house",
+      "level": "A1",
+      "tag": "home"
+    },
+    "plupart": {
+      "french": "la plupart",
+      "english": "most (la plupart des = most of the)",
+      "level": "A2",
+      "tag": "travel"
+    },
+    "prennent": {
+      "french": "prendre",
+      "english": "take",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "voiture": {
+      "french": "la voiture",
+      "english": "car",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "soixante-treize": {
+      "french": "soixante-treize",
+      "english": "seventy-three",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "l'avion": {
+      "french": "l'avion",
+      "english": "the plane",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "d'autres": {
+      "french": "d'autres",
+      "english": "others; other people",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "train": {
+      "french": "le train",
+      "english": "train",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "bus": {
+      "french": "le bus",
+      "english": "bus",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "ou": {
+      "french": "ou",
+      "english": "or",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "bateau": {
+      "french": "le bateau",
+      "english": "boat",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "vont": {
+      "french": "aller",
+      "english": "go",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "floride": {
+      "french": "la Floride",
+      "english": "Florida",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "orlando": {
+      "french": "Orlando",
+      "english": "(name) Orlando",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "miami": {
+      "french": "Miami",
+      "english": "(name) Miami",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "los": {
+      "french": "Los",
+      "english": "(name) Los Angeles",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "angeles": {
+      "french": "Angeles",
+      "english": "(name) Los Angeles",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "new": {
+      "french": "New York",
+      "english": "(name) New York",
+      "level": "A1",
+      "tag": "places"
+    },
+    "york": {
+      "french": "New York",
+      "english": "(name) New York",
+      "level": "A1",
+      "tag": "places"
+    },
+    "demain": {
+      "french": "demain",
+      "english": "tomorrow",
+      "level": "A1",
+      "tag": "time"
+    },
+    "mercredi": {
+      "french": "le mercredi",
+      "english": "Wednesday",
+      "level": "A1",
+      "tag": "time"
+    },
+    "voitures": {
+      "french": "la voiture",
+      "english": "cars",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "sur": {
+      "french": "sur",
+      "english": "on",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "routes": {
+      "french": "la route",
+      "english": "roads",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "calmes": {
+      "french": "calme",
+      "english": "calm; quiet",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "aéroports": {
+      "french": "l'aéroport",
+      "english": "airports",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "aussi": {
+      "french": "aussi",
+      "english": "also; too",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "monde": {
+      "french": "le monde",
+      "english": "people (beaucoup de monde = lots of people)",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "tsa": {
+      "french": "la TSA",
+      "english": "(name) TSA, US airport security agency",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "contrôle": {
+      "french": "contrôler",
+      "english": "checks; screens",
+      "level": "A2",
+      "tag": "travel"
+    },
+    "passagers": {
+      "french": "le passager",
+      "english": "passengers",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "semaine": {
+      "french": "la semaine",
+      "english": "week",
+      "level": "A1",
+      "tag": "time"
+    },
+    "attend": {
+      "french": "attendre",
+      "english": "expects; waits for",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "dix-sept": {
+      "french": "dix-sept",
+      "english": "seventeen",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "dimanche": {
+      "french": "le dimanche",
+      "english": "Sunday",
+      "level": "A1",
+      "tag": "time"
+    },
+    "difficile": {
+      "french": "difficile",
+      "english": "difficult",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "voyager": {
+      "french": "voyager",
+      "english": "to travel",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "coûte": {
+      "french": "coûter",
+      "english": "costs",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "cher": {
+      "french": "cher",
+      "english": "expensive (coûter cher = to cost a lot)",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "l'essence": {
+      "french": "l'essence",
+      "english": "gasoline",
+      "level": "A2",
+      "tag": "travel"
+    },
+    "chère": {
+      "french": "cher",
+      "english": "expensive",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "gallon": {
+      "french": "le gallon",
+      "english": "gallon",
+      "level": "A2",
+      "tag": "travel"
+    },
+    "d'essence": {
+      "french": "l'essence",
+      "english": "of gasoline",
+      "level": "A2",
+      "tag": "travel"
+    },
+    "moyenne": {
+      "french": "la moyenne",
+      "english": "average (en moyenne = on average)",
+      "level": "A2",
+      "tag": "travel"
+    },
+    "quatre-vingt-sept": {
+      "french": "quatre-vingt-sept",
+      "english": "eighty-seven",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "billets": {
+      "french": "le billet",
+      "english": "tickets",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "d'avion": {
+      "french": "l'avion",
+      "english": "plane (billet d'avion = plane ticket)",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "chers": {
+      "french": "cher",
+      "english": "expensive",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "hopper": {
+      "french": "Hopper",
+      "english": "(name) Hopper, a travel app",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "coûtent": {
+      "french": "coûter",
+      "english": "cost",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "trente-neuf": {
+      "french": "trente-neuf",
+      "english": "thirty-nine",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "donne": {
+      "french": "donner",
+      "english": "gives",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "arrivez": {
+      "french": "arriver",
+      "english": "arrive (command)",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "tôt": {
+      "french": "tôt",
+      "english": "early",
+      "level": "A1",
+      "tag": "time"
+    },
+    "amtrak": {
+      "french": "Amtrak",
+      "english": "(name) Amtrak, US passenger railroad",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "américain": {
+      "french": "américain",
+      "english": "American",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "record": {
+      "french": "le record",
+      "english": "record",
+      "level": "A2",
+      "tag": "general"
+    },
+    "trains": {
+      "french": "le train",
+      "english": "trains",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "entre": {
+      "french": "entre",
+      "english": "between",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "washington": {
+      "french": "Washington",
+      "english": "(name) Washington",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "si": {
+      "french": "si",
+      "english": "if (s'il = if there)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "vous": {
+      "french": "vous",
+      "english": "you",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "voyagez": {
+      "french": "voyager",
+      "english": "(you) travel",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "soyez": {
+      "french": "être",
+      "english": "be",
+      "level": "A2",
+      "tag": "verbs"
+    },
+    "patients": {
+      "french": "patient",
+      "english": "patient",
+      "level": "A2",
+      "tag": "travel"
+    },
+    "troisième": {
+      "french": "troisième",
+      "english": "third",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "dindes": {
+      "french": "la dinde",
+      "english": "turkeys",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "maison-blanche": {
+      "french": "la Maison-Blanche",
+      "english": "the White House",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "mangent": {
+      "french": "manger",
+      "english": "eat",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "dinde": {
+      "french": "la dinde",
+      "english": "turkey",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "grand": {
+      "french": "grand",
+      "english": "big; great",
+      "level": "A1",
+      "tag": "general"
+    },
+    "oiseau": {
+      "french": "l'oiseau",
+      "english": "bird",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "chaque": {
+      "french": "chaque",
+      "english": "each; every",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "tradition": {
+      "french": "la tradition",
+      "english": "tradition",
+      "level": "A2",
+      "tag": "culture"
+    },
+    "amusante": {
+      "french": "amusant",
+      "english": "fun; amusing",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "pardonne": {
+      "french": "pardonner",
+      "english": "pardons",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "ne": {
+      "french": "ne",
+      "english": "not (ne ... pas)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "finit": {
+      "french": "finir",
+      "english": "ends; finishes",
+      "level": "A1",
+      "tag": "general"
+    },
+    "table": {
+      "french": "la table",
+      "english": "table",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "reste": {
+      "french": "rester",
+      "english": "stays",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "elles": {
+      "french": "elles",
+      "english": "they (feminine)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "s'appellent": {
+      "french": "s'appeler",
+      "english": "are called",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "freedom": {
+      "french": "Freedom",
+      "english": "(name) Freedom",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "feather": {
+      "french": "Feather",
+      "english": "(name) Feather",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "liberté": {
+      "french": "la liberté",
+      "english": "freedom",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "plume": {
+      "french": "la plume",
+      "english": "feather",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "viennent": {
+      "french": "venir",
+      "english": "(they) come",
+      "level": "A1",
+      "tag": "general"
+    },
+    "virginie-occidentale": {
+      "french": "la Virginie-Occidentale",
+      "english": "West Virginia",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "hôtel": {
+      "french": "l'hôtel",
+      "english": "hotel",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "pardonnées": {
+      "french": "pardonner",
+      "english": "pardoned",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "seule": {
+      "french": "seul",
+      "english": "only; single",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "participe": {
+      "french": "participer",
+      "english": "takes part",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "cérémonie": {
+      "french": "la cérémonie",
+      "english": "ceremony",
+      "level": "A2",
+      "tag": "culture"
+    },
+    "votent": {
+      "french": "voter",
+      "english": "vote",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "internet": {
+      "french": "Internet",
+      "english": "the Internet",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "choisir": {
+      "french": "choisir",
+      "english": "to choose",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "texas": {
+      "french": "le Texas",
+      "english": "Texas",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "vivre": {
+      "french": "vivre",
+      "english": "to live",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "l'université": {
+      "french": "l'université",
+      "english": "the university",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "a&m": {
+      "french": "A&M",
+      "english": "(name) Texas A&M University",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "là-bas": {
+      "french": "là-bas",
+      "english": "over there",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "tranquilles": {
+      "french": "tranquille",
+      "english": "peaceful; quiet",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "existe": {
+      "french": "exister",
+      "english": "exists",
+      "level": "A2",
+      "tag": "holidays"
+    },
+    "neuf": {
+      "french": "neuf",
+      "english": "nine",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "quatre-vingt-neuf": {
+      "french": "quatre-vingt-neuf",
+      "english": "eighty-nine",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "avec": {
+      "french": "avec",
+      "english": "with",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "george": {
+      "french": "George",
+      "english": "(name) George H. W. Bush",
+      "level": "A1",
+      "tag": "news"
+    },
+    "h": {
+      "french": "H.",
+      "english": "(initial) George H. W. Bush",
+      "level": "A1",
+      "tag": "news"
+    },
+    "w": {
+      "french": "W.",
+      "english": "(initial) George H. W. Bush",
+      "level": "A1",
+      "tag": "news"
+    },
+    "bush": {
+      "french": "Bush",
+      "english": "(name) George H. W. Bush",
+      "level": "A1",
+      "tag": "news"
+    },
+    "quatrième": {
+      "french": "quatrième",
+      "english": "fourth",
+      "level": "A1",
+      "tag": "numbers"
+    },
+    "maintenant": {
+      "french": "maintenant",
+      "english": "now",
+      "level": "A1",
+      "tag": "time"
+    },
+    "bientôt": {
+      "french": "bientôt",
+      "english": "soon",
+      "level": "A1",
+      "tag": "time"
+    },
+    "noël": {
+      "french": "Noël",
+      "english": "Christmas",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "patinoire": {
+      "french": "la patinoire",
+      "english": "ice rink",
+      "level": "B1",
+      "tag": "paris"
+    },
+    "ouvre": {
+      "french": "ouvrir",
+      "english": "opens",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "toit": {
+      "french": "le toit",
+      "english": "roof",
+      "level": "A2",
+      "tag": "paris"
+    },
+    "galeries": {
+      "french": "Galeries",
+      "english": "(name) Galeries Lafayette, a Paris department store",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "lafayette": {
+      "french": "Lafayette",
+      "english": "(name) Galeries Lafayette",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "magasin": {
+      "french": "le magasin",
+      "english": "store; shop",
+      "level": "A1",
+      "tag": "shopping"
+    },
+    "belle": {
+      "french": "beau",
+      "english": "beautiful",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "vue": {
+      "french": "la vue",
+      "english": "view",
+      "level": "A2",
+      "tag": "paris"
+    },
+    "peut": {
+      "french": "pouvoir",
+      "english": "can; may",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "tour": {
+      "french": "la tour",
+      "english": "tower",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "eiffel": {
+      "french": "Eiffel",
+      "english": "(name) the Eiffel Tower",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "touristes": {
+      "french": "le touriste",
+      "english": "tourists",
+      "level": "A1",
+      "tag": "travel"
+    },
+    "photo": {
+      "french": "la photo",
+      "english": "photo",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "piste": {
+      "french": "la piste",
+      "english": "track; rink surface",
+      "level": "A2",
+      "tag": "paris"
+    },
+    "glace": {
+      "french": "la glace",
+      "english": "ice",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "patine": {
+      "french": "patiner",
+      "english": "skates",
+      "level": "B1",
+      "tag": "paris"
+    },
+    "ouverte": {
+      "french": "ouvert",
+      "english": "open",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "janvier": {
+      "french": "janvier",
+      "english": "January",
+      "level": "A1",
+      "tag": "time"
+    },
+    "marchés": {
+      "french": "le marché",
+      "english": "markets",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "par": {
+      "french": "par",
+      "english": "by; through",
+      "level": "A1",
+      "tag": "basic"
+    },
+    "exemple": {
+      "french": "un exemple",
+      "english": "example (par exemple = for example)",
+      "level": "A1",
+      "tag": "general"
+    },
+    "marché": {
+      "french": "le marché",
+      "english": "market",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "jardin": {
+      "french": "le jardin",
+      "english": "garden",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "tuileries": {
+      "french": "les Tuileries",
+      "english": "(name) the Tuileries Garden",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "ouvert": {
+      "french": "ouvert",
+      "english": "open",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "champs-élysées": {
+      "french": "les Champs-Élysées",
+      "english": "(name) the Champs-Élysées avenue",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "retour": {
+      "french": "le retour",
+      "english": "return (de retour = back)",
+      "level": "A2",
+      "tag": "paris"
+    },
+    "cadeaux": {
+      "french": "le cadeau",
+      "english": "gifts; presents",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "mange": {
+      "french": "manger",
+      "english": "eats",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "boit": {
+      "french": "boire",
+      "english": "drinks",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "choses": {
+      "french": "la chose",
+      "english": "things",
+      "level": "A1",
+      "tag": "paris"
+    },
+    "chaudes": {
+      "french": "chaud",
+      "english": "hot",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "vin": {
+      "french": "le vin",
+      "english": "wine",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "chaud": {
+      "french": "chaud",
+      "english": "hot (vin chaud = mulled wine)",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "crêpes": {
+      "french": "la crêpe",
+      "english": "crepes",
+      "level": "A1",
+      "tag": "holidays"
+    },
+    "froid": {
+      "french": "froid",
+      "english": "cold",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "milieu": {
+      "french": "le milieu",
+      "english": "middle",
+      "level": "A2",
+      "tag": "time"
+    },
+    "l'air": {
+      "french": "l'air",
+      "english": "the air",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "arrive": {
+      "french": "arriver",
+      "english": "arrives",
+      "level": "A1",
+      "tag": "actions"
+    },
+    "peut-être": {
+      "french": "peut-être",
+      "english": "maybe; perhaps",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "verglas": {
+      "french": "le verglas",
+      "english": "black ice",
+      "level": "B1",
+      "tag": "weather"
+    },
+    "dangereux": {
+      "french": "dangereux",
+      "english": "dangerous",
+      "level": "A1",
+      "tag": "general"
+    },
+    "piétons": {
+      "french": "le piéton",
+      "english": "pedestrians",
+      "level": "A2",
+      "tag": "weather"
+    },
+    "quelques": {
+      "french": "quelques",
+      "english": "a few",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "flocons": {
+      "french": "le flocon",
+      "english": "flakes (flocons de neige = snowflakes)",
+      "level": "B1",
+      "tag": "weather"
+    },
+    "neige": {
+      "french": "la neige",
+      "english": "snow; (il neige) it snows",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "prenez": {
+      "french": "prendre",
+      "english": "take (command)",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "manteau": {
+      "french": "le manteau",
+      "english": "coat",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "bonnet": {
+      "french": "le bonnet",
+      "english": "winter hat",
+      "level": "A2",
+      "tag": "weather"
+    },
+    "ce": {
+      "french": "ce",
+      "english": "this (ce soir = tonight); it (c'est)",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "soir": {
+      "french": "le soir",
+      "english": "evening",
+      "level": "A1",
+      "tag": "time"
+    },
+    "regardez": {
+      "french": "regarder",
+      "english": "look at (command)",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "ciel": {
+      "french": "le ciel",
+      "english": "sky",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "pleine": {
+      "french": "plein",
+      "english": "full (pleine lune = full moon)",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "lune": {
+      "french": "la lune",
+      "english": "moon",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "sans": {
+      "french": "sans",
+      "english": "without",
+      "level": "A1",
+      "tag": "grammar"
+    },
+    "télescope": {
+      "french": "le télescope",
+      "english": "telescope",
+      "level": "A2",
+      "tag": "weather"
+    },
+    "nuages": {
+      "french": "le nuage",
+      "english": "clouds",
+      "level": "A1",
+      "tag": "weather"
+    },
+    "fin": {
+      "french": "la fin",
+      "english": "end",
+      "level": "A1",
+      "tag": "general"
+    },
+    "résumé": {
+      "french": "le résumé",
+      "english": "summary",
+      "level": "A2",
+      "tag": "media"
+    },
+    "merci": {
+      "french": "merci",
+      "english": "thank you",
+      "level": "A1",
+      "tag": "greetings"
+    },
+    "joyeux": {
+      "french": "joyeux",
+      "english": "happy (joyeux Thanksgiving = happy Thanksgiving)",
+      "level": "A1",
+      "tag": "holidays"
+    }
   }
- }
 }
